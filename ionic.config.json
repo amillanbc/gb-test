@@ -1,0 +1,7 @@
+{
+  "name": "gb-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
