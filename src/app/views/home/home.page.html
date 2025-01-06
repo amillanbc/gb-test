@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p>Counter: {{ count() }}</p>
+  <p>Double: {{ doubleCount() }}</p>
+  <ion-button (click)="logout()">Logout </ion-button>
+  <ion-button (click)="add()" color="success" [disabled]="!canAdd()">
+    Add
+  </ion-button>
+  <ion-toggle [(ngModel)]="canAdd">Can add</ion-toggle>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p>State values {{ appStore.clientName() }}</p>
+  <ul>
+    @for (item of itemsList(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  @if (appStore.clientName() == 'Pablo') {
+  <p>CONTENT IS SHOWING</p>
+  }
+  <ion-button (click)="openModal()">Show modal</ion-button>
+  <ion-button (click)="openModal2()">Show modal 2</ion-button>
+</ion-content>

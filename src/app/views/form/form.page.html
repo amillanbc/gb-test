@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">form</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Last name"
+        type="text"
+        [(ngModel)]="lastName"></ion-input>
+    </ion-item>
+  </ion-list>
+  <app-full-name
+    [n]="name()"
+    [ln]="lastName()"
+    (nameOutput)="alertFullName($event)"></app-full-name>
+</ion-content>

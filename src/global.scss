@@ -35,3 +35,19 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+ion-modal#dialog-modal {
+  --width: fit-content;
+  --min-width: 250px;
+  --height: fit-content;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+ion-modal#dialog-modal .wrapper {
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
