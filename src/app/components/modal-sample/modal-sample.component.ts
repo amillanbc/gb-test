@@ -1,3 +1,4 @@
+// ##### IONIC & ANGULAR
 import { Component, input, computed } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
 import { IonButton } from '@ionic/angular/standalone';
@@ -12,11 +13,18 @@ export class ModalSampleComponent {
   constructor(private modalCtrl: ModalController) {}
 
   // ##### METHODS
+  /**
+   * Closes the modal displayed
+   */
   closeModal(action?: string) {
     this.modalCtrl.dismiss({ action: action });
   }
 
   // ##### COMPUTED
+  /**
+   * Returns the text to render in DOM
+   * * @returns String to render
+   */
   showText = computed(() => this.bodyText);
 
   // ##### PROPS

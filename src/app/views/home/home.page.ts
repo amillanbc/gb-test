@@ -1,5 +1,5 @@
 // ##### IONIC & ANGULAR
-import { Component, signal, computed, effect } from '@angular/core';
+import { Component, signal, computed, effect, inject } from '@angular/core';
 import {
   IonHeader,
   IonToolbar,
@@ -11,7 +11,7 @@ import {
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-// ##### STORES
+// ##### SERVICES
 import { AppStore } from 'src/app/stores/app-store.service';
 
 @Component({
@@ -29,7 +29,10 @@ import { AppStore } from 'src/app/stores/app-store.service';
   ],
 })
 export class HomePage {
-  constructor(private router: Router, private appStore: AppStore) {
+  // ##### INJECTIONS
+  appStore = inject(AppStore);
+
+  constructor(private router: Router) {
     effect(() => {
       console.log(`COUNT INCREASED ${this.count()}`);
     });
@@ -49,7 +52,7 @@ export class HomePage {
     console.log('UPDATE STATE');
     this.appStore.clientName.set('Pablo');
     console.log('STATE UPDATED', this.appStore.clientName());
-    this.count.update((val) => val + 1);
+    this.count.update(val => val + 1);
   }
 
   // ##### COMPUTED

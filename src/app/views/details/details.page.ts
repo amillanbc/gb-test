@@ -1,5 +1,5 @@
 // ##### IONIC & ANGULAR
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, inject } from '@angular/core';
 import {
   IonContent,
   IonHeader,
@@ -8,7 +8,7 @@ import {
   IonButton,
 } from '@ionic/angular/standalone';
 
-// ##### STORES
+// ##### SERVICES
 import { AppStore } from 'src/app/stores/app-store.service';
 import { Utils } from 'src/app/stores/utils.service';
 
@@ -27,14 +27,17 @@ import User from 'src/app/types/User';
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton],
 })
 export class DetailsPage implements OnInit {
-  constructor(public appStore: AppStore, public utils: Utils) {}
+  // ##### INJECTIONS
+  appStore = inject(AppStore);
+  utils = inject(Utils);
+
+  constructor() {}
 
   // ##### SIGNALS
   itemsList = signal(['Apples', 'Bananas', 'Pears']);
   newUser = signal<User>({ name: 'John', lastName: 'Doe', age: 20 });
 
   // ##### METHODS
-
   /**
    * Opens modal component 1
    */

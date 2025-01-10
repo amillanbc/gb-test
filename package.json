@@ -9,7 +9,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "test-android": "ionic capacitor run android -l --external",
+    "test-am": "ionic capacitor run ios -l --external --target 00008130-000E78C83451001C"
   },
   "private": true,
   "dependencies": {
@@ -63,5 +65,13 @@
     "prettier": "^3.4.2",
     "typescript": "~5.6.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "browserslist": [
+    "Chrome >=79",
+    "ChromeAndroid >=79",
+    "Firefox >=70",
+    "Edge >=79",
+    "Safari >=14",
+    "iOS >=14"
+  ]
 }
