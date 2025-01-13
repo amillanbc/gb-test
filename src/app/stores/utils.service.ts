@@ -8,7 +8,7 @@ export class Utils {
   constructor(private modalCtrl: ModalController) {}
 
   /**
-   * Opens a Ionic component modal with the content and attributes passed in the function params
+   * Opens an Ionic component modal with the content and attributes passed in the function params
    *
    * @param comp - The Angular component that shoud be shown in the modal
    * @param props - An object with the Inputs used in the component
