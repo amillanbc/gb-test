@@ -45,7 +45,7 @@ export class LoginPage {
 
   // ##### METHODS
   /**
-   * Validates user and password to login and redirect to home
+   * Validates user/password to login and redirect to home
    */
   login() {
     this.router.navigate(['/app/home']);
@@ -54,7 +54,7 @@ export class LoginPage {
   // ##### COMPUTED
   /**
    * Validates user and password matches required RegEx
-   * * @returns Will return string with the action taken by user click or undefined
+   * @returns Will return string with the action taken by user click or undefined
    */
   isValidUserAndPass = computed(() => {
     const isValidEmail = this.appStore.emailRegex.test(this.user());

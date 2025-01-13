@@ -23,7 +23,7 @@ export class ModalSampleComponent {
   // ##### COMPUTED
   /**
    * Returns the text to render in DOM
-   * * @returns String to render
+   * @returns String to render in DOM
    */
   showText = computed(() => this.bodyText);
 

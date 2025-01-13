@@ -44,10 +44,16 @@ export class HomePage {
   inputText = signal('');
 
   // ##### METHODS
+  /**
+   * Logs the user out and redirects to the login view
+   */
   logout() {
     this.router.navigate(['/base/login']);
   }
 
+  /**
+   * Increases the counter value by one
+   */
   add() {
     console.log('UPDATE STATE');
     this.appStore.clientName.set('Pablo');
@@ -56,5 +62,9 @@ export class HomePage {
   }
 
   // ##### COMPUTED
+  /**
+   * Calculates the counter value multiplied by 2
+   * @returns Will return number counter doubled
+   */
   doubleCount = computed(() => this.count() * 2);
 }

@@ -19,6 +19,9 @@ export class FullNameComponent {
   nameOutput = output<{ name: string; lastName: string }>();
 
   // ##### METHODS
+  /**
+   * Emits a call to parent component (output) containing the name and last name in upper case
+   */
   callCompOutput() {
     this.nameOutput.emit({
       name: this.n().toUpperCase(),
@@ -27,5 +30,8 @@ export class FullNameComponent {
   }
 
   // ##### COMPUTED
+  /**
+   * Emits a call to parent component (output) containing the name and last name in upper case
+   */
   fullName = computed(() => `${this.n()} ${this.ln()}`);
 }
