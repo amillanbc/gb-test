@@ -5,28 +5,51 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item>
-      <ion-input
-        label="User"
+  <div style="padding: 10px">
+    <ion-list>
+      <ion-item>
+        <ion-input label="User" type="email" placeholder="test@email.com" [(ngModel)]="user">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Password" placeholder="Password" type="password" [(ngModel)]="pass">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      color="gb-blue-500"
+      (click)="login()"
+      expand="block"
+      [disabled]="isValidUserAndPass()">
+      Login
+    </ion-button>
+    <br />
+    <form class="form-floating">
+      <input
         type="email"
-        placeholder="test@email.com"
-        [(ngModel)]="user">
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input
-        label="Password"
-        placeholder="Password"
-        type="password"
-        [(ngModel)]="pass">
-      </ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-button
-    (click)="login()"
-    expand="block"
-    [disabled]="isValidUserAndPass()">
-    Login
-  </ion-button>
+        class="form-control is-invalid"
+        id="floatingInputInvalid"
+        placeholder="name@example.com"
+        value="test@example.com" />
+      <label for="floatingInputInvalid">Invalid input</label>
+    </form>
+    <br />
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+      <label class="form-check-label" for="flexSwitchCheckDefault"
+        >Default switch checkbox input</label
+      >
+    </div>
+    <br />
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <br />
+    <div class="bg-gb-blue-300 pa-md rounded-border-md">
+      <div class="text-gb-blue-800">Color test</div>
+    </div>
+  </div>
 </ion-content>

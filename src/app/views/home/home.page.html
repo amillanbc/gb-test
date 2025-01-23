@@ -7,9 +7,7 @@
 <ion-content [fullscreen]="true">
   <p>Counter: {{ count() }}</p>
   <p>Double: {{ doubleCount() }}</p>
-  <ion-button (click)="logout()">Logout </ion-button>
-  <ion-button (click)="add()" color="success" [disabled]="!canAdd()">
-    Add
-  </ion-button>
-  <ion-toggle [(ngModel)]="canAdd">Can add</ion-toggle>
+  <ion-button (click)="logout()" color="gb-blue-600">Logout </ion-button>
+  <ion-button (click)="add()" color="success" [disabled]="!canAdd()"> Add </ion-button>
+  <ion-toggle [(ngModel)]="canAdd" color="gb-pink-800">Can add</ion-toggle>
 </ion-content>

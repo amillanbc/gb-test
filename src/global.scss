@@ -1,3 +1,6 @@
+@use "./theme/colors";
+@use "./theme/spacing";
+
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
@@ -50,4 +53,11 @@ ion-modal#dialog-modal .wrapper {
   margin-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.form-check-input {
+  height: 34px !important;
+  width: 68px !important;
 }
