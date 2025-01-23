@@ -1,0 +1,47 @@
+// SIZES
+$size-text-xs2: 0.575rem;
+$size-text-xs: 0.625rem;
+$size-text-sm: 0.75rem;
+$size-text-md: 0.875rem;
+$size-text-lg: 1rem;
+$size-text-xl: 1.125rem;
+$size-display-xs: 1.25rem;
+$size-display-sm: 1.5rem;
+$size-display-md: 1.875rem;
+$size-display-lg: 2.25rem;
+$size-display-xl: 3rem;
+$size-display-xl2: 3.75rem;
+$size-display-xl3: 4.5rem;
+$size-display-xl4: 5.625rem;
+
+// WEIGHTS
+$weights: (300, 400, 500, 600, 700);
+
+$gb-text-sizes: (
+  text-xs2: $size-text-xs2,
+  text-xs: $size-text-xs,
+  text-sm: $size-text-sm,
+  text-md: $size-text-md,
+  text-lg: $size-text-lg,
+  text-xl: $size-text-xl,
+  display-xs: $size-display-xs,
+  display-sm: $size-display-sm,
+  display-md: $size-display-md,
+  display-lg: $size-display-lg,
+  display-xl: $size-display-xl,
+  display-xl2: $size-display-xl2,
+  display-xl3: $size-display-xl3,
+  display-xl4: $size-display-xl4,
+);
+
+@each $name, $size in $gb-text-sizes {
+  .#{$name} {
+    font-size: $size;
+  }
+}
+
+@each $weight in $weights {
+  .w#{$weight} {
+    font-weight: $weight;
+  }
+}
