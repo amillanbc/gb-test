@@ -20,16 +20,16 @@ export class MainPage {
       route: '/button',
     },
     {
-      comp: 'Toggle',
-      route: '/toggle',
-    },
-    {
       comp: 'Input',
       route: '/input',
     },
     {
       comp: 'Checkbox',
       route: '/checkbox',
+    },
+    {
+      comp: 'Toggle',
+      route: '/toggle',
     },
     {
       comp: 'Tipografía',
