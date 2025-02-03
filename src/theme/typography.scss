@@ -29,9 +29,9 @@ $gb-text-sizes: (
   display-md: $size-display-md,
   display-lg: $size-display-lg,
   display-xl: $size-display-xl,
-  display-xl2: $size-display-xl2,
-  display-xl3: $size-display-xl3,
-  display-xl4: $size-display-xl4,
+  display-2xl: $size-display-xl2,
+  display-3xl: $size-display-xl3,
+  display-4xl: $size-display-xl4,
 );
 
 @each $name, $size in $gb-text-sizes {

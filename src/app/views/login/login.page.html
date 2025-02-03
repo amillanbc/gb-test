@@ -37,44 +37,4 @@
     </div>
   </div>
   <br />
-  <gb-checkbox name="checkbox_1" label="Checkbox" [(value)]="isChecked" />
-  <p>is checked: {{ isChecked() }}</p>
-  <gb-toggle name="toggle_1" label="Texto" [(value)]="isToggled" />
-  <p>{{isToggled()}}</p>
-  <gb-input placeholder="Insert text here" [(value)]="inputText" />
-  <p>{{inputText()}}</p>
-  <br />
-  <div class="gb-mb-md">
-    @for (level of levels(); track level) {
-    <gb-btn label="Button" [level]="level" extraClasses="gb-mr-md" />
-    }
-  </div>
-  <div class="gb-mb-md">
-    @for (level of levels(); track level) {
-    <gb-btn
-      label="Button"
-      [level]="level"
-      extraClasses="gb-mr-md"
-      color="pink" />
-    }
-  </div>
-  <div class="gb-mb-md">
-    @for (level of levels(); track level) {
-    <gb-btn
-      label="Button"
-      [level]="level"
-      fill="outline"
-      extraClasses="gb-mr-md" />
-    }
-  </div>
-  <div class="gb-mb-md">
-    @for (level of levels(); track level) {
-    <gb-btn
-      label="Button"
-      [level]="level"
-      fill="outline"
-      extraClasses="gb-mr-md"
-      color="pink" />
-    }
-  </div>
 </ion-content>

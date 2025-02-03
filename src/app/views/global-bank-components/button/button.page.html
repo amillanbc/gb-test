@@ -1,0 +1,147 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Button</div>
+    <!-- Primary -->
+    <div class="display-sm w600">Button primary</div>
+    <div class="text-md">
+      Boton primario, por defecto adquiere el color principal del banco.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Secondary -->
+    <div class="display-sm w600">Button secondary</div>
+    <div class="text-md">Boton secundario, con bordes y texto.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" fill="outline" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Color -->
+    <div class="display-sm w600">Button color</div>
+    <div class="text-md">
+      Controla el color del boton segun la colección de colores del banco.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" color="blue" />
+          <gb-btn label="Button" fill="solid" color="pink" />
+          <gb-btn label="Button" color="blue" fill="outline" />
+          <gb-btn label="Button" fill="outline" color="pink" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Level -->
+    <div class="display-sm w600">Button color level</div>
+    <div class="text-md">
+      Controla el nivel de intensidad del color asignado. <br />[25, 50, 100,
+      200, 300, 400, 500, 600, 700, 800, 900, 950]
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" [level]="300" />
+          <gb-btn label="Button" [level]="400" />
+          <gb-btn label="Button" [level]="500" />
+          <gb-btn label="Button" [level]="600" />
+          <gb-btn label="Button" [level]="700" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Disabled -->
+    <div class="display-sm w600">Button disabled</div>
+    <div class="text-md">Deshabilita el boton</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" [disabled]="true" />
+          <gb-btn label="Button" [disabled]="true" fill="outline" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Icons -->
+    <div class="display-sm w600">Button icons</div>
+    <div class="text-md">Agrega un icono al boton (Ionicons)</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" icon="home-outline" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Icons -->
+    <div class="display-sm w600">Button icons position</div>
+    <div class="text-md">
+      Indica la posición del icono en el boton (derecha o izquierda del label).
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" icon="home-outline" iconPosition="right" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Spinner -->
+    <div class="display-sm w600">Button spinner</div>
+    <div class="text-md">Agrega un spinner al boton.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn spinner="bubbles" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Spinner position -->
+    <div class="display-sm w600">Button spinner position</div>
+    <div class="text-md">
+      Indica la posición del spinner en el botón (derecha o izquierda del
+      label).
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" spinner="bubbles" spinnerPosition="right" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Spinner -->
+    <div class="display-sm w600">Button extra classes</div>
+    <div class="text-md">
+      Permite agregar clases de CSS adicionales al componente.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Button" extraClasses="rounded-md gb-pa-4xl" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>

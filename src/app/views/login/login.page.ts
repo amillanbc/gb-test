@@ -16,12 +16,6 @@ import { FormsModule } from '@angular/forms';
 // ##### SERVICES
 import { AppStore } from 'src/app/stores/app-store.service';
 
-// ##### GB COMPONENTS
-import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
-import { GbToggleComponent } from 'src/app/components/global/gb-toggle/gb-toggle.component';
-import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
-import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -37,10 +31,6 @@ import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-ch
     IonItem,
     IonInput,
     FormsModule,
-    GbBtnComponent,
-    GbToggleComponent,
-    GbInputComponent,
-    GbCheckboxComponent,
   ],
 })
 export class LoginPage {

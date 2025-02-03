@@ -1,10 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>main</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+  <div class="display-md w700 gb-pa-3xl">Componentes Global Bank</div>
   <ion-row>
     @for (component of gbComponents(); track component) {
     <ion-col sizeLg="3">
@@ -13,11 +8,11 @@
           class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
           <div class="p-8 text-center sm:p-9 md:p-7 xl:p-9">
             <div class="display-sm w700 gb-mb-lg">{{component.comp}}</div>
-            <a
-              href="javascript:void(0)"
+            <button
+              (click)="goToCompPage(component.route)"
               class="inline-block py-2 text-base font-medium transition border rounded-full text-body-color hover:border-primary hover:bg-primary border-gray-3 px-7 hover:text-white dark:border-dark-3 dark:text-dark-6">
-              View Details
-            </a>
+              Ver detalles
+            </button>
           </div>
         </div>
       </div>

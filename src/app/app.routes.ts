@@ -18,6 +18,13 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./views/login/login.page').then(m => m.LoginPage),
       },
+      {
+        path: 'button',
+        loadComponent: () =>
+          import('./views/global-bank-components/button/button.page').then(
+            m => m.ButtonPage
+          ),
+      },
     ],
   },
   {
