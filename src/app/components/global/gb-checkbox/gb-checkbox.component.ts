@@ -1,11 +1,11 @@
 import { Component, input, output } from '@angular/core';
 
 @Component({
-  selector: 'gb-toggle',
-  templateUrl: './gb-toggle.component.html',
-  styleUrls: ['./gb-toggle.component.scss'],
+  selector: 'gb-checkbox',
+  templateUrl: './gb-checkbox.component.html',
+  styleUrls: ['./gb-checkbox.component.scss'],
 })
-export class GbToggleComponent {
+export class GbCheckboxComponent {
   // ##### INPUTS
   name = input.required<string>();
   value = input.required<boolean>();

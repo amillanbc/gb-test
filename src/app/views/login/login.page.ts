@@ -20,6 +20,7 @@ import { AppStore } from 'src/app/stores/app-store.service';
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 import { GbToggleComponent } from 'src/app/components/global/gb-toggle/gb-toggle.component';
 import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
+import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
 
 @Component({
   selector: 'app-login',
@@ -39,6 +40,7 @@ import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.co
     GbBtnComponent,
     GbToggleComponent,
     GbInputComponent,
+    GbCheckboxComponent,
   ],
 })
 export class LoginPage {
@@ -51,6 +53,7 @@ export class LoginPage {
   user = signal('test@email.com');
   pass = signal('123456');
   isToggled = signal(true);
+  isChecked = signal(true);
   inputText = signal('');
   levels = signal([25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]);
 
