@@ -19,6 +19,7 @@ import { AppStore } from 'src/app/stores/app-store.service';
 // ##### GB COMPONENTS
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 import { GbToggleComponent } from 'src/app/components/global/gb-toggle/gb-toggle.component';
+import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
 
 @Component({
   selector: 'app-login',
@@ -37,6 +38,7 @@ import { GbToggleComponent } from 'src/app/components/global/gb-toggle/gb-toggle
     FormsModule,
     GbBtnComponent,
     GbToggleComponent,
+    GbInputComponent,
   ],
 })
 export class LoginPage {
@@ -49,6 +51,7 @@ export class LoginPage {
   user = signal('test@email.com');
   pass = signal('123456');
   isToggled = signal(true);
+  inputText = signal('');
   levels = signal([25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]);
 
   // ##### METHODS

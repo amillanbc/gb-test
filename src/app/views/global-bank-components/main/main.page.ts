@@ -36,5 +36,9 @@ export class MainPage {
       comp: 'Toggle',
       route: '/toggle',
     },
+    {
+      comp: 'Input',
+      route: '/input',
+    },
   ]);
 }
