@@ -1,5 +1,19 @@
-<input
-  [type]="type()"
-  [placeholder]="placeholder()"
-  [(ngModel)]="model"
-  class="w-full bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] px-5 text-dark-6 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-gray-2 disabled:border-gray-2" />
+<div class="relative">
+  <input
+    [type]="inType()"
+    [placeholder]="placeholder()"
+    [(ngModel)]="model"
+    [class]="classes()"
+    [disabled]="disabled()" />
+  <ion-icon
+    [name]="icon()"
+    class="absolute top-1/2 left-4 -translate-y-1/2"
+    color="medium" />
+  @if (type() == 'password' && passwordToggle()) {
+    <ion-icon
+      [name]="isShowingPassword() ? 'eye-off-outline' : 'eye-outline'"
+      class="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer"
+      color="medium"
+      (click)="togglePass()" />
+  }
+</div>

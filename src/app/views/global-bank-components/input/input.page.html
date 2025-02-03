@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Input</div>
+    <!-- Primary -->
+    <div class="display-sm w600">Input</div>
+    <div class="text-md">
+      Input principal, por defecto obtiene el color primario del banco.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-input [(value)]="input1" placeholder="Type here" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Type -->
+    <div class="display-sm w600">Input type</div>
+    <div class="text-md">Indica el tipo de input.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-input [(value)]="input1" placeholder="Type text (default)" />
+          <br />
+          <gb-input
+            [(value)]="input1"
+            placeholder="Type password"
+            [passwordToggle]="true"
+            type="password" />
+          <br />
+          <gb-input
+            [(value)]="input1"
+            placeholder="Type email (for mobile)"
+            type="email" />
+          <br />
+          <gb-input
+            [(value)]="input1"
+            placeholder="Type number"
+            type="number" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Disabled -->
+    <div class="display-sm w600">Input disabled</div>
+    <div class="text-md">Input deshabilitado.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-input
+            [(value)]="input1"
+            placeholder="Type here"
+            [disabled]="true" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Colors -->
+    <div class="display-sm w600">Input colors</div>
+    <div class="text-md">Indica el color del input.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-input [(value)]="input1" placeholder="Type here" color="blue" />
+          <br />
+          <gb-input [(value)]="input1" placeholder="Type here" color="pink" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Icon -->
+    <div class="display-sm w600">Input icon</div>
+    <div class="text-md">Asigna un icono al inicio del input</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-input
+            [(value)]="input1"
+            placeholder="Type here"
+            icon="person-outline" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>

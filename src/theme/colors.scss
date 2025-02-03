@@ -77,22 +77,25 @@ $gb-colors: (
   // TAILGRID COLORS
   .text-#{$name},
   .hover\:text-#{$name}:hover,
-  .active\:text-#{$name}:active {
+  .active\:text-#{$name}:active,
+  .focus\:text-#{$name}:focus {
     color: $color;
   }
   .bg-#{$name},
   .hover\:bg-#{$name}:hover,
-  .active\:bg-#{$name}:active {
-    background-color: $color;
-  }
-  .peer:checked ~ .peer-checked\:bg-#{$name}{
+  .active\:bg-#{$name}:active,
+  .focus\:bg-#{$name}:focus  {
     background-color: $color;
   }
   .border-#{$name},
   .hover\:border-#{$name}:hover,
-  .active\:border-#{$name}:active {
+  .active\:border-#{$name}:active,
+  .focus\:border-#{$name}:focus {
     border: solid 1px;
     border-color: $color;
+  }
+  .peer:checked ~ .peer-checked\:bg-#{$name}{
+    background-color: $color;
   }
   // DISABLED
   .disabled\:bg-#{$name}:disabled{
@@ -106,7 +109,8 @@ $gb-colors: (
   .disabled\:text-#{$name}:disabled{
     color: $color !important;
   }
-  button:disabled {
+  button:disabled,
+  input:disabled {
     cursor: not-allowed !important;
   }
 }

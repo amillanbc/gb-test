@@ -25,6 +25,13 @@ export const routes: Routes = [
             m => m.ButtonPage
           ),
       },
+      {
+        path: 'input',
+        loadComponent: () =>
+          import('./views/global-bank-components/input/input.page').then(
+            m => m.InputPage
+          ),
+      },
     ],
   },
   {
@@ -57,5 +64,12 @@ export const routes: Routes = [
           ),
       },
     ],
+  },
+  {
+    path: 'input',
+    loadComponent: () =>
+      import('./views/global-bank-components/input/input.page').then(
+        m => m.InputPage
+      ),
   },
 ];
