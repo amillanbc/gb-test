@@ -57,7 +57,9 @@ ion-modal#dialog-modal .wrapper {
   padding-right: 15px;
 }
 
-@import 'bootstrap/dist/css/bootstrap.min.css';
+// @import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'tailgrids/assets/css/tailwind.css';
+
 
 .form-check-input {
   height: 34px !important;

@@ -16,6 +16,10 @@ import { FormsModule } from '@angular/forms';
 // ##### SERVICES
 import { AppStore } from 'src/app/stores/app-store.service';
 
+// ##### GB COMPONENTS
+import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
+import { GbToggleComponent } from 'src/app/components/global/gb-toggle/gb-toggle.component';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -31,6 +35,8 @@ import { AppStore } from 'src/app/stores/app-store.service';
     IonItem,
     IonInput,
     FormsModule,
+    GbBtnComponent,
+    GbToggleComponent,
   ],
 })
 export class LoginPage {
@@ -42,20 +48,15 @@ export class LoginPage {
   // ##### SIGNALS
   user = signal('test@email.com');
   pass = signal('123456');
+  isToggled = signal(true);
+  levels = signal([25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]);
 
   // ##### METHODS
-  /**
-   * Validates user/password to login and redirect to home
-   */
   login() {
     this.router.navigate(['/app/home']);
   }
 
   // ##### COMPUTED
-  /**
-   * Validates user and password matches required RegEx
-   * @returns Will return string with the action taken by user click or undefined
-   */
   isValidUserAndPass = computed(() => {
     const isValidEmail = this.appStore.emailRegex.test(this.user());
     const isValidPass = this.appStore.passRegex.test(this.pass());

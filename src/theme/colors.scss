@@ -29,6 +29,8 @@ $gb-pink-900: #77095D;
 $gb-pink-950: #4C0630;
 
 $gb-colors: (
+  no-color: transparent,
+  // 
   gb-blue-25: $gb-blue-25,
   gb-blue-50: $gb-blue-50,
   gb-blue-100: $gb-blue-100,
@@ -67,32 +69,44 @@ $gb-colors: (
 }
 
 @each $name, $color in $gb-colors {
-  .text-#{$name} {
-    color: $color;
-  }
-  .bg-#{$name} {
-    background-color: $color;
-  }
+  // IONIC COLORS
   .ion-color-#{$name} {
     --ion-color-base: var(--ion-color-#{$name});
     --ion-color-base-rgb: var(--ion-color-new-rgb-#{$name});
   }
+  // TAILGRID COLORS
+  .text-#{$name},
+  .hover\:text-#{$name}:hover,
+  .active\:text-#{$name}:active {
+    color: $color;
+  }
+  .bg-#{$name},
+  .hover\:bg-#{$name}:hover,
+  .active\:bg-#{$name}:active {
+    background-color: $color;
+  }
+  .peer:checked ~ .peer-checked\:bg-#{$name}{
+    background-color: $color;
+  }
+  .border-#{$name},
+  .hover\:border-#{$name}:hover,
+  .active\:border-#{$name}:active {
+    border: solid 1px;
+    border-color: $color;
+  }
+  // DISABLED
+  .disabled\:bg-#{$name}:disabled{
+    background-color: $color !important;
+    border-color: $color !important;
+  }
+  .disabled\:border-#{$name}:disabled{
+    border: solid 1px !important;
+    border-color: $color !important;
+  }
+  .disabled\:text-#{$name}:disabled{
+    color: $color !important;
+  }
+  button:disabled {
+    cursor: not-allowed !important;
+  }
 }
-
-
-// .btn-gb {
-//   --bs-btn-color: #fff;
-//   --bs-btn-bg: #{$gb-pink-100};
-//   --bs-btn-border-color: #{$gb-pink-100};
-//   --bs-btn-hover-color: #fff;
-//   --bs-btn-hover-bg: #{darken($gb-pink-100, 6%)};
-//   --bs-btn-hover-border-color: #{darken($gb-pink-100, 6%)};
-//   --bs-btn-focus-shadow-rgb: 49,132,253;
-//   --bs-btn-active-color: #fff;
-//   --bs-btn-active-bg: #{darken($gb-pink-100, 9%)};
-//   --bs-btn-active-border-color: #{darken($gb-pink-100, 9%)};
-//   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-//   --bs-btn-disabled-color: #fff;
-//   --bs-btn-disabled-bg: #{$gb-pink-100};
-//   --bs-btn-disabled-border-color: #{$gb-pink-100};
-// }

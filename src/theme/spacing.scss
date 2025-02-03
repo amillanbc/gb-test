@@ -26,51 +26,60 @@ $gb-sizes: (
 );
 
 @each $name, $size in $gb-sizes {
-  .ma-#{$name} {
+  .gb-ma-#{$name} {
     margin: $size;
   }
-  .ml-#{$name} {
+  .gb-ml-#{$name} {
     margin-left: $size;
   }
-  .mt-#{$name} {
+  .gb-mt-#{$name} {
     margin-top: $size;
   }
-  .mr-#{$name} {
+  .gb-mr-#{$name} {
     margin-right: $size;
   }
-  .mb-#{$name} {
+  .gb-mb-#{$name} {
     margin-bottom: $size;
   }
   // 
-  .pa-#{$name} {
+  .gb-pa-#{$name} {
     padding: $size;
   }
-  .pl-#{$name} {
+  .gb-pl-#{$name} {
     padding-left: $size;
   }
-  .pt-#{$name} {
+  .gb-pt-#{$name} {
     padding-top: $size;
   }
-  .pr-#{$name} {
+  .gb-pr-#{$name} {
     padding-right: $size;
   }
-  .pb-#{$name} {
+  .gb-pb-#{$name} {
     padding-bottom: $size;
   }
   // 
-  .rounded-border-#{$name} {
+  .gb-py-#{$name} {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+  .gb-px-#{$name} {
+    padding-left: $size;
+    padding-right: $size;
+  }
+  // 
+  .gb-rounded-border-#{$name} {
     border-radius: $size;
   }
-  .rounded-border-tl-#{$name} {
+  .gb-rounded-border-tl-#{$name} {
     border-top-left-radius: $size;
   }
-  .rounded-border-tr-#{$name} {
+  .gb-rounded-border-tr-#{$name} {
     border-top-right-radius: $size;
   }
-  .rounded-border-bl-#{$name} {
+  .gb-rounded-border-bl-#{$name} {
     border-bottom-left-radius: $size;
   }
-  .rounded-border-br-#{$name} {
+  .gb-rounded-border-br-#{$name} {
     border-bottom-right-radius: $size;
   }
 }

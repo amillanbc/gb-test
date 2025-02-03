@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   IonRouterOutlet,
   IonTabs,
@@ -8,7 +8,12 @@ import {
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { homeOutline, cogOutline, newspaperOutline } from 'ionicons/icons';
+import {
+  homeOutline,
+  cogOutline,
+  newspaperOutline,
+  cubeOutline,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-app-layout',
@@ -16,10 +21,8 @@ import { homeOutline, cogOutline, newspaperOutline } from 'ionicons/icons';
   styleUrls: ['./app-layout.component.scss'],
   imports: [IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon],
 })
-export class AppLayoutComponent implements OnInit {
+export class AppLayoutComponent {
   constructor() {
-    addIcons({ homeOutline, cogOutline, newspaperOutline });
+    addIcons({ homeOutline, cogOutline, newspaperOutline, cubeOutline });
   }
-
-  ngOnInit() {}
 }
