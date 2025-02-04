@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import {
   IonRouterOutlet,
   IonTabs,
@@ -25,4 +25,9 @@ export class AppLayoutComponent {
   constructor() {
     addIcons({ homeOutline, cogOutline, newspaperOutline, cubeOutline });
   }
+
+  // ##### COMPUTED
+  returnURL = computed(() => {
+    return window.location.href;
+  });
 }
