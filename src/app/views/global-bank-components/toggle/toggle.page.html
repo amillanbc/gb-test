@@ -14,7 +14,9 @@
             <ion-col>
               <gb-toggle name="toggle_1" [(value)]="isToggled" />
             </ion-col>
-            <ion-col> </ion-col>
+            <ion-col>
+              <pre><code [highlight]="primary" language="html"></code></pre>
+            </ion-col>
           </ion-row>
         </div>
       </div>
@@ -34,7 +36,9 @@
                 [(value)]="isToggled"
                 label="Toggle label" />
             </ion-col>
-            <ion-col> </ion-col>
+            <ion-col>
+              <pre><code [highlight]="label" language="html"></code></pre>
+            </ion-col>
           </ion-row>
         </div>
       </div>
@@ -55,7 +59,9 @@
                 label="Toggle label"
                 labelPosition="right" />
             </ion-col>
-            <ion-col> </ion-col>
+            <ion-col>
+              <pre><code [highlight]="labelPosition" language="html"></code></pre>
+            </ion-col>
           </ion-row>
         </div>
       </div>
@@ -73,7 +79,9 @@
               <gb-toggle name="toggle_4" [(value)]="isToggled" color="blue" />
               <gb-toggle name="toggle_5" [(value)]="isToggled" color="pink" />
             </ion-col>
-            <ion-col> </ion-col>
+            <ion-col>
+              <pre><code [highlight]="color" language="html"></code></pre>
+            </ion-col>
           </ion-row>
         </div>
       </div>
