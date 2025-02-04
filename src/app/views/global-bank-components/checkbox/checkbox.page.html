@@ -10,10 +10,17 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-checkbox
-            [(value)]="isChecked"
-            name="checkbox_1"
-            label="Checkbox label" />
+          <ion-row>
+            <ion-col>
+              <gb-checkbox
+                [(value)]="isChecked"
+                name="checkbox_1"
+                label="Checkbox label" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="primary" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -25,16 +32,23 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-checkbox
-            [(value)]="isChecked"
-            name="checkbox_2"
-            label="Checkbox label" />
-          <br />
-          <gb-checkbox
-            [(value)]="isChecked"
-            name="checkbox_3"
-            label="Checkbox label"
-            color="pink" />
+          <ion-row>
+            <ion-col>
+              <gb-checkbox
+                [(value)]="isChecked"
+                name="checkbox_2"
+                label="Checkbox label" />
+              <br />
+              <gb-checkbox
+                [(value)]="isChecked"
+                name="checkbox_3"
+                label="Checkbox label"
+                color="pink" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="colors" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -46,11 +60,18 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-checkbox
-            [(value)]="isChecked"
-            name="checkbox_4"
-            label="Checkbox label"
-            [disabled]="true" />
+          <ion-row>
+            <ion-col>
+              <gb-checkbox
+                [(value)]="isChecked"
+                name="checkbox_4"
+                label="Checkbox label"
+                [disabled]="true" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="disabled" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
