@@ -1,36 +1,36 @@
 @use 'sass:color';
 
 // BLUES
-$gb-blue-25: #FAFCFF;
-$gb-blue-50: #F0F6FF;
-$gb-blue-100: #E0ECFF;
-$gb-blue-200: #B8D3FF;
-$gb-blue-300: #85B4FF;
-$gb-blue-400: #3D87FF;
-$gb-blue-500: #0047BA;
-$gb-blue-600: #003D9E;
+$gb-blue-25: #fafcff;
+$gb-blue-50: #f0f6ff;
+$gb-blue-100: #e0ecff;
+$gb-blue-200: #b8d3ff;
+$gb-blue-300: #85b4ff;
+$gb-blue-400: #3d87ff;
+$gb-blue-500: #0047ba;
+$gb-blue-600: #003d9e;
 $gb-blue-700: #003994;
-$gb-blue-800: #002B70;
-$gb-blue-900: #00235C;
-$gb-blue-950: #00173D;
+$gb-blue-800: #002b70;
+$gb-blue-900: #00235c;
+$gb-blue-950: #00173d;
 
 // PINKS
-$gb-pink-25: #FEF5Fc;
-$gb-pink-50: #FEF1Fb;
-$gb-pink-100: #FDE7F8;
-$gb-pink-200: #FBCBF0;
-$gb-pink-300: #F9AAE6;
-$gb-pink-400: #F57FDA;
-$gb-pink-500: #EF2AC1;
-$gb-pink-600: #DF11AF;
-$gb-pink-700: #C20F99;
-$gb-pink-800: #A60C82;
-$gb-pink-900: #77095D;
-$gb-pink-950: #4C0630;
+$gb-pink-25: #fef5fc;
+$gb-pink-50: #fef1fb;
+$gb-pink-100: #fde7f8;
+$gb-pink-200: #fbcbf0;
+$gb-pink-300: #f9aae6;
+$gb-pink-400: #f57fda;
+$gb-pink-500: #ef2ac1;
+$gb-pink-600: #df11af;
+$gb-pink-700: #c20f99;
+$gb-pink-800: #a60c82;
+$gb-pink-900: #77095d;
+$gb-pink-950: #4c0630;
 
 $gb-colors: (
   no-color: transparent,
-  // 
+  //
   gb-blue-25: $gb-blue-25,
   gb-blue-50: $gb-blue-50,
   gb-blue-100: $gb-blue-100,
@@ -43,7 +43,7 @@ $gb-colors: (
   gb-blue-800: $gb-blue-800,
   gb-blue-900: $gb-blue-900,
   gb-blue-950: $gb-blue-950,
-  // 
+  //
   gb-pink-50: $gb-pink-50,
   gb-pink-25: $gb-pink-25,
   gb-pink-100: $gb-pink-100,
@@ -60,9 +60,9 @@ $gb-colors: (
 
 :root {
   @each $name, $color in $gb-colors {
-    $r: color.channel($color, "red");
-    $g: color.channel($color, "green");
-    $b: color.channel($color, "blue");
+    $r: color.channel($color, 'red');
+    $g: color.channel($color, 'green');
+    $b: color.channel($color, 'blue');
     --ion-color-#{$name}: #{$color};
     --ion-color-new-rgb-#{$name}: #{$r}, #{$g}, #{$b};
   }
@@ -84,7 +84,7 @@ $gb-colors: (
   .bg-#{$name},
   .hover\:bg-#{$name}:hover,
   .active\:bg-#{$name}:active,
-  .focus\:bg-#{$name}:focus  {
+  .focus\:bg-#{$name}:focus {
     background-color: $color;
   }
   .border-#{$name},
@@ -99,23 +99,23 @@ $gb-colors: (
     stroke: $color;
   }
   // DISABLED
-  .disabled\:bg-#{$name}:disabled{
+  .disabled\:bg-#{$name}:disabled {
     background-color: $color !important;
     border-color: $color !important;
   }
-  .disabled\:border-#{$name}:disabled{
+  .disabled\:border-#{$name}:disabled {
     border: solid 1px !important;
     border-color: $color !important;
   }
-  .disabled\:text-#{$name}:disabled{
+  .disabled\:text-#{$name}:disabled {
     color: $color !important;
   }
   // TOGGLE
-  .peer:checked ~ .peer-checked\:bg-#{$name}{
+  .themeSwitcherTwo input:checked ~ .slider\:bg-#{$name} {
     background-color: $color;
   }
   // CHECKBOX
   input:checked ~ .box\:border-#{$name} {
-    border-color: $color !important
+    border-color: $color !important;
   }
 }

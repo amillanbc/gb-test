@@ -1,0 +1,83 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Toggle</div>
+    <!-- Primary -->
+    <div class="display-sm w600">Toggle primary</div>
+    <div class="text-md">
+      Toggle primario, por defecto adquiere el color principal del banco.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-toggle name="toggle_1" [(value)]="isToggled" />
+            </ion-col>
+            <ion-col> </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Label -->
+    <div class="display-sm w600">Toggle label</div>
+    <div class="text-md">Label para identificacion del toggle.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-toggle
+                name="toggle_2"
+                [(value)]="isToggled"
+                label="Toggle label" />
+            </ion-col>
+            <ion-col> </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Label position -->
+    <div class="display-sm w600">Toggle label position</div>
+    <div class="text-md">Posicion del label en el toggle.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-toggle
+                name="toggle_3"
+                [(value)]="isToggled"
+                label="Toggle label"
+                labelPosition="right" />
+            </ion-col>
+            <ion-col> </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Color -->
+    <div class="display-sm w600">Toggle color</div>
+    <div class="text-md">Color del toggle.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-toggle name="toggle_4" [(value)]="isToggled" color="blue" />
+              <gb-toggle name="toggle_5" [(value)]="isToggled" color="pink" />
+            </ion-col>
+            <ion-col> </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>

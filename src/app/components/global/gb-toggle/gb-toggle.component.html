@@ -1,32 +1,23 @@
-<!-- <label
-  for="toggleTwo"
-  class="flex items-center cursor-pointer select-none text-dark dark:text-white">
-  <div class="relative">
-    <input type="checkbox" id="toggleTwo" class="peer sr-only" />
-    <div
-      class="absolute w-6 h-6 transition bg-white rounded-full dot dark:bg-dark-4 left-1 top-1 peer-checked:translate-x-full peer-checked:bg-gb-blue-500"></div>
-  </div>
-</label> -->
-<label
-  [for]="name()"
-  class="themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center">
+<label [for]="name()" [class]="labelClasses()">
   <input
     type="checkbox"
     [name]="name()"
     [id]="name()"
     class="sr-only"
     (click)="updateValue()"
-    [checked]="value()" />
-  <!-- <span
-    class="label flex items-center text-sm font-medium text-dark dark:text-white">
-    Light
-  </span> -->
-  <span
-    class="slider mx-4 flex h-8 w-[60px] items-center rounded-full bg-[#CCCCCE] p-1 duration-200">
+    [checked]="value()"
+    [disabled]="disabled()" />
+  @if (labelPosition() == 'left') {
+    <span class="label flex items-center text-sm font-medium text-dark">
+      {{ label() }}
+    </span>
+  }
+  <span [class]="classes()">
     <span class="dot h-6 w-6 rounded-full bg-white duration-200"></span>
   </span>
-  <span
-    class="label flex items-center text-md font-medium text-dark dark:text-white">
-    {{ label() }}
-  </span>
+  @if (labelPosition() == 'right') {
+    <span class="label flex items-center text-sm font-medium text-dark">
+      {{ label() }}
+    </span>
+  }
 </label>

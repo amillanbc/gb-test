@@ -39,6 +39,13 @@ export const routes: Routes = [
             m => m.CheckboxPage
           ),
       },
+      {
+        path: 'toggle',
+        loadComponent: () =>
+          import('./views/global-bank-components/toggle/toggle.page').then(
+            m => m.TogglePage
+          ),
+      },
     ],
   },
   {
