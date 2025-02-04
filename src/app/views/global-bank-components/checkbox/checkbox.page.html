@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Checkbox</div>
+    <!-- Primary -->
+    <div class="display-sm w600">Checkbox</div>
+    <div class="text-md">
+      Checkbox principal, por defecto obtiene el color primario del banco.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-checkbox
+            [(value)]="isChecked"
+            name="checkbox_1"
+            label="Checkbox label" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Colors -->
+    <div class="display-sm w600">Checkbox colors</div>
+    <div class="text-md">Indica el color del checkbox.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-checkbox
+            [(value)]="isChecked"
+            name="checkbox_2"
+            label="Checkbox label" />
+          <br />
+          <gb-checkbox
+            [(value)]="isChecked"
+            name="checkbox_3"
+            label="Checkbox label"
+            color="pink" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Colors -->
+    <div class="display-sm w600">Checkbox disabled</div>
+    <div class="text-md">Deshabilita el checkbox.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-checkbox
+            [(value)]="isChecked"
+            name="checkbox_4"
+            label="Checkbox label"
+            [disabled]="true" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>

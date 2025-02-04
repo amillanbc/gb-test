@@ -1,7 +1,7 @@
-@use "./theme/colors";
-@use "./theme/spacing";
-@use "./theme/typography";
-@use "./theme/shadows";
+@use './theme/colors';
+@use './theme/spacing';
+@use './theme/typography';
+@use './theme/shadows';
 
 /*
  * App Global CSS
@@ -15,20 +15,20 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
+@import '@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
 
 /**
  * Ionic Dark Mode
@@ -60,8 +60,14 @@ ion-modal#dialog-modal .wrapper {
 // @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'tailgrids/assets/css/tailwind.css';
 
-
 .form-check-input {
   height: 34px !important;
   width: 68px !important;
+}
+button:disabled,
+input:disabled {
+  cursor: not-allowed !important;
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
 }

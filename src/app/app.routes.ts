@@ -32,6 +32,13 @@ export const routes: Routes = [
             m => m.InputPage
           ),
       },
+      {
+        path: 'checkbox',
+        loadComponent: () =>
+          import('./views/global-bank-components/checkbox/checkbox.page').then(
+            m => m.CheckboxPage
+          ),
+      },
     ],
   },
   {
@@ -64,12 +71,5 @@ export const routes: Routes = [
           ),
       },
     ],
-  },
-  {
-    path: 'input',
-    loadComponent: () =>
-      import('./views/global-bank-components/input/input.page').then(
-        m => m.InputPage
-      ),
   },
 ];

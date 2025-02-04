@@ -94,8 +94,9 @@ $gb-colors: (
     border: solid 1px;
     border-color: $color;
   }
-  .peer:checked ~ .peer-checked\:bg-#{$name}{
-    background-color: $color;
+  .fill-#{$name} {
+    fill: $color;
+    stroke: $color;
   }
   // DISABLED
   .disabled\:bg-#{$name}:disabled{
@@ -109,8 +110,12 @@ $gb-colors: (
   .disabled\:text-#{$name}:disabled{
     color: $color !important;
   }
-  button:disabled,
-  input:disabled {
-    cursor: not-allowed !important;
+  // TOGGLE
+  .peer:checked ~ .peer-checked\:bg-#{$name}{
+    background-color: $color;
+  }
+  // CHECKBOX
+  input:checked ~ .box\:border-#{$name} {
+    border-color: $color !important
   }
 }
