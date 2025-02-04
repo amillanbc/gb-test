@@ -1,17 +1,30 @@
 // ##### IONIC & ANGULAR
 import { Component, signal } from '@angular/core';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
 import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
+
+// ##### OTHER IMPORTS
+import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.page.html',
   styleUrls: ['./input.page.scss'],
   standalone: true,
-  imports: [IonContent, GbInputComponent],
+  imports: [IonContent, GbInputComponent, IonRow, IonCol, Highlight],
 })
 export class InputPage {
   input1 = signal('');
+
+  primary = '<gb-input [(value)]="input1" placeholder="Type here" />';
+  type =
+    '<gb-input [(value)]="input1" placeholder="Type text (default)" />\n<gb-input [(value)]="input1" placeholder="Type password" [passwordToggle]="true" type="password" />\n<gb-input [(value)]="input1" placeholder="Type email (for mobile)" type="email" />\n<gb-input [(value)]="input1" placeholder="Type number" type="number" />';
+  disabled =
+    '<gb-input [(value)]="input1" placeholder="Type here" [disabled]="true" />';
+  colors =
+    '<gb-input [(value)]="input1" placeholder="Type here" color="blue" />\n<gb-input [(value)]="input1" placeholder="Type here" color="pink" />';
+  icon =
+    '<gb-input [(value)]="input1" placeholder="Type here" icon="person-outline" />';
 }

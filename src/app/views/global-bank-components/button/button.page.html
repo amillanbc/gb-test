@@ -10,7 +10,12 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" />
+          <ion-row>
+            <ion-col><gb-btn label="Button" /></ion-col>
+            <ion-col>
+              <pre><code [highlight]="primary" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -22,7 +27,14 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" fill="outline" />
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Button" fill="outline" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="outline" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -36,10 +48,17 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" color="blue" />
-          <gb-btn label="Button" fill="solid" color="pink" />
-          <gb-btn label="Button" color="blue" fill="outline" />
-          <gb-btn label="Button" fill="outline" color="pink" />
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Button" color="blue" />
+              <gb-btn label="Button" fill="solid" color="pink" />
+              <gb-btn label="Button" color="blue" fill="outline" />
+              <gb-btn label="Button" fill="outline" color="pink" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="colors" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -54,11 +73,18 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" [level]="300" />
-          <gb-btn label="Button" [level]="400" />
-          <gb-btn label="Button" [level]="500" />
-          <gb-btn label="Button" [level]="600" />
-          <gb-btn label="Button" [level]="700" />
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Button" [level]="300" />
+              <gb-btn label="Button" [level]="400" />
+              <gb-btn label="Button" [level]="500" />
+              <gb-btn label="Button" [level]="600" />
+              <gb-btn label="Button" [level]="700" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="level" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -70,8 +96,15 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" [disabled]="true" />
-          <gb-btn label="Button" [disabled]="true" fill="outline" />
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Button" [disabled]="true" />
+              <gb-btn label="Button" [disabled]="true" fill="outline" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="disabled" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -83,7 +116,14 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" icon="home-outline" />
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Button" icon="home-outline" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="icon" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -97,7 +137,14 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" icon="home-outline" iconPosition="right" />
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Button" icon="home-outline" iconPosition="right" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="iconPosition" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -109,7 +156,14 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn spinner="bubbles" />
+          <ion-row>
+            <ion-col>
+              <gb-btn spinner="bubbles" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="spinner" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -124,7 +178,17 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" spinner="bubbles" spinnerPosition="right" />
+          <ion-row>
+            <ion-col>
+              <gb-btn
+                label="Button"
+                spinner="bubbles"
+                spinnerPosition="right" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="spinnerPosition" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -138,7 +202,14 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Button" extraClasses="rounded-md gb-pa-4xl" />
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Button" extraClasses="rounded-md gb-pa-4xl" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="extraClasses" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>

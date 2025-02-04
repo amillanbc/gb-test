@@ -10,7 +10,14 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-input [(value)]="input1" placeholder="Type here" />
+          <ion-row>
+            <ion-col>
+              <gb-input [(value)]="input1" placeholder="Type here" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="primary" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -22,23 +29,30 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-input [(value)]="input1" placeholder="Type text (default)" />
-          <br />
-          <gb-input
-            [(value)]="input1"
-            placeholder="Type password"
-            [passwordToggle]="true"
-            type="password" />
-          <br />
-          <gb-input
-            [(value)]="input1"
-            placeholder="Type email (for mobile)"
-            type="email" />
-          <br />
-          <gb-input
-            [(value)]="input1"
-            placeholder="Type number"
-            type="number" />
+          <ion-row>
+            <ion-col>
+              <gb-input [(value)]="input1" placeholder="Type text (default)" />
+              <br />
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type password"
+                [passwordToggle]="true"
+                type="password" />
+              <br />
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type email (for mobile)"
+                type="email" />
+              <br />
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type number"
+                type="number" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="type" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -50,10 +64,17 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-input
-            [(value)]="input1"
-            placeholder="Type here"
-            [disabled]="true" />
+          <ion-row>
+            <ion-col>
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                [disabled]="true" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="disabled" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -65,9 +86,22 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-input [(value)]="input1" placeholder="Type here" color="blue" />
-          <br />
-          <gb-input [(value)]="input1" placeholder="Type here" color="pink" />
+          <ion-row>
+            <ion-col>
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                color="blue" />
+              <br />
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                color="pink" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="colors" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -79,10 +113,17 @@
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-input
-            [(value)]="input1"
-            placeholder="Type here"
-            icon="person-outline" />
+          <ion-row>
+            <ion-col>
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                icon="person-outline" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="icon" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
