@@ -46,6 +46,13 @@ export const routes: Routes = [
             m => m.TogglePage
           ),
       },
+      {
+        path: 'typography',
+        loadComponent: () =>
+          import(
+            './views/global-bank-components/typography/typography.page'
+          ).then(m => m.TypographyPage),
+      },
     ],
   },
   {
