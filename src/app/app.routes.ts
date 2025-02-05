@@ -53,6 +53,13 @@ export const routes: Routes = [
             './views/global-bank-components/typography/typography.page'
           ).then(m => m.TypographyPage),
       },
+      {
+        path: 'colors',
+        loadComponent: () =>
+          import('./views/global-bank-components/colors/colors.page').then(
+            m => m.ColorsPage
+          ),
+      },
     ],
   },
   {

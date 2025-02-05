@@ -1,0 +1,105 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="gb-pa-4xl">
+      <div class="display-lg w700 gb-mb-4xl">GB Colors</div>
+    </div>
+    <!-- Background -->
+    <div class="display-sm w600">Background colors</div>
+    <div class="text-md">Clases para colores de fondo</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (color of colors; track color) {
+          <ion-row>
+            <ion-col size-lg="1">{{color}}</ion-col>
+            @for (level of levels; track level) {
+            <div [class]="'gb-pa-sm gb-ma-sm bg-gb-' + color + '-' + level">
+              {{level}}
+            </div>
+            }
+            <ion-col>
+              <pre><code [highlight]="returnCode('bg', color)" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Border -->
+    <div class="display-sm w600">Border colors</div>
+    <div class="text-md">Clases para colores de borde</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (color of colors; track color) {
+          <ion-row>
+            <ion-col size-lg="1">{{color}}</ion-col>
+            @for (level of levels; track level) {
+            <div [class]="'gb-pa-sm gb-ma-sm border-gb-' + color + '-' + level">
+              {{level}}
+            </div>
+            }
+            <ion-col>
+              <pre><code [highlight]="returnCode('border', color)" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Hover -->
+    <div class="display-sm w600">Hover colors</div>
+    <div class="text-md">Clases para colores de hover</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (color of colors; track color) {
+          <ion-row>
+            <ion-col size-lg="1">{{color}}</ion-col>
+            @for (level of levels; track level) {
+            <div
+              [class]="'gb-pa-sm gb-ma-sm hover:bg-gb-' + color + '-' + level">
+              {{level}}
+            </div>
+            }
+            <ion-col>
+              <pre><code [highlight]="returnCode('hover:bg', color)" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Active -->
+    <div class="display-sm w600">Active colors</div>
+    <div class="text-md">Clases para colores de active (en click)</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (color of colors; track color) {
+          <ion-row class="ion-content-align-center">
+            <ion-col size-lg="1">{{color}}</ion-col>
+            @for (level of levels; track level) {
+            <div
+              [class]="'gb-pa-sm gb-ma-xs active:bg-gb-' + color + '-' + level">
+              {{level}}
+            </div>
+            }
+            <ion-col>
+              <pre><code [highlight]="returnCode('active:bg',color)" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>
