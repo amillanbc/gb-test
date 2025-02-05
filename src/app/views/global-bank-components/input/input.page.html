@@ -8,7 +8,7 @@
     </div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
@@ -27,7 +27,7 @@
     <div class="text-md">Indica el tipo de input.</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
@@ -62,7 +62,7 @@
     <div class="text-md">Input deshabilitado.</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
@@ -84,7 +84,7 @@
     <div class="text-md">Indica el color del input.</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
@@ -111,7 +111,7 @@
     <div class="text-md">Asigna un icono al inicio del input</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
@@ -122,6 +122,28 @@
             </ion-col>
             <ion-col>
               <pre><code [highlight]="icon" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Validation -->
+    <div class="display-sm w600">Input validation</div>
+    <div class="text-md">Valida el valor ingresado en el input segun regex</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                regex="^[A-Za-z0-9]{6,}$" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="validation" language="html"></code></pre>
             </ion-col>
           </ion-row>
         </div>

@@ -37,6 +37,7 @@ export class GbInputComponent implements OnInit {
   disabled = input(false);
   extraClasses = input('');
   passwordToggle = input(false);
+  regex = input<string>('');
 
   // ##### SIGNALS
   model = signal<string | number>('');
@@ -57,14 +58,23 @@ export class GbInputComponent implements OnInit {
   classes = computed(() => {
     const c = this.color();
     const l = this.level();
-    const d = this.level() - 200 < 25 ? 25 : this.level() - 200;
     let classes = `w-full bg-transparent rounded-md border border-stroke outline-none transition py-[10px] pr-3`;
     if (this.icon()) classes += ` pl-12`;
     else classes += ` pl-3`;
     classes += ` focus:border-gb-${c}-${l}`;
+    if (this.regex() && this.model()) {
+      if (this.isValid())
+        classes += ' focus:border-gb-success-500 border-gb-success-500';
+      else classes += ' focus:border-gb-error-500 border-gb-error-500';
+    }
     classes += ` ${this.extraClasses()}`;
     return classes;
   });
+
+  isValid() {
+    const reg = new RegExp(this.regex());
+    return reg.test(`${this.model()}`);
+  }
 
   // ##### LC HOOKS
   ngOnInit(): void {

@@ -16,6 +16,7 @@ import { Highlight } from 'ngx-highlightjs';
   imports: [IonContent, GbInputComponent, IonRow, IonCol, Highlight],
 })
 export class InputPage {
+  // ##### INPUTS
   input1 = signal('');
 
   primary = '<gb-input [(value)]="input1" placeholder="Type here" />';
@@ -27,4 +28,6 @@ export class InputPage {
     '<gb-input [(value)]="input1" placeholder="Type here" color="blue" />\n<gb-input [(value)]="input1" placeholder="Type here" color="pink" />';
   icon =
     '<gb-input [(value)]="input1" placeholder="Type here" icon="person-outline" />';
+  validation =
+    '<gb-input [(value)]="input1" placeholder="Type here" regex="^[A-Za-z0-9]{6,}$" />';
 }
