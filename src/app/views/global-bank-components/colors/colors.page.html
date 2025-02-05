@@ -8,7 +8,7 @@
     <div class="text-md">Clases para colores de fondo</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           @for (color of colors; track color) {
           <ion-row>
@@ -32,7 +32,7 @@
     <div class="text-md">Clases para colores de borde</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           @for (color of colors; track color) {
           <ion-row>
@@ -56,14 +56,14 @@
     <div class="text-md">Clases para colores de hover</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           @for (color of colors; track color) {
           <ion-row>
             <ion-col size-lg="1">{{color}}</ion-col>
             @for (level of levels; track level) {
             <div
-              [class]="'gb-pa-sm gb-ma-sm hover:bg-gb-' + color + '-' + level">
+              [class]="'transition gb-pa-sm gb-ma-sm hover:bg-gb-' + color + '-' + level">
               {{level}}
             </div>
             }
@@ -81,14 +81,14 @@
     <div class="text-md">Clases para colores de active (en click)</div>
     <div class="gb-py-2xl gb-px-md">
       <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
         <div class="text-center sm:p-9 md:p-7 xl:p-9">
           @for (color of colors; track color) {
           <ion-row class="ion-content-align-center">
             <ion-col size-lg="1">{{color}}</ion-col>
             @for (level of levels; track level) {
             <div
-              [class]="'gb-pa-sm gb-ma-xs active:bg-gb-' + color + '-' + level">
+              [class]="'transition gb-pa-sm gb-ma-xs active:bg-gb-' + color + '-' + level">
               {{level}}
             </div>
             }
