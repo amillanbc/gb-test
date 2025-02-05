@@ -1,6 +1,34 @@
 @use 'sass:color';
 
-// BLUES
+$gb-gray-light-25: #fdfdfd;
+$gb-gray-light-50: #fafafa;
+$gb-gray-light-100: #f5f5f5;
+$gb-gray-light-200: #e9eaeb;
+$gb-gray-light-300: #d5d7da;
+$gb-gray-light-400: #a4a7ae;
+$gb-gray-light-500: #717680;
+$gb-gray-light-600: #535862;
+$gb-gray-light-700: #414651;
+$gb-gray-light-800: #252b37;
+$gb-gray-light-900: #181d27;
+$gb-gray-light-950: #0a0d12;
+
+// Gray dark mode
+$gb-gray-dark-25: #fafafa;
+$gb-gray-dark-50: #f7f7f7;
+$gb-gray-dark-100: #f0f0f1;
+$gb-gray-dark-200: #ececed;
+$gb-gray-dark-300: #cecfd2;
+$gb-gray-dark-400: #94979c;
+$gb-gray-dark-500: #85888e;
+$gb-gray-dark-600: #61656c;
+$gb-gray-dark-700: #373a41;
+$gb-gray-dark-800: #22262f;
+$gb-gray-dark-900: #13161b;
+$gb-gray-dark-950: #0c0e12;
+
+// Global bank primaries colors
+// Global Blue
 $gb-blue-25: #fafcff;
 $gb-blue-50: #f0f6ff;
 $gb-blue-100: #e0ecff;
@@ -14,7 +42,21 @@ $gb-blue-800: #002b70;
 $gb-blue-900: #00235c;
 $gb-blue-950: #00173d;
 
-// PINKS
+// Global Cyan
+$gb-cyan-25: #f5fcff;
+$gb-cyan-50: #ebfaff;
+$gb-cyan-100: #d6f5ff;
+$gb-cyan-200: #a3e8ff;
+$gb-cyan-300: #66d9ff;
+$gb-cyan-400: #0ac2ff;
+$gb-cyan-500: #00a7e1;
+$gb-cyan-600: #0095c7;
+$gb-cyan-700: #0086b3;
+$gb-cyan-800: #006b8f;
+$gb-cyan-900: #00506b;
+$gb-cyan-950: #003647;
+
+// Global Pink
 $gb-pink-25: #fef5fc;
 $gb-pink-50: #fef1fb;
 $gb-pink-100: #fde7f8;
@@ -26,11 +68,196 @@ $gb-pink-600: #df11af;
 $gb-pink-700: #c20f99;
 $gb-pink-800: #a60c82;
 $gb-pink-900: #77095d;
-$gb-pink-950: #4c0630;
+$gb-pink-950: #4c063c;
+
+// Global green
+$gb-green-25: #f9ffeb;
+$gb-green-50: #f2ffd6;
+$gb-green-100: #e4ffa8;
+$gb-green-200: #baff24;
+$gb-green-300: #a7f500;
+$gb-green-400: #9de600;
+$gb-green-500: #93d500;
+$gb-green-600: #84c200;
+$gb-green-700: #73a800;
+$gb-green-800: #628f00;
+$gb-green-900: #466600;
+$gb-green-950: #314700;
+
+// Global yellow
+$gb-yellow-25: #fffdf5;
+$gb-yellow-50: #fffceb;
+$gb-yellow-100: #fffadb;
+$gb-yellow-200: #fff4ad;
+$gb-yellow-300: #ffee80;
+$gb-yellow-400: #ffe642;
+$gb-yellow-500: #ffdd00;
+$gb-yellow-600: #e6c700;
+$gb-yellow-700: #ccb100;
+$gb-yellow-800: #a89200;
+$gb-yellow-900: #7a6a00;
+$gb-yellow-950: #574b00;
+
+// Global error
+$gb-error-25: #fffafa;
+$gb-error-50: #fff0f0;
+$gb-error-100: #ffe5e5;
+$gb-error-200: #ffc7c7;
+$gb-error-300: #ff9e9e;
+$gb-error-400: #ff5c5c;
+$gb-error-500: #cc0000;
+$gb-error-600: #b80000;
+$gb-error-700: #a30000;
+$gb-error-800: #850000;
+$gb-error-900: #6b0000;
+$gb-error-950: #3d0000;
+
+// Global warning
+$gb-warning-25: #fefbf5;
+$gb-warning-50: #fef9f0;
+$gb-warning-100: #fdf1dd;
+$gb-warning-200: #fce3bb;
+$gb-warning-300: #fad18f;
+$gb-warning-400: #f8bd5e;
+$gb-warning-500: #f5a623;
+$gb-warning-600: #e5910a;
+$gb-warning-700: #c87f09;
+$gb-warning-800: #ab6c08;
+$gb-warning-900: #754a05;
+$gb-warning-950: #583804;
+
+// Global success
+$gb-success-25: #f5fff8;
+$gb-success-50: #dbffe7;
+$gb-success-100: #b8ffcf;
+$gb-success-200: #70ffa0;
+$gb-success-300: #29ff70;
+$gb-success-400: #00e04b;
+$gb-success-500: #009933;
+$gb-success-600: #007a29;
+$gb-success-700: #005c1f;
+$gb-success-800: #003d14;
+$gb-success-900: #001f0a;
+$gb-success-950: #000f05;
+
+//Global TAP
+// TAP blue
+$gb-tap-blue-25: #f5f7ff;
+$gb-tap-blue-50: #e5ebff;
+$gb-tap-blue-100: #ccd7ff;
+$gb-tap-blue-200: #99afff;
+$gb-tap-blue-300: #6687ff;
+$gb-tap-blue-400: #335fff;
+$gb-tap-blue-500: #0037fc;
+$gb-tap-blue-600: #002ccc;
+$gb-tap-blue-700: #002199;
+$gb-tap-blue-800: #001666;
+$gb-tap-blue-900: #000b33;
+$gb-tap-blue-950: #000619;
+
+// TAP yellow
+$gb-tap-yellow-25: #f5f7ff;
+$gb-tap-yellow-50: #ffffdb;
+$gb-tap-yellow-100: #ffffc7;
+$gb-tap-yellow-200: #ffff85;
+$gb-tap-yellow-300: #fefe01;
+$gb-tap-yellow-400: #f9f901;
+$gb-tap-yellow-500: #f5f501;
+$gb-tap-yellow-600: #e0e001;
+$gb-tap-yellow-700: #c6c601;
+$gb-tap-yellow-800: #a3a301;
+$gb-tap-yellow-900: #757500;
+$gb-tap-yellow-950: #515100;
+
+// TAP pink
+$gb-tap-pink-25: #fffafd;
+$gb-tap-pink-50: #fff5fc;
+$gb-tap-pink-100: #fee7f8;
+$gb-tap-pink-200: #fdc9f1;
+$gb-tap-pink-300: #fba2e6;
+$gb-tap-pink-400: #f96cd8;
+$gb-tap-pink-500: #e60ab4;
+$gb-tap-pink-600: #cd099f;
+$gb-tap-pink-700: #b5088c;
+$gb-tap-pink-800: #980776;
+$gb-tap-pink-900: #6c0554;
+$gb-tap-pink-950: #4e033d;
+
+// TAP Cyan
+$gb-tap-cyan-25: #fafdff;
+$gb-tap-cyan-50: #f0f9ff;
+$gb-tap-cyan-100: #dbf1ff;
+$gb-tap-cyan-200: #b8e2ff;
+$gb-tap-cyan-300: #85ceff;
+$gb-tap-cyan-400: #4db8ff;
+$gb-tap-cyan-500: #0097fc;
+$gb-tap-cyan-600: #0087e0;
+$gb-tap-cyan-700: #0077c7;
+$gb-tap-cyan-800: #0065a8;
+$gb-tap-cyan-900: #00497a;
+$gb-tap-cyan-950: #003457;
+
+// TAP Aquamarine
+$gb-tap-aquamarine-25: #fafdff;
+$gb-tap-aquamarine-50: #edfcf8;
+$gb-tap-aquamarine-100: #dbfaf1;
+$gb-tap-aquamarine-200: #b8f4e2;
+$gb-tap-aquamarine-300: #94efd4;
+$gb-tap-aquamarine-400: #71eac6;
+$gb-tap-aquamarine-500: #50e5b9;
+$gb-tap-aquamarine-600: #20d59f;
+$gb-tap-aquamarine-700: #18a077;
+$gb-tap-aquamarine-800: #106b4f;
+$gb-tap-aquamarine-900: #083528;
+$gb-tap-aquamarine-950: #041b14;
+
+// TAP Aquamarine
+$gb-tap-error-25: #fefafa;
+$gb-tap-error-50: #fef6f6;
+$gb-tap-error-100: #fce8e8;
+$gb-tap-error-200: #fad1d1;
+$gb-tap-error-300: #f6b2b2;
+$gb-tap-error-400: #f18d8d;
+$gb-tap-error-500: #eb5757;
+$gb-tap-error-600: #e73636;
+$gb-tap-error-700: #d61a1a;
+$gb-tap-error-800: #b21515;
+$gb-tap-error-900: #800f0f;
+$gb-tap-error-950: #640c0c;
 
 $gb-colors: (
   no-color: transparent,
   //
+  // Gray light mode
+  gb-gray-light-25: $gb-gray-light-25,
+  gb-gray-light-50: $gb-gray-light-50,
+  gb-gray-light-100: $gb-gray-light-100,
+  gb-gray-light-200: $gb-gray-light-200,
+  gb-gray-light-300: $gb-gray-light-300,
+  gb-gray-light-400: $gb-gray-light-400,
+  gb-gray-light-500: $gb-gray-light-500,
+  gb-gray-light-600: $gb-gray-light-600,
+  gb-gray-light-700: $gb-gray-light-700,
+  gb-gray-light-800: $gb-gray-light-800,
+  gb-gray-light-900: $gb-gray-light-900,
+  gb-gray-light-950: $gb-gray-light-950,
+
+  // Gray dark mode
+  gb-gray-dark-25: $gb-gray-dark-25,
+  gb-gray-dark-50: $gb-gray-dark-50,
+  gb-gray-dark-100: $gb-gray-dark-100,
+  gb-gray-dark-200: $gb-gray-dark-200,
+  gb-gray-dark-300: $gb-gray-dark-300,
+  gb-gray-dark-400: $gb-gray-dark-400,
+  gb-gray-dark-500: $gb-gray-dark-500,
+  gb-gray-dark-600: $gb-gray-dark-600,
+  gb-gray-dark-700: $gb-gray-dark-700,
+  gb-gray-dark-800: $gb-gray-dark-800,
+  gb-gray-dark-900: $gb-gray-dark-900,
+  gb-gray-dark-950: $gb-gray-dark-950,
+
+  // Global bank primaries colors
+  // Global Blue
   gb-blue-25: $gb-blue-25,
   gb-blue-50: $gb-blue-50,
   gb-blue-100: $gb-blue-100,
@@ -43,9 +270,24 @@ $gb-colors: (
   gb-blue-800: $gb-blue-800,
   gb-blue-900: $gb-blue-900,
   gb-blue-950: $gb-blue-950,
-  //
-  gb-pink-50: $gb-pink-50,
+
+  //  Global cyan
+  gb-cyan-25: $gb-cyan-25,
+  gb-cyan-50: $gb-cyan-50,
+  gb-cyan-100: $gb-cyan-100,
+  gb-cyan-200: $gb-cyan-200,
+  gb-cyan-300: $gb-cyan-300,
+  gb-cyan-400: $gb-cyan-400,
+  gb-cyan-500: $gb-cyan-500,
+  gb-cyan-600: $gb-cyan-600,
+  gb-cyan-700: $gb-cyan-700,
+  gb-cyan-800: $gb-cyan-800,
+  gb-cyan-900: $gb-cyan-900,
+  gb-cyan-950: $gb-cyan-950,
+
+  // Global Pink
   gb-pink-25: $gb-pink-25,
+  gb-pink-50: $gb-pink-50,
   gb-pink-100: $gb-pink-100,
   gb-pink-200: $gb-pink-200,
   gb-pink-300: $gb-pink-300,
@@ -56,6 +298,161 @@ $gb-colors: (
   gb-pink-800: $gb-pink-800,
   gb-pink-900: $gb-pink-900,
   gb-pink-950: $gb-pink-950,
+
+  // Global green
+  gb-green-25: $gb-green-25,
+  gb-green-50: $gb-green-50,
+  gb-green-100: $gb-green-100,
+  gb-green-200: $gb-green-200,
+  gb-green-300: $gb-green-300,
+  gb-green-400: $gb-green-400,
+  gb-green-500: $gb-green-500,
+  gb-green-600: $gb-green-600,
+  gb-green-700: $gb-green-700,
+  gb-green-800: $gb-green-800,
+  gb-green-900: $gb-green-900,
+  gb-green-950: $gb-green-950,
+
+  // Global yellow
+  gb-yellow-25: $gb-yellow-25,
+  gb-yellow-50: $gb-yellow-50,
+  gb-yellow-100: $gb-yellow-100,
+  gb-yellow-200: $gb-yellow-200,
+  gb-yellow-300: $gb-yellow-300,
+  gb-yellow-400: $gb-yellow-400,
+  gb-yellow-500: $gb-yellow-500,
+  gb-yellow-600: $gb-yellow-600,
+  gb-yellow-700: $gb-yellow-700,
+  gb-yellow-800: $gb-yellow-800,
+  gb-yellow-900: $gb-yellow-900,
+  gb-yellow-950: $gb-yellow-950,
+
+  // Global error
+  gb-error-25: $gb-error-25,
+  gb-error-50: $gb-error-50,
+  gb-error-100: $gb-error-100,
+  gb-error-200: $gb-error-200,
+  gb-error-300: $gb-error-300,
+  gb-error-400: $gb-error-400,
+  gb-error-500: $gb-error-500,
+  gb-error-600: $gb-error-600,
+  gb-error-700: $gb-error-700,
+  gb-error-800: $gb-error-800,
+  gb-error-900: $gb-error-900,
+  gb-error-950: $gb-error-950,
+
+  // Global warning
+  gb-warning-25: $gb-warning-25,
+  gb-warning-50: $gb-warning-50,
+  gb-warning-100: $gb-warning-100,
+  gb-warning-200: $gb-warning-200,
+  gb-warning-300: $gb-warning-300,
+  gb-warning-400: $gb-warning-400,
+  gb-warning-500: $gb-warning-500,
+  gb-warning-600: $gb-warning-600,
+  gb-warning-700: $gb-warning-700,
+  gb-warning-800: $gb-warning-800,
+  gb-warning-900: $gb-warning-900,
+  gb-warning-950: $gb-warning-950,
+
+  // Global success,
+  gb-success-25: $gb-success-25,
+  gb-success-50: $gb-success-50,
+  gb-success-100: $gb-success-100,
+  gb-success-200: $gb-success-200,
+  gb-success-300: $gb-success-300,
+  gb-success-400: $gb-success-400,
+  gb-success-500: $gb-success-500,
+  gb-success-600: $gb-success-600,
+  gb-success-700: $gb-success-700,
+  gb-success-800: $gb-success-800,
+  gb-success-900: $gb-success-900,
+  gb-success-950: $gb-success-950,
+
+  //Global TAP
+  // TAP blue
+  gb-tap-blue-25: $gb-tap-blue-25,
+  gb-tap-blue-50: $gb-tap-blue-50,
+  gb-tap-blue-100: $gb-tap-blue-100,
+  gb-tap-blue-200: $gb-tap-blue-200,
+  gb-tap-blue-300: $gb-tap-blue-300,
+  gb-tap-blue-400: $gb-tap-blue-400,
+  gb-tap-blue-500: $gb-tap-blue-500,
+  gb-tap-blue-600: $gb-tap-blue-600,
+  gb-tap-blue-700: $gb-tap-blue-700,
+  gb-tap-blue-800: $gb-tap-blue-800,
+  gb-tap-blue-900: $gb-tap-blue-900,
+  gb-tap-blue-950: $gb-tap-blue-950,
+
+  // TAP yellow
+  gb-tap-yellow-25: $gb-tap-yellow-25,
+  gb-tap-yellow-50: $gb-tap-yellow-50,
+  gb-tap-yellow-100: $gb-tap-yellow-100,
+  gb-tap-yellow-200: $gb-tap-yellow-200,
+  gb-tap-yellow-300: $gb-tap-yellow-300,
+  gb-tap-yellow-400: $gb-tap-yellow-400,
+  gb-tap-yellow-500: $gb-tap-yellow-500,
+  gb-tap-yellow-600: $gb-tap-yellow-600,
+  gb-tap-yellow-700: $gb-tap-yellow-700,
+  gb-tap-yellow-800: $gb-tap-yellow-800,
+  gb-tap-yellow-900: $gb-tap-yellow-900,
+  gb-tap-yellow-950: $gb-tap-yellow-950,
+
+  // TAP pink
+  gb-tap-pink-25: $gb-tap-pink-25,
+  gb-tap-pink-50: $gb-tap-pink-50,
+  gb-tap-pink-100: $gb-tap-pink-100,
+  gb-tap-pink-200: $gb-tap-pink-200,
+  gb-tap-pink-300: $gb-tap-pink-300,
+  gb-tap-pink-400: $gb-tap-pink-400,
+  gb-tap-pink-500: $gb-tap-pink-500,
+  gb-tap-pink-600: $gb-tap-pink-600,
+  gb-tap-pink-700: $gb-tap-pink-700,
+  gb-tap-pink-800: $gb-tap-pink-800,
+  gb-tap-pink-900: $gb-tap-pink-900,
+  gb-tap-pink-950: $gb-tap-pink-950,
+
+  // TAP Cyan
+  gb-tap-cyan-25: $gb-tap-cyan-25,
+  gb-tap-cyan-50: $gb-tap-cyan-50,
+  gb-tap-cyan-100: $gb-tap-cyan-100,
+  gb-tap-cyan-200: $gb-tap-cyan-200,
+  gb-tap-cyan-300: $gb-tap-cyan-300,
+  gb-tap-cyan-400: $gb-tap-cyan-400,
+  gb-tap-cyan-500: $gb-tap-cyan-500,
+  gb-tap-cyan-600: $gb-tap-cyan-600,
+  gb-tap-cyan-700: $gb-tap-cyan-700,
+  gb-tap-cyan-800: $gb-tap-cyan-800,
+  gb-tap-cyan-900: $gb-tap-cyan-900,
+  gb-tap-cyan-950: $gb-tap-cyan-950,
+
+  // TAP Aquamarine
+  gb-tap-aquamarine-25: $gb-tap-cyan-25,
+  gb-tap-aquamarine-50: $gb-tap-cyan-50,
+  gb-tap-aquamarine-100: $gb-tap-cyan-100,
+  gb-tap-aquamarine-200: $gb-tap-cyan-200,
+  gb-tap-aquamarine-300: $gb-tap-cyan-300,
+  gb-tap-aquamarine-400: $gb-tap-cyan-400,
+  gb-tap-aquamarine-500: $gb-tap-cyan-500,
+  gb-tap-aquamarine-600: $gb-tap-cyan-600,
+  gb-tap-aquamarine-700: $gb-tap-cyan-700,
+  gb-tap-aquamarine-800: $gb-tap-cyan-800,
+  gb-tap-aquamarine-900: $gb-tap-cyan-900,
+  gb-tap-aquamarine-950: $gb-tap-cyan-950,
+
+  // TAP Aquamarine
+  gb-tap-error-25: $gb-tap-cyan-25,
+  gb-tap-error-50: $gb-tap-cyan-50,
+  gb-tap-error-100: $gb-tap-cyan-100,
+  gb-tap-error-200: $gb-tap-cyan-200,
+  gb-tap-error-300: $gb-tap-cyan-300,
+  gb-tap-error-400: $gb-tap-cyan-400,
+  gb-tap-error-500: $gb-tap-cyan-500,
+  gb-tap-error-600: $gb-tap-cyan-600,
+  gb-tap-error-700: $gb-tap-cyan-700,
+  gb-tap-error-800: $gb-tap-cyan-800,
+  gb-tap-error-900: $gb-tap-cyan-900,
+  gb-tap-error-950: $gb-tap-cyan-950,
 );
 
 :root {
