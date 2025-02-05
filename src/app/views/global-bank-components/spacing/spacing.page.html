@@ -34,7 +34,7 @@
           @for (margin of marginsAndPaddings; track margin) {
           <ion-row>
             <ion-col>
-              <div>gb-m{{margin.class}}-md</div>
+              <pre><code [highlight]="'.gb-m' + margin.class + '-md'" language="css"></code></pre>
             </ion-col>
             <ion-col>
               <div>Margin {{margin.desc}}</div>
@@ -58,7 +58,8 @@
           @for (margin of marginsAndPaddings; track margin) {
           <ion-row>
             <ion-col>
-              <div>gb-p{{margin.class}}-md</div>
+              <!-- <div>.gb-p{{margin.class}}-md</div> -->
+              <pre><code [highlight]="'.gb-p' + margin.class + '-md'" language="css"></code></pre>
             </ion-col>
             <ion-col>
               <div>Padding {{margin.desc}}</div>
@@ -84,7 +85,7 @@
             <ion-col>
               <div
                 [class]="'bg-gb-blue-500 gb-py-md text-white ' + border.class + '-md'">
-                {{border.class + '-md'}}
+                {{'.' + border.class + '-md'}}
               </div>
             </ion-col>
             <ion-col>
