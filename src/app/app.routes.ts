@@ -54,6 +54,13 @@ export const routes: Routes = [
           ).then(m => m.TypographyPage),
       },
       {
+        path: 'spacing',
+        loadComponent: () =>
+          import('./views/global-bank-components/spacing/spacing.page').then(
+            m => m.SpacingPage
+          ),
+      },
+      {
         path: 'colors',
         loadComponent: () =>
           import('./views/global-bank-components/colors/colors.page').then(

@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="gb-pa-4xl">
+      <div class="display-lg w700 gb-mb-4xl">GB Spacing</div>
+    </div>
+    <!-- Sizes -->
+    <div class="display-sm w600">Sizes</div>
+    <div class="text-md">Tamaños de los espacios</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (size of sizes; track size) {
+          <ion-row>
+            <ion-col>
+              <div>{{size.class}}</div>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="size.desc" language="css"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Margins -->
+    <div class="display-sm w600">Margins</div>
+    <div class="text-md">Tamaños margenes</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (margin of marginsAndPaddings; track margin) {
+          <ion-row>
+            <ion-col>
+              <div>gb-m{{margin.class}}-md</div>
+            </ion-col>
+            <ion-col>
+              <div>Margin {{margin.desc}}</div>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="returnCode(margin.class, 'm')" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Paddings -->
+    <div class="display-sm w600">Paddings</div>
+    <div class="text-md">Tamaños paddings</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (margin of marginsAndPaddings; track margin) {
+          <ion-row>
+            <ion-col>
+              <div>gb-p{{margin.class}}-md</div>
+            </ion-col>
+            <ion-col>
+              <div>Padding {{margin.desc}}</div>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="returnCode(margin.class, 'p')" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Border radius -->
+    <div class="display-sm w600">Border radius</div>
+    <div class="text-md">Tamaños para border radius</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          @for (border of borders; track border) {
+          <ion-row>
+            <ion-col>
+              <div
+                [class]="'bg-gb-blue-500 gb-py-md text-white ' + border.class + '-md'">
+                {{border.class + '-md'}}
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>{{border.desc}}</div>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="returnBorderRadiusCode(border.class)" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          }
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>
