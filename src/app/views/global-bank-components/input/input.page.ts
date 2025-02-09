@@ -30,4 +30,8 @@ export class InputPage {
     '<gb-input [(value)]="input1" placeholder="Type here" icon="person-outline" />';
   validation =
     '<gb-input [(value)]="input1" placeholder="Type here" regex="^[A-Za-z0-9]{6,}$" />';
+  minmax =
+    '<gb-input [(value)]="input1" placeholder="Type here" [min]="1" [max]="10" />';
+  required =
+    '<gb-input [(value)]="input1" placeholder="Type here" [required]="true" />';
 }

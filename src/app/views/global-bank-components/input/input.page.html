@@ -130,7 +130,9 @@
     <!--/-->
     <!-- Validation -->
     <div class="display-sm w600">Input validation</div>
-    <div class="text-md">Valida el valor ingresado en el input segun regex</div>
+    <div class="text-md">
+      Valida el valor ingresado en el input segun regex o min y max.
+    </div>
     <div class="gb-py-2xl gb-px-md">
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3">
@@ -141,9 +143,41 @@
                 [(value)]="input1"
                 placeholder="Type here"
                 regex="^[A-Za-z0-9]{6,}$" />
+              <br />
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                type="number"
+                [min]="1"
+                [max]="10" />
             </ion-col>
             <ion-col>
               <pre><code [highlight]="validation" language="html"></code></pre>
+              <pre><code [highlight]="minmax" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    <!-- Required -->
+    <div class="display-sm w600">Input required</div>
+    <div class="text-md">
+      Si el input es clickeado, se valida que este tenga un valor.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                [required]="true" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="required" language="html"></code></pre>
             </ion-col>
           </ion-row>
         </div>
