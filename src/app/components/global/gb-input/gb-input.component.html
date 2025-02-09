@@ -1,7 +1,7 @@
 <div class="relative">
   <input
     [type]="inType()"
-    [placeholder]="placeholder()"
+    [placeholder]="placeholder() + (required() ? ' *' : '')"
     [(ngModel)]="model"
     [class]="classes()"
     (focusout)="wasFocused()"
