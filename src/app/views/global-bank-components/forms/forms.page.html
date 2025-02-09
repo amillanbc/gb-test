@@ -6,7 +6,7 @@
     <div class="gb-py-2xl gb-px-md">
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+        <div class="sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
               <gb-input
@@ -42,13 +42,32 @@
                 (click)="submitLogin()"
                 [disabled]="!isFormValid()" />
             </ion-col>
-            <ion-col>
-              <!-- <pre><code [highlight]="primary" language="html"></code></pre> -->
-            </ion-col>
+            <ion-col> </ion-col>
           </ion-row>
         </div>
       </div>
     </div>
+    <!--/-->
+
+    <!-- Snippets -->
+    <ion-row>
+      <ion-col>
+        <div
+          class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+          <div class="sm:p-9 md:p-7 xl:p-9">
+            <pre><code [highlight]="html" language="html"></code></pre>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div
+          class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+          <div class="sm:p-9 md:p-7 xl:p-9">
+            <pre><code [highlight]="ts" language="typescript"></code></pre>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
     <!--/-->
   </div>
 </ion-content>
