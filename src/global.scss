@@ -71,3 +71,8 @@ input:disabled {
 .cursor-not-allowed {
   cursor: not-allowed;
 }
+
+#storybook-docs {
+  overflow-y: auto !important;
+  max-height: 100vh;
+}

@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">Forms</div>
+    <!-- Form -->
+    <div class="text-md">Manejo de forms con validacion.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-input
+                placeholder="User"
+                [(value)]="formData.user.value"
+                [regex]="formData.user.validator"
+                [required]="true"
+                icon="person-outline" />
+              <br />
+              <gb-input
+                placeholder="Password"
+                [(value)]="formData.pass.value"
+                [regex]="formData.pass.validator"
+                icon="lock-closed-outline"
+                [required]="true"
+                type="password" />
+              <br />
+              <gb-input
+                placeholder="Age"
+                [(value)]="formData.age.value"
+                type="number"
+                [required]="true"
+                [min]="formData.age.min"
+                [max]="formData.age.max" />
+              <br />
+              <gb-checkbox
+                name="checkbox_1"
+                [(value)]="formData.accept.value"
+                label="Accept terms" />
+              <br />
+              <gb-btn
+                label="Register"
+                (click)="submitLogin()"
+                [disabled]="!isFormValid()" />
+            </ion-col>
+            <ion-col>
+              <!-- <pre><code [highlight]="primary" language="html"></code></pre> -->
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>

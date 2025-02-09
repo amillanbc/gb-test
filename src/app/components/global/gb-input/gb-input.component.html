@@ -4,6 +4,7 @@
     [placeholder]="placeholder()"
     [(ngModel)]="model"
     [class]="classes()"
+    (focusout)="wasFocused()"
     [disabled]="disabled()" />
   <ion-icon
     [name]="icon()"

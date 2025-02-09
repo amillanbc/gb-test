@@ -32,19 +32,23 @@ export class MainPage {
       route: '/toggle',
     },
     {
-      comp: 'Tipografía',
+      comp: 'Forms',
+      route: '/forms',
+    },
+    {
+      comp: 'Typography',
       route: '/typography',
     },
     {
-      comp: 'Espaciados',
+      comp: 'Spacing',
       route: '/spacing',
     },
     {
-      comp: 'Colores',
+      comp: 'Colors',
       route: '/colors',
     },
     {
-      comp: 'Sombras',
+      comp: 'Shadows',
       route: '/shadows',
     },
   ]);

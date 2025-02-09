@@ -67,6 +67,13 @@ export const routes: Routes = [
             m => m.ColorsPage
           ),
       },
+      {
+        path: 'forms',
+        loadComponent: () =>
+          import('./views/global-bank-components/forms/forms.page').then(
+            m => m.FormsPage
+          ),
+      },
     ],
   },
   {

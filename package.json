@@ -11,7 +11,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "test-android": "ionic capacitor run android -l --external",
-    "test-am": "ionic capacitor run ios -l --external --target 00008130-000E78C83451001C"
+    "test-am": "ionic capacitor run ios -l --external --target 00008130-000E78C83451001C",
+    "storybook": "ng run app:storybook",
+    "build-storybook": "ng run app:build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -51,7 +53,16 @@
     "@angular/language-service": "^19.0.0",
     "@angular/localize": "^19.0.5",
     "@capacitor/cli": "6.2.0",
+    "@chromatic-com/storybook": "^3.2.4",
+    "@compodoc/compodoc": "^1.1.26",
     "@ionic/angular-toolkit": "^12.0.0",
+    "@storybook/addon-docs": "^8.5.3",
+    "@storybook/addon-essentials": "^8.5.3",
+    "@storybook/addon-interactions": "^8.5.3",
+    "@storybook/addon-onboarding": "^8.5.3",
+    "@storybook/angular": "^8.5.3",
+    "@storybook/blocks": "^8.5.3",
+    "@storybook/test": "^8.5.3",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
@@ -59,6 +70,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.1",
     "eslint-plugin-prefer-arrow": "1.2.2",
+    "eslint-plugin-storybook": "^0.11.2",
     "jasmine-core": "~5.1.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.4.0",
@@ -67,6 +79,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.4.2",
+    "storybook": "^8.5.3",
     "typescript": "~5.6.3"
   },
   "description": "An Ionic project",
