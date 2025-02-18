@@ -2,6 +2,91 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "FieldObject",
+            "id": "interface-FieldObject-451f1e036544b10ebb0e7e9cd9753f393f763cdaaca120eeec814838ad8cf4f5eb28288b9a5ac9a404f180ff5aaf432a86fba83282d5fc06eaed6270c95f8fa4",
+            "file": "src/app/types/FormObject.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { WritableSignal } from '@angular/core';\n\ninterface FieldObject {\n  value: WritableSignal<string | boolean>;\n  validator?: string | boolean;\n  min?: number;\n  max?: number;\n}\n\ninterface FormObject {\n  [key: string]: FieldObject;\n}\n\nexport default FormObject;\n",
+            "properties": [
+                {
+                    "name": "max",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "min",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "validator",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WritableSignal<string | boolean>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "FormObject",
+            "id": "interface-FormObject-451f1e036544b10ebb0e7e9cd9753f393f763cdaaca120eeec814838ad8cf4f5eb28288b9a5ac9a404f180ff5aaf432a86fba83282d5fc06eaed6270c95f8fa4",
+            "file": "src/app/types/FormObject.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { WritableSignal } from '@angular/core';\n\ninterface FieldObject {\n  value: WritableSignal<string | boolean>;\n  validator?: string | boolean;\n  min?: number;\n  max?: number;\n}\n\ninterface FormObject {\n  [key: string]: FieldObject;\n}\n\nexport default FormObject;\n",
+            "properties": [],
+            "indexSignatures": [
+                {
+                    "id": "index-declaration-451f1e036544b10ebb0e7e9cd9753f393f763cdaaca120eeec814838ad8cf4f5eb28288b9a5ac9a404f180ff5aaf432a86fba83282d5fc06eaed6270c95f8fa4",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "FieldObject",
+                    "line": 10,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "kind": 181,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-ea5bccc9f42bcd0bb29bb8d26a73792c111bdcf4ce9a11d7d1f74becf72fc24175d1958bf53f41b8f527bba47be7c79f153321673c92c68680cfd35569872ce6",
             "file": "src/app/types/User.ts",
@@ -107,9 +192,21 @@
         },
         {
             "name": "Utils",
-            "id": "injectable-Utils-d8f919fc384339062dabae9e83f512d9d8f027b92b5361ee1316591fb87bca73500df06503b66cda1ebedb4bef97ac6f1600f2cd87c47a5254b583ffe7c85303",
+            "id": "injectable-Utils-a7e855ce86bffca97c7c8b29c8e8a9bb2c3a0eb1f3694cf68155f34deab801ccda2e3afc63377e8e2c73bf6b4b7da831d7137eb195e217ae0ab2c5c0b780b427",
             "file": "src/app/stores/utils.service.ts",
-            "properties": [],
+            "properties": [
+                {
+                    "name": "modalCtrl",
+                    "defaultValue": "inject(ModalController)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
             "methods": [
                 {
                     "name": "showGenericModal",
@@ -137,111 +234,68 @@
                     "optional": false,
                     "returnType": "unknown",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nOpens an Ionic component modal with the content and attributes passed in the function params\n\n\n```html\n```typescript\nconst comp = ExampleAngularComponent;\nconst props = {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};\nconst id = 'modal-unique-id';\nconst modal = await showGenericModal(comp, id, props, canDismiss);\nconsole.log(modal); // 'accept' || undefined\n```\n```",
-                    "description": "<p>Opens an Ionic component modal with the content and attributes passed in the function params</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nconst comp = ExampleAngularComponent;\nconst props = {text: &#39;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#39;};\nconst id = &#39;modal-unique-id&#39;;\nconst modal = await showGenericModal(comp, id, props, canDismiss);\nconsole.log(modal); // &#39;accept&#39; || undefined</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\"></code></pre></div>",
                     "modifierKind": [
                         134
                     ],
                     "jsdoctags": [
                         {
-                            "name": {
-                                "pos": 341,
-                                "end": 345,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "comp"
-                            },
+                            "name": "comp",
                             "type": "any",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 335,
-                                "end": 340,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "param"
-                            },
-                            "comment": "<ul>\n<li>The Angular component that shoud be shown in the modal</li>\n</ul>\n"
+                                "text": "param"
+                            }
                         },
                         {
-                            "name": {
-                                "pos": 415,
-                                "end": 420,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "props"
-                            },
+                            "name": "props",
                             "type": "object",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 409,
-                                "end": 414,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "param"
-                            },
-                            "comment": "<ul>\n<li>An object with the Inputs used in the component</li>\n</ul>\n"
+                                "text": "param"
+                            }
                         },
                         {
-                            "name": {
-                                "pos": 483,
-                                "end": 485,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "id"
-                            },
+                            "name": "id",
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "defaultValue": "'dialog-modal'",
                             "tagName": {
-                                "pos": 477,
-                                "end": 482,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "param"
-                            },
-                            "comment": "<ul>\n<li>The ID attribute assigned to the modal | default &#39;dialog-modal&#39;</li>\n</ul>\n"
-                        },
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "validateForm",
+                    "args": [
                         {
-                            "tagName": {
-                                "pos": 558,
-                                "end": 565,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "returns"
-                            },
-                            "comment": "<p>Will return undefined or a string with the action taken by user click</p>\n"
-                        },
+                            "name": "formData",
+                            "type": "FormObject",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
                         {
+                            "name": "formData",
+                            "type": "FormObject",
+                            "deprecated": false,
+                            "deprecationMessage": "",
                             "tagName": {
-                                "pos": 647,
-                                "end": 654,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "example"
-                            },
-                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const comp = ExampleAngularComponent;\nconst props = {text: &#39;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#39;};\nconst id = &#39;modal-unique-id&#39;;\nconst modal = await showGenericModal(comp, id, props, canDismiss);\nconsole.log(modal); // &#39;accept&#39; || undefined</code></pre></div>"
+                                "text": "param"
+                            }
                         }
                     ]
                 }
@@ -250,33 +304,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { ModalController } from '@ionic/angular/standalone';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class Utils {\n  constructor(private modalCtrl: ModalController) {}\n\n  /**\n   * Opens an Ionic component modal with the content and attributes passed in the function params\n   *\n   * @param comp - The Angular component that shoud be shown in the modal\n   * @param props - An object with the Inputs used in the component\n   * @param id - The ID attribute assigned to the modal | default 'dialog-modal'\n   * @returns Will return undefined or a string with the action taken by user click\n   *\n   * @example\n   * ```typescript\n   * const comp = ExampleAngularComponent;\n   * const props = {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};\n   * const id = 'modal-unique-id';\n   * const modal = await showGenericModal(comp, id, props, canDismiss);\n   * console.log(modal); // 'accept' || undefined\n   * ```\n   */\n  async showGenericModal(\n    comp: any,\n    props: object,\n    id: string = 'dialog-modal'\n  ) {\n    const modal = await this.modalCtrl.create({\n      component: comp,\n      id: id,\n      componentProps: props,\n    });\n    modal.present();\n    const { data } = await modal.onWillDismiss();\n    if (data) return data.action;\n    return undefined;\n  }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "modalCtrl",
-                        "type": "ModalController",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 7,
-                "jsdoctags": [
-                    {
-                        "name": "modalCtrl",
-                        "type": "ModalController",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
+            "sourceCode": "import { Injectable, inject } from '@angular/core';\nimport { ModalController } from '@ionic/angular/standalone';\n\n// ##### MODELS\nimport FormObject from '../types/FormObject';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class Utils {\n  modalCtrl = inject(ModalController);\n\n  async showGenericModal(\n    comp: any,\n    props: object,\n    id: string = 'dialog-modal'\n  ) {\n    const modal = await this.modalCtrl.create({\n      component: comp,\n      id: id,\n      componentProps: props,\n    });\n    modal.present();\n    const { data } = await modal.onWillDismiss();\n    if (data) return data.action;\n    return undefined;\n  }\n\n  validateForm(formData: FormObject) {\n    let isValid = true;\n    for (let field in formData) {\n      const val = formData[field].value();\n      const validator = formData[field].validator;\n      const min = formData[field].min;\n      const max = formData[field].max;\n      const num = parseFloat(`${val}`);\n      if (typeof validator == 'boolean' && val != validator) isValid = false;\n      if (typeof val == 'string') {\n        if (typeof validator == 'string') {\n          const regex = new RegExp(validator);\n          if (typeof val == 'string' && !regex.test(val)) isValid = false;\n        }\n        if (min || max) {\n          if (isNaN(num)) isValid = false;\n          else {\n            if (min != undefined && num < min) isValid = false;\n            if (max != undefined && num > max) isValid = false;\n          }\n        }\n      }\n    }\n    return isValid;\n  }\n}\n",
             "extends": [],
             "type": "injectable"
         }
@@ -1211,6 +1239,142 @@
             "templateData": "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>form</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">form</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-list>\n    <ion-item>\n      <ion-input type=\"text\" placeholder=\"Name\" [(ngModel)]=\"name\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-input\n        placeholder=\"Last name\"\n        type=\"text\"\n        [(ngModel)]=\"lastName\"></ion-input>\n    </ion-item>\n  </ion-list>\n  <app-full-name\n    [n]=\"name()\"\n    [ln]=\"lastName()\"\n    (nameOutput)=\"alertFullName($event)\"></app-full-name>\n</ion-content>\n"
         },
         {
+            "name": "FormsPage",
+            "id": "component-FormsPage-4b5e0d5a9b30da4b52643fa8bcda31e3f2f83e86851538960f13a7a552e52bc79cc2020be6a7ec1665c2141923ade6203ca2c6940eab0866c55b2cc8600cec7d",
+            "file": "src/app/views/global-bank-components/forms/forms.page.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-forms",
+            "styleUrls": [
+                "./forms.page.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./forms.page.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "formData",
+                    "defaultValue": "{\n    user: {\n      value: signal(''),\n      validator: '^.{3,}$',\n    },\n    pass: {\n      value: signal(''),\n      validator: '^.{3,}$',\n    },\n    age: {\n      value: signal(''),\n      min: 0,\n      max: 50,\n    },\n    accept: {\n      value: signal(false),\n      validator: true,\n    },\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
+                },
+                {
+                    "name": "html",
+                    "defaultValue": "`\n  <gb-input\n    placeholder=\"User\"\n    [(value)]=\"formData.user.value\"\n    [regex]=\"formData.user.validator\"\n    [required]=\"true\"\n    icon=\"person-outline\" />\n\n  <gb-input\n    placeholder=\"Password\"\n    [(value)]=\"formData.pass.value\"\n    [regex]=\"formData.pass.validator\"\n    icon=\"lock-closed-outline\"\n    [required]=\"true\"\n    type=\"password\" />\n\n  <gb-input\n    placeholder=\"Age\"\n    [(value)]=\"formData.age.value\"\n    type=\"number\"\n    [required]=\"true\"\n    [min]=\"formData.age.min\"\n    [max]=\"formData.age.max\" />\n\n  <gb-checkbox\n    name=\"checkbox_1\"\n    [(value)]=\"formData.accept.value\"\n    label=\"Accept terms\" />\n\n  <gb-btn\n    label=\"Register\"\n    (click)=\"submitLogin()\"\n    [disabled]=\"!isFormValid()\" />`",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 66
+                },
+                {
+                    "name": "isFormValid",
+                    "defaultValue": "computed(() => {\n    return this.utils.validateForm(this.formData);\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 62
+                },
+                {
+                    "name": "ts",
+                    "defaultValue": "`\n  // ##### IONIC & ANGULAR\n  import { signal, computed, inject } from '@angular/core';\n\n  // ##### SERVICES\n  import { Utils } from 'src/app/stores/utils.service';\n\n  export class FormsPage {\n    // ##### INJECTIONS\n    utils = inject(Utils);\n\n    // ##### SIGNALS\n    formData = {\n      user: {\n        value: signal(''),\n        validator: '^.{3,}$',\n      },\n      pass: {\n        value: signal(''),\n        validator: '^.{3,}$',\n      },\n      age: {\n        value: signal(''),\n        min: 0,\n        max: 50,\n      },\n      accept: {\n        value: signal(false),\n        validator: true,\n      },\n    };\n    \n    // ##### METHODS\n    submitLogin() {\n      // your code here\n    }\n      \n    // ##### COMPUTED\n    isFormValid = computed(() => {\n      return this.utils.validateForm(this.formData);\n    });\n  }\n\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 100
+                },
+                {
+                    "name": "utils",
+                    "defaultValue": "inject(Utils)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "submitLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "IonCol"
+                },
+                {
+                    "name": "IonRow"
+                },
+                {
+                    "name": "IonContent"
+                },
+                {
+                    "name": "GbInputComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "GbBtnComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "GbCheckboxComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "Highlight"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, signal, computed, inject } from '@angular/core';\nimport { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';\n\n// ##### GB COMPONENTS\nimport { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';\nimport { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';\nimport { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';\n\n// ##### SERVICES\nimport { Utils } from 'src/app/stores/utils.service';\n\n// ##### OTHER IMPORTS\nimport { Highlight } from 'ngx-highlightjs';\n\n@Component({\n  selector: 'app-forms',\n  templateUrl: './forms.page.html',\n  styleUrls: ['./forms.page.scss'],\n  standalone: true,\n  imports: [\n    IonCol,\n    IonRow,\n    IonContent,\n    GbInputComponent,\n    GbBtnComponent,\n    GbCheckboxComponent,\n    Highlight,\n  ],\n})\nexport class FormsPage {\n  // ##### INJECTIONS\n  utils = inject(Utils);\n\n  // ##### SIGNALS\n  formData = {\n    user: {\n      value: signal(''),\n      validator: '^.{3,}$',\n    },\n    pass: {\n      value: signal(''),\n      validator: '^.{3,}$',\n    },\n    age: {\n      value: signal(''),\n      min: 0,\n      max: 50,\n    },\n    accept: {\n      value: signal(false),\n      validator: true,\n    },\n  };\n\n  // ##### METHODS\n  submitLogin() {\n    alert('Registration successfull');\n  }\n\n  // ##### COMPUTED\n  isFormValid = computed(() => {\n    return this.utils.validateForm(this.formData);\n  });\n\n  html = `\n  <gb-input\n    placeholder=\"User\"\n    [(value)]=\"formData.user.value\"\n    [regex]=\"formData.user.validator\"\n    [required]=\"true\"\n    icon=\"person-outline\" />\n\n  <gb-input\n    placeholder=\"Password\"\n    [(value)]=\"formData.pass.value\"\n    [regex]=\"formData.pass.validator\"\n    icon=\"lock-closed-outline\"\n    [required]=\"true\"\n    type=\"password\" />\n\n  <gb-input\n    placeholder=\"Age\"\n    [(value)]=\"formData.age.value\"\n    type=\"number\"\n    [required]=\"true\"\n    [min]=\"formData.age.min\"\n    [max]=\"formData.age.max\" />\n\n  <gb-checkbox\n    name=\"checkbox_1\"\n    [(value)]=\"formData.accept.value\"\n    label=\"Accept terms\" />\n\n  <gb-btn\n    label=\"Register\"\n    (click)=\"submitLogin()\"\n    [disabled]=\"!isFormValid()\" />`;\n\n  ts = `\n  // ##### IONIC & ANGULAR\n  import { signal, computed, inject } from '@angular/core';\n\n  // ##### SERVICES\n  import { Utils } from 'src/app/stores/utils.service';\n\n  export class FormsPage {\n    // ##### INJECTIONS\n    utils = inject(Utils);\n\n    // ##### SIGNALS\n    formData = {\n      user: {\n        value: signal(''),\n        validator: '^.{3,}$',\n      },\n      pass: {\n        value: signal(''),\n        validator: '^.{3,}$',\n      },\n      age: {\n        value: signal(''),\n        min: 0,\n        max: 50,\n      },\n      accept: {\n        value: signal(false),\n        validator: true,\n      },\n    };\n    \n    // ##### METHODS\n    submitLogin() {\n      // your code here\n    }\n      \n    // ##### COMPUTED\n    isFormValid = computed(() => {\n      return this.utils.validateForm(this.formData);\n    });\n  }\n\n  `;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./forms.page.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ion-content [fullscreen]=\"true\">\n  <div class=\"gb-pa-4xl\">\n    <div class=\"display-lg w700 gb-mb-4xl\">Forms</div>\n    <!-- Form -->\n    <div class=\"text-md\">Manejo de forms con validacion.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                placeholder=\"User\"\n                [(value)]=\"formData.user.value\"\n                [regex]=\"formData.user.validator\"\n                [required]=\"true\"\n                icon=\"person-outline\" />\n              <br />\n              <gb-input\n                placeholder=\"Password\"\n                [(value)]=\"formData.pass.value\"\n                [regex]=\"formData.pass.validator\"\n                icon=\"lock-closed-outline\"\n                [required]=\"true\"\n                type=\"password\" />\n              <br />\n              <gb-input\n                placeholder=\"Age\"\n                [(value)]=\"formData.age.value\"\n                type=\"number\"\n                [required]=\"true\"\n                [min]=\"formData.age.min\"\n                [max]=\"formData.age.max\" />\n              <br />\n              <gb-checkbox\n                name=\"checkbox_1\"\n                [(value)]=\"formData.accept.value\"\n                label=\"Accept terms\" />\n              <br />\n              <gb-btn\n                label=\"Register\"\n                (click)=\"submitLogin()\"\n                [disabled]=\"!isFormValid()\" />\n            </ion-col>\n            <ion-col> </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n\n    <!-- Snippets -->\n    <ion-row>\n      <ion-col>\n        <div\n          class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n          <div class=\"sm:p-9 md:p-7 xl:p-9\">\n            <pre><code [highlight]=\"html\" language=\"html\"></code></pre>\n          </div>\n        </div>\n      </ion-col>\n      <ion-col>\n        <div\n          class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n          <div class=\"sm:p-9 md:p-7 xl:p-9\">\n            <pre><code [highlight]=\"ts\" language=\"typescript\"></code></pre>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n    <!--/-->\n  </div>\n</ion-content>\n"
+        },
+        {
             "name": "FullNameComponent",
             "id": "component-FullNameComponent-f79715d8121a1a374096f451be0a3ca4cb214d48b6059b3b20cdb2e5af8ac5705b5ac0cd6838800807f13f71d28a2bd4f55d86317bb5f208f2f8d343c42d6d85",
             "file": "src/app/components/full-name/full-name.component.ts",
@@ -1350,7 +1514,7 @@
         },
         {
             "name": "GbBtnComponent",
-            "id": "component-GbBtnComponent-748cce26263a8e60ead57e5d0711d5bf5cd8a41296ff38d0ae14d06f0ed9e7fb27a44b4509f3f1b64f15bb88c0b0c3fd848e82eaadef7ed15fc626905292c803",
+            "id": "component-GbBtnComponent-4ccaa43962a2dd78050eb4b7b30b96f83ec360c27ca9d0b17a78f839bc428d52adc45f02655ad80454325526f35ed3ac2f0e6767a6f62e17774b8c013624abc0",
             "file": "src/app/components/global/gb-btn/gb-btn.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1378,6 +1542,17 @@
                     "optional": false,
                     "description": "",
                     "line": 37,
+                    "required": false
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
                     "required": false
                 },
                 {
@@ -1453,14 +1628,14 @@
                 },
                 {
                     "name": "icon",
-                    "defaultValue": "input<string>('')",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 23,
+                    "required": false
                 },
                 {
                     "name": "iconPosition",
@@ -1536,7 +1711,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input, computed } from '@angular/core';\nimport { IonIcon, IonSpinner } from '@ionic/angular/standalone';\nimport { addIcons } from 'ionicons';\nimport * as icons from 'ionicons/icons';\n\n@Component({\n  selector: 'gb-btn',\n  templateUrl: './gb-btn.component.html',\n  styleUrls: ['./gb-btn.component.scss'],\n  imports: [IonIcon, IonSpinner],\n})\nexport class GbBtnComponent {\n  constructor() {\n    addIcons(icons);\n  }\n\n  // ##### INPUTS\n  label = input('');\n  color = input('blue');\n  level = input(500);\n  fill = input<'solid' | 'outline'>('solid');\n  icon = input<string>('');\n  iconPosition = input<'left' | 'right'>('left');\n  spinner = input<\n    | 'dots'\n    | 'lines'\n    | 'lines-small'\n    | 'lines-sharp'\n    | 'lines-sharp-small'\n    | 'bubbles'\n    | 'circles'\n    | 'circular'\n    | 'crescent'\n  >();\n  spinnerPosition = input<'left' | 'right'>('left');\n  disabled = input(false);\n  extraClasses = input('');\n\n  // ##### COMPUTED\n  classes = computed(() => {\n    const c = this.color();\n    const l = this.level();\n    const h = this.level() + 100 > 950 ? 950 : this.level() + 100;\n    const a = this.level() + 200 > 950 ? 950 : this.level() + 200;\n    const d = this.level() - 200 < 25 ? 25 : this.level() - 200;\n    let classes =\n      'rounded-full inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium gap-2.5';\n    if (this.fill() == 'solid')\n      classes += ` bg-gb-${c}-${l} text-white active:bg-gb-${c}-${a} disabled:bg-gb-${c}-${d} hover:bg-gb-${c}-${h} border-gb-${c}-${l} active:border-gb-${c}-${a} hover:border-gb-${c}-${h}`;\n    if (this.fill() == 'outline')\n      classes += `  text-gb-${c}-${l} bg-gb-no-color border-gb-${c}-${l} hover:bg-gb-${c}-50 active:bg-gb-${c}-${l} active:text-gb-${c}-50 disabled:bg-no-color disabled:border-gb-${c}-${d} disabled:text-gb-${c}-${d}`;\n    classes += ` ${this.extraClasses()}`;\n    return classes;\n  });\n}\n",
+            "sourceCode": "import { Component, input, computed } from '@angular/core';\nimport { IonIcon, IonSpinner } from '@ionic/angular/standalone';\nimport { addIcons } from 'ionicons';\nimport * as icons from 'ionicons/icons';\n\n@Component({\n  selector: 'gb-btn',\n  templateUrl: './gb-btn.component.html',\n  styleUrls: ['./gb-btn.component.scss'],\n  imports: [IonIcon, IonSpinner],\n})\nexport class GbBtnComponent {\n  constructor() {\n    addIcons(icons);\n  }\n\n  // ##### INPUTS\n  label = input('');\n  color = input('blue');\n  level = input(500);\n  fill = input<'solid' | 'outline'>('solid');\n  icon = input<string>();\n  iconPosition = input<'left' | 'right'>('left');\n  spinner = input<\n    | 'dots'\n    | 'lines'\n    | 'lines-small'\n    | 'lines-sharp'\n    | 'lines-sharp-small'\n    | 'bubbles'\n    | 'circles'\n    | 'circular'\n    | 'crescent'\n  >();\n  spinnerPosition = input<'left' | 'right'>('left');\n  disabled = input(false);\n  extraClasses = input('');\n\n  // ##### COMPUTED\n  classes = computed(() => {\n    const c = this.color();\n    const l = this.level();\n    const h = this.level() + 100 > 950 ? 950 : this.level() + 100;\n    const a = this.level() + 200 > 950 ? 950 : this.level() + 200;\n    const d = this.level() - 200 < 25 ? 25 : this.level() - 200;\n    let classes =\n      'rounded-full inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium gap-2.5';\n    if (this.fill() == 'solid')\n      classes += ` bg-gb-${c}-${l} text-white active:bg-gb-${c}-${a} disabled:bg-gb-${c}-${d} hover:bg-gb-${c}-${h} border-gb-${c}-${l} active:border-gb-${c}-${a} hover:border-gb-${c}-${h}`;\n    if (this.fill() == 'outline')\n      classes += `  text-gb-${c}-${l} bg-gb-no-color border-gb-${c}-${l} hover:bg-gb-${c}-50 active:bg-gb-${c}-${l} active:text-gb-${c}-50 disabled:bg-no-color disabled:border-gb-${c}-${d} disabled:text-gb-${c}-${d}`;\n    classes += ` ${this.extraClasses()}`;\n    return classes;\n  });\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1774,7 +1949,7 @@
         },
         {
             "name": "GbInputComponent",
-            "id": "component-GbInputComponent-e40596da96800149081d4535aef8c15ea2f7e81f90bcda4ffdb83af4166db2c6b8c580632ccc3adb56150b939a43b8f3dec56172551fcf29a0b54519720d995e",
+            "id": "component-GbInputComponent-2282a1570edc49c249b870ba3e3ee6c0a11ed61b70392857eb34032d5f9d35394c32fca14c7cfff70aad5c31b91883844b9f0b87e24ee4b211a974f8d9dfcc2d",
             "file": "src/app/components/global/gb-input/gb-input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1800,7 +1975,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 58,
+                    "line": 66,
                     "required": false
                 },
                 {
@@ -1839,6 +2014,28 @@
                     "required": false
                 },
                 {
+                    "name": "max",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43,
+                    "required": false
+                },
+                {
+                    "name": "min",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "required": false
+                },
+                {
                     "name": "passwordToggle",
                     "defaultValue": "false",
                     "deprecated": false,
@@ -1849,6 +2046,40 @@
                     "description": "",
                     "line": 39,
                     "required": false
+                },
+                {
+                    "name": "regex",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 40,
+                    "required": false
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "required": false
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33,
+                    "required": true
                 }
             ],
             "outputsClass": [],
@@ -1861,7 +2092,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 58,
+                    "line": 66,
                     "required": false
                 },
                 {
@@ -1899,6 +2130,17 @@
                     "line": 38
                 },
                 {
+                    "name": "focused",
+                    "defaultValue": "signal(false)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 49
+                },
+                {
                     "name": "icon",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1918,7 +2160,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 45
+                    "line": 48
                 },
                 {
                     "name": "isShowingPassword",
@@ -1929,7 +2171,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 44
+                    "line": 47
                 },
                 {
                     "name": "level",
@@ -1944,15 +2186,37 @@
                     "required": false
                 },
                 {
-                    "name": "model",
-                    "defaultValue": "signal<string | number>('')",
+                    "name": "max",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 43
+                    "line": 43,
+                    "required": false
+                },
+                {
+                    "name": "min",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "required": false
+                },
+                {
+                    "name": "model",
+                    "defaultValue": "signal<string>('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
                 },
                 {
                     "name": "passwordToggle",
@@ -1979,14 +2243,26 @@
                 },
                 {
                     "name": "regex",
-                    "defaultValue": "input<string>('')",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 40
+                    "line": 40,
+                    "required": false
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "required": false
                 },
                 {
                     "name": "type",
@@ -2001,14 +2277,14 @@
                 },
                 {
                     "name": "value",
-                    "defaultValue": "input.required<string | number>()",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 33,
+                    "required": true
                 },
                 {
                     "name": "valueChange",
@@ -2019,7 +2295,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 55
+                    "line": 63
                 }
             ],
             "methodsClass": [
@@ -2029,7 +2305,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 74,
+                    "line": 85,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2039,7 +2315,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 80,
+                    "line": 99,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2049,7 +2325,17 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "wasFocused",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 58,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2071,7 +2357,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  input,\n  output,\n  signal,\n  OnInit,\n  effect,\n  computed,\n} from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { IonIcon } from '@ionic/angular/standalone';\nimport { addIcons } from 'ionicons';\nimport * as icons from 'ionicons/icons';\n\n@Component({\n  selector: 'gb-input',\n  templateUrl: './gb-input.component.html',\n  styleUrls: ['./gb-input.component.scss'],\n  imports: [FormsModule, IonIcon],\n})\nexport class GbInputComponent implements OnInit {\n  constructor() {\n    addIcons(icons);\n    // ##### EFFECTS\n    effect(() => {\n      this.valueChange.emit(this.model());\n    });\n  }\n  // ##### INPUTS\n  type = input<'text' | 'password' | 'email' | 'number'>('text');\n  placeholder = input('');\n  value = input.required<string | number>();\n  color = input('blue');\n  level = input(500);\n  icon = input<string>();\n  disabled = input(false);\n  extraClasses = input('');\n  passwordToggle = input(false);\n  regex = input<string>('');\n\n  // ##### SIGNALS\n  model = signal<string | number>('');\n  isShowingPassword = signal(false);\n  inType = signal('');\n\n  // ##### METHODS\n  togglePass() {\n    this.isShowingPassword.update(val => (val = !val));\n    if (this.isShowingPassword()) this.inType.update(val => (val = 'text'));\n    else this.inType.update(val => (val = 'password'));\n  }\n\n  // OUTPUTS\n  valueChange = output<string | number>();\n\n  // ##### COMPUTED\n  classes = computed(() => {\n    const c = this.color();\n    const l = this.level();\n    let classes = `w-full bg-transparent rounded-md border border-stroke outline-none transition py-[10px] pr-3`;\n    if (this.icon()) classes += ` pl-12`;\n    else classes += ` pl-3`;\n    classes += ` focus:border-gb-${c}-${l}`;\n    if (this.regex() && this.model()) {\n      if (this.isValid())\n        classes += ' focus:border-gb-success-500 border-gb-success-500';\n      else classes += ' focus:border-gb-error-500 border-gb-error-500';\n    }\n    classes += ` ${this.extraClasses()}`;\n    return classes;\n  });\n\n  isValid() {\n    const reg = new RegExp(this.regex());\n    return reg.test(`${this.model()}`);\n  }\n\n  // ##### LC HOOKS\n  ngOnInit(): void {\n    this.model.update(val => (val = this.value()));\n    this.inType.update(val => (val = this.type()));\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  input,\n  output,\n  signal,\n  OnInit,\n  effect,\n  computed,\n} from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { IonIcon } from '@ionic/angular/standalone';\nimport { addIcons } from 'ionicons';\nimport * as icons from 'ionicons/icons';\n\n@Component({\n  selector: 'gb-input',\n  templateUrl: './gb-input.component.html',\n  styleUrls: ['./gb-input.component.scss'],\n  imports: [FormsModule, IonIcon],\n})\nexport class GbInputComponent implements OnInit {\n  constructor() {\n    addIcons(icons);\n    // ##### EFFECTS\n    effect(() => {\n      this.valueChange.emit(this.model());\n    });\n  }\n  // ##### INPUTS\n  type = input<'text' | 'password' | 'email' | 'number'>('text');\n  placeholder = input('');\n  value = input.required<string>();\n  color = input('blue');\n  level = input(500);\n  icon = input<string>();\n  disabled = input(false);\n  extraClasses = input('');\n  passwordToggle = input(false);\n  regex = input<string>();\n  required = input(false);\n  min = input<number>();\n  max = input<number>();\n\n  // ##### SIGNALS\n  model = signal<string>('');\n  isShowingPassword = signal(false);\n  inType = signal('');\n  focused = signal(false);\n\n  // ##### METHODS\n  togglePass() {\n    this.isShowingPassword.update(val => (val = !val));\n    if (this.isShowingPassword()) this.inType.update(val => (val = 'text'));\n    else this.inType.update(val => (val = 'password'));\n  }\n\n  wasFocused() {\n    this.focused.update(val => (val = true));\n  }\n\n  // OUTPUTS\n  valueChange = output<string | number>();\n\n  // ##### COMPUTED\n  classes = computed(() => {\n    const c = this.color();\n    const l = this.level();\n    let classes = `w-full bg-transparent rounded-md border border-stroke outline-none transition py-[10px] pr-3`;\n    if (this.icon()) classes += ` pl-12`;\n    else classes += ` pl-3`;\n    classes += ` focus:border-gb-${c}-${l}`;\n    if ((this.regex() || this.min() || this.max()) && this.model()) {\n      if (this.isValid())\n        classes += ' focus:border-gb-success-500 border-gb-success-500';\n      else classes += ' focus:border-gb-error-500 border-gb-error-500';\n    }\n    if (this.required() && !this.model() && this.focused()) {\n      classes += ' focus:border-gb-error-500 border-gb-error-500';\n    }\n    classes += ` ${this.extraClasses()}`;\n    return classes;\n  });\n\n  isValid() {\n    const regex = this.regex();\n    const min = this.min();\n    const max = this.max();\n    if (regex) {\n      const reg = new RegExp(regex);\n      return reg.test(`${this.model()}`);\n    }\n    if (min != undefined && parseFloat(this.model()) < min) return false;\n    if (max != undefined && parseFloat(this.model()) > max) return false;\n    return true;\n  }\n\n  // ##### LC HOOKS\n  ngOnInit(): void {\n    this.model.update(val => (val = this.value()));\n    this.inType.update(val => (val = this.type()));\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2092,7 +2378,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"relative\">\n  <input\n    [type]=\"inType()\"\n    [placeholder]=\"placeholder()\"\n    [(ngModel)]=\"model\"\n    [class]=\"classes()\"\n    [disabled]=\"disabled()\" />\n  <ion-icon\n    [name]=\"icon()\"\n    class=\"absolute top-1/2 left-4 -translate-y-1/2\"\n    color=\"medium\" />\n  @if (type() == 'password' && passwordToggle()) {\n    <ion-icon\n      [name]=\"isShowingPassword() ? 'eye-off-outline' : 'eye-outline'\"\n      class=\"absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer\"\n      color=\"medium\"\n      (click)=\"togglePass()\" />\n  }\n</div>\n"
+            "templateData": "<div class=\"relative\">\n  <input\n    [type]=\"inType()\"\n    [placeholder]=\"placeholder() + (required() ? ' *' : '')\"\n    [(ngModel)]=\"model\"\n    [class]=\"classes()\"\n    (focusout)=\"wasFocused()\"\n    [disabled]=\"disabled()\" />\n  <ion-icon\n    [name]=\"icon()\"\n    class=\"absolute top-1/2 left-4 -translate-y-1/2\"\n    color=\"medium\" />\n  @if (type() == 'password' && passwordToggle()) {\n    <ion-icon\n      [name]=\"isShowingPassword() ? 'eye-off-outline' : 'eye-outline'\"\n      class=\"absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer\"\n      color=\"medium\"\n      (click)=\"togglePass()\" />\n  }\n</div>\n"
         },
         {
             "name": "GbToggleComponent",
@@ -2530,7 +2816,7 @@
         },
         {
             "name": "InputPage",
-            "id": "component-InputPage-258fc186a4d02e9f8d3cb6ee2d13ddca15ee17fca3033616e23d89bf1c132b2c02667139c3455bc38c9fd10ca09170aafc262fbb24b11884e00ae447479ad693",
+            "id": "component-InputPage-83c5e40184245d9b8f23b1602d7fedf98ae8284e4eac937fa1a62e83a61c54a2d791291d87da9281777a2ef4a1ffc5794ec5fe4c35def0219fc102e3536f1f32",
             "file": "src/app/views/global-bank-components/input/input.page.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2595,6 +2881,17 @@
                     "line": 20
                 },
                 {
+                    "name": "minmax",
+                    "defaultValue": "'<gb-input [(value)]=\"input1\" placeholder=\"Type here\" [min]=\"1\" [max]=\"10\" />'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
                     "name": "primary",
                     "defaultValue": "'<gb-input [(value)]=\"input1\" placeholder=\"Type here\" />'",
                     "deprecated": false,
@@ -2604,6 +2901,17 @@
                     "optional": false,
                     "description": "",
                     "line": 22
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "'<gb-input [(value)]=\"input1\" placeholder=\"Type here\" [required]=\"true\" />'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
                 },
                 {
                     "name": "type",
@@ -2655,7 +2963,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';\n\n// ##### GB COMPONENTS\nimport { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';\n\n// ##### OTHER IMPORTS\nimport { Highlight } from 'ngx-highlightjs';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.page.html',\n  styleUrls: ['./input.page.scss'],\n  standalone: true,\n  imports: [IonContent, GbInputComponent, IonRow, IonCol, Highlight],\n})\nexport class InputPage {\n  // ##### INPUTS\n  input1 = signal('');\n\n  primary = '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" />';\n  type =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type text (default)\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type password\" [passwordToggle]=\"true\" type=\"password\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type email (for mobile)\" type=\"email\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type number\" type=\"number\" />';\n  disabled =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" [disabled]=\"true\" />';\n  colors =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" color=\"blue\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type here\" color=\"pink\" />';\n  icon =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" icon=\"person-outline\" />';\n  validation =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" regex=\"^[A-Za-z0-9]{6,}$\" />';\n}\n",
+            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';\n\n// ##### GB COMPONENTS\nimport { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';\n\n// ##### OTHER IMPORTS\nimport { Highlight } from 'ngx-highlightjs';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.page.html',\n  styleUrls: ['./input.page.scss'],\n  standalone: true,\n  imports: [IonContent, GbInputComponent, IonRow, IonCol, Highlight],\n})\nexport class InputPage {\n  // ##### INPUTS\n  input1 = signal('');\n\n  primary = '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" />';\n  type =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type text (default)\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type password\" [passwordToggle]=\"true\" type=\"password\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type email (for mobile)\" type=\"email\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type number\" type=\"number\" />';\n  disabled =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" [disabled]=\"true\" />';\n  colors =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" color=\"blue\" />\\n<gb-input [(value)]=\"input1\" placeholder=\"Type here\" color=\"pink\" />';\n  icon =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" icon=\"person-outline\" />';\n  validation =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" regex=\"^[A-Za-z0-9]{6,}$\" />';\n  minmax =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" [min]=\"1\" [max]=\"10\" />';\n  required =\n    '<gb-input [(value)]=\"input1\" placeholder=\"Type here\" [required]=\"true\" />';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2665,7 +2973,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<ion-content [fullscreen]=\"true\">\n  <div class=\"gb-pa-4xl\">\n    <div class=\"display-lg w700 gb-mb-4xl\">GB Input</div>\n    <!-- Primary -->\n    <div class=\"display-sm w600\">Input</div>\n    <div class=\"text-md\">\n      Input principal, por defecto obtiene el color primario del banco.\n    </div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input [(value)]=\"input1\" placeholder=\"Type here\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"primary\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Type -->\n    <div class=\"display-sm w600\">Input type</div>\n    <div class=\"text-md\">Indica el tipo de input.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input [(value)]=\"input1\" placeholder=\"Type text (default)\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type password\"\n                [passwordToggle]=\"true\"\n                type=\"password\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type email (for mobile)\"\n                type=\"email\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type number\"\n                type=\"number\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"type\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Disabled -->\n    <div class=\"display-sm w600\">Input disabled</div>\n    <div class=\"text-md\">Input deshabilitado.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                [disabled]=\"true\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"disabled\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Colors -->\n    <div class=\"display-sm w600\">Input colors</div>\n    <div class=\"text-md\">Indica el color del input.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                color=\"blue\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                color=\"pink\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"colors\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Icon -->\n    <div class=\"display-sm w600\">Input icon</div>\n    <div class=\"text-md\">Asigna un icono al inicio del input</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                icon=\"person-outline\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"icon\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Validation -->\n    <div class=\"display-sm w600\">Input validation</div>\n    <div class=\"text-md\">Valida el valor ingresado en el input segun regex</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                regex=\"^[A-Za-z0-9]{6,}$\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"validation\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n  </div>\n</ion-content>\n"
+            "templateData": "<ion-content [fullscreen]=\"true\">\n  <div class=\"gb-pa-4xl\">\n    <div class=\"display-lg w700 gb-mb-4xl\">GB Input</div>\n    <!-- Primary -->\n    <div class=\"display-sm w600\">Input</div>\n    <div class=\"text-md\">\n      Input principal, por defecto obtiene el color primario del banco.\n    </div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input [(value)]=\"input1\" placeholder=\"Type here\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"primary\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Type -->\n    <div class=\"display-sm w600\">Input type</div>\n    <div class=\"text-md\">Indica el tipo de input.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input [(value)]=\"input1\" placeholder=\"Type text (default)\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type password\"\n                [passwordToggle]=\"true\"\n                type=\"password\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type email (for mobile)\"\n                type=\"email\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type number\"\n                type=\"number\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"type\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Disabled -->\n    <div class=\"display-sm w600\">Input disabled</div>\n    <div class=\"text-md\">Input deshabilitado.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                [disabled]=\"true\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"disabled\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Colors -->\n    <div class=\"display-sm w600\">Input colors</div>\n    <div class=\"text-md\">Indica el color del input.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                color=\"blue\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                color=\"pink\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"colors\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Icon -->\n    <div class=\"display-sm w600\">Input icon</div>\n    <div class=\"text-md\">Asigna un icono al inicio del input</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                icon=\"person-outline\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"icon\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Validation -->\n    <div class=\"display-sm w600\">Input validation</div>\n    <div class=\"text-md\">\n      Valida el valor ingresado en el input segun regex o min y max.\n    </div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                regex=\"^[A-Za-z0-9]{6,}$\" />\n              <br />\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                type=\"number\"\n                [min]=\"1\"\n                [max]=\"10\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"validation\" language=\"html\"></code></pre>\n              <pre><code [highlight]=\"minmax\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Required -->\n    <div class=\"display-sm w600\">Input required</div>\n    <div class=\"text-md\">\n      Si el input es clickeado, se valida que este tenga un valor.\n    </div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-input\n                [(value)]=\"input1\"\n                placeholder=\"Type here\"\n                [required]=\"true\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"required\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n  </div>\n</ion-content>\n"
         },
         {
             "name": "LoginPage",
@@ -2868,7 +3176,7 @@
         },
         {
             "name": "MainPage",
-            "id": "component-MainPage-6c38590e999b987516aaae01b0ddfa81f91be02d7d368a24ccabb9825ae58b49199d5e0d0d657792a9dcbda5f504d82965fc63a7dc0a231c2da5054f244a85f9",
+            "id": "component-MainPage-60a37d185031ddf7a0b91c5d82b897f5312b5f61f73ee68c0150be7c53eff6c523b975865048216f9741d0fe064cce9c18c3fe9b4bdda104c3e104d4797611de",
             "file": "src/app/views/global-bank-components/main/main.page.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2890,7 +3198,7 @@
             "propertiesClass": [
                 {
                     "name": "gbComponents",
-                    "defaultValue": "signal([\n    {\n      comp: 'Button',\n      route: '/button',\n    },\n    {\n      comp: 'Input',\n      route: '/input',\n    },\n    {\n      comp: 'Checkbox',\n      route: '/checkbox',\n    },\n    {\n      comp: 'Toggle',\n      route: '/toggle',\n    },\n    {\n      comp: 'Tipografía',\n      route: '/typography',\n    },\n    {\n      comp: 'Espaciados',\n      route: '/spacing',\n    },\n    {\n      comp: 'Colores',\n      route: '/colors',\n    },\n    {\n      comp: 'Sombras',\n      route: '/shadows',\n    },\n  ])",
+                    "defaultValue": "signal([\n    {\n      comp: 'Button',\n      route: '/button',\n    },\n    {\n      comp: 'Input',\n      route: '/input',\n    },\n    {\n      comp: 'Checkbox',\n      route: '/checkbox',\n    },\n    {\n      comp: 'Toggle',\n      route: '/toggle',\n    },\n    {\n      comp: 'Forms',\n      route: '/forms',\n    },\n    {\n      comp: 'Typography',\n      route: '/typography',\n    },\n    {\n      comp: 'Spacing',\n      route: '/spacing',\n    },\n    {\n      comp: 'Colors',\n      route: '/colors',\n    },\n    {\n      comp: 'Shadows',\n      route: '/shadows',\n    },\n  ])",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -2914,7 +3222,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 53,
+                    "line": 57,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2949,7 +3257,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';\nimport { Router } from '@angular/router';\n\n@Component({\n  selector: 'app-main',\n  templateUrl: './main.page.html',\n  styleUrls: ['./main.page.scss'],\n  standalone: true,\n  imports: [IonContent, IonRow, IonCol],\n})\nexport class MainPage {\n  constructor(private router: Router) {}\n\n  // ##### SIGNALS\n  gbComponents = signal([\n    {\n      comp: 'Button',\n      route: '/button',\n    },\n    {\n      comp: 'Input',\n      route: '/input',\n    },\n    {\n      comp: 'Checkbox',\n      route: '/checkbox',\n    },\n    {\n      comp: 'Toggle',\n      route: '/toggle',\n    },\n    {\n      comp: 'Tipografía',\n      route: '/typography',\n    },\n    {\n      comp: 'Espaciados',\n      route: '/spacing',\n    },\n    {\n      comp: 'Colores',\n      route: '/colors',\n    },\n    {\n      comp: 'Sombras',\n      route: '/shadows',\n    },\n  ]);\n\n  // ##### METHODS\n  goToCompPage(path: string) {\n    this.router.navigate([`/base${path}`]);\n  }\n}\n",
+            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';\nimport { Router } from '@angular/router';\n\n@Component({\n  selector: 'app-main',\n  templateUrl: './main.page.html',\n  styleUrls: ['./main.page.scss'],\n  standalone: true,\n  imports: [IonContent, IonRow, IonCol],\n})\nexport class MainPage {\n  constructor(private router: Router) {}\n\n  // ##### SIGNALS\n  gbComponents = signal([\n    {\n      comp: 'Button',\n      route: '/button',\n    },\n    {\n      comp: 'Input',\n      route: '/input',\n    },\n    {\n      comp: 'Checkbox',\n      route: '/checkbox',\n    },\n    {\n      comp: 'Toggle',\n      route: '/toggle',\n    },\n    {\n      comp: 'Forms',\n      route: '/forms',\n    },\n    {\n      comp: 'Typography',\n      route: '/typography',\n    },\n    {\n      comp: 'Spacing',\n      route: '/spacing',\n    },\n    {\n      comp: 'Colors',\n      route: '/colors',\n    },\n    {\n      comp: 'Shadows',\n      route: '/shadows',\n    },\n  ]);\n\n  // ##### METHODS\n  goToCompPage(path: string) {\n    this.router.navigate([`/base${path}`]);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3495,7 +3803,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<ion-content [fullscreen]=\"true\">\n  <div class=\"gb-pa-4xl\">\n    <div class=\"display-lg w700 gb-mb-4xl\">GB Toggle</div>\n    <!-- Primary -->\n    <div class=\"display-sm w600\">Toggle primary</div>\n    <div class=\"text-md\">\n      Toggle primario, por defecto adquiere el color principal del banco.\n    </div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle name=\"toggle_1\" [(value)]=\"isToggled\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"primary\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Label -->\n    <div class=\"display-sm w600\">Toggle label</div>\n    <div class=\"text-md\">Label para identificacion del toggle.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle\n                name=\"toggle_2\"\n                [(value)]=\"isToggled\"\n                label=\"Toggle label\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"label\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Label position -->\n    <div class=\"display-sm w600\">Toggle label position</div>\n    <div class=\"text-md\">Posicion del label en el toggle.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle\n                name=\"toggle_3\"\n                [(value)]=\"isToggled\"\n                label=\"Toggle label\"\n                labelPosition=\"right\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"labelPosition\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Color -->\n    <div class=\"display-sm w600\">Toggle color</div>\n    <div class=\"text-md\">Color del toggle.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle name=\"toggle_4\" [(value)]=\"isToggled\" color=\"blue\" />\n              <gb-toggle name=\"toggle_5\" [(value)]=\"isToggled\" color=\"pink\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"color\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n  </div>\n</ion-content>\n"
+            "templateData": "<ion-content [fullscreen]=\"true\">\n  <div class=\"gb-pa-4xl\">\n    <div class=\"display-lg w700 gb-mb-4xl\">GB Toggle</div>\n    <!-- Primary -->\n    <div class=\"display-sm w600\">Toggle default</div>\n    <div class=\"text-md\">\n      Toggle primario, por defecto adquiere el color principal del banco.\n    </div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle name=\"toggle_1\" [(value)]=\"isToggled\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"primary\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Label -->\n    <div class=\"display-sm w600\">Toggle label</div>\n    <div class=\"text-md\">Label para identificacion del toggle.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle\n                name=\"toggle_2\"\n                [(value)]=\"isToggled\"\n                label=\"Toggle label\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"label\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Label position -->\n    <div class=\"display-sm w600\">Toggle label position</div>\n    <div class=\"text-md\">Posicion del label en el toggle.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle\n                name=\"toggle_3\"\n                [(value)]=\"isToggled\"\n                label=\"Toggle label\"\n                labelPosition=\"right\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"labelPosition\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n    <!-- Color -->\n    <div class=\"display-sm w600\">Toggle color</div>\n    <div class=\"text-md\">Color del toggle.</div>\n    <div class=\"gb-py-2xl gb-px-md\">\n      <div\n        class=\"overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3\">\n        <div class=\"text-center sm:p-9 md:p-7 xl:p-9\">\n          <ion-row>\n            <ion-col>\n              <gb-toggle name=\"toggle_4\" [(value)]=\"isToggled\" color=\"blue\" />\n              <gb-toggle name=\"toggle_5\" [(value)]=\"isToggled\" color=\"pink\" />\n            </ion-col>\n            <ion-col>\n              <pre><code [highlight]=\"color\" language=\"html\"></code></pre>\n            </ion-col>\n          </ion-row>\n        </div>\n      </div>\n    </div>\n    <!--/-->\n  </div>\n</ion-content>\n"
         },
         {
             "name": "TypographyPage",
@@ -3637,7 +3945,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -3664,7 +3972,7 @@
                 "linktype": "component",
                 "name": "GbBtnComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -3682,7 +3990,7 @@
                 "linktype": "component",
                 "name": "GbInputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/25",
+                "coverageCount": "0/35",
                 "status": "low"
             },
             {
@@ -3744,9 +4052,27 @@
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "Utils",
-                "coveragePercent": 33,
-                "coverageCount": "1/3",
-                "status": "medium"
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/types/FormObject.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FieldObject",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/types/FormObject.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FormObject",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/app/types/User.ts",
@@ -3803,12 +4129,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/views/global-bank-components/forms/forms.page.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormsPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/views/global-bank-components/input/input.page.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "InputPage",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
