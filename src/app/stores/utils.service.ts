@@ -16,8 +16,8 @@ export class Utils {
 
   async showGenericModal(
     props: object,
-    comp?: any,
-    fullscreen: boolean = true
+    fullscreen: boolean = true,
+    comp?: any
   ) {
     const modal = await this.modalCtrl.create({
       component: comp || GbGenericModalComponent,

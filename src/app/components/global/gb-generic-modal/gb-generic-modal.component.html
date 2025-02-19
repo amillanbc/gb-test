@@ -1,25 +1,37 @@
 <div class="gb-pa-xl">
   <ion-grid>
     <ion-row class="ion-justify-content-center gb-mb-3xl">
-      <ion-icon [name]="'warning-outline'" style="font-size: 8rem" />
+      <ion-icon [name]="type + '-outline'" style="font-size: 8rem" />
     </ion-row>
     <ion-row class="gb-mb-2xl">
       <ion-col>
         <div class="text-xl ion-text-center w600">{{ headerText() }}</div>
       </ion-col>
     </ion-row>
-    <ion-row class="gb-mb-3xl">
+    <ion-row>
       <div class="text-md">{{ bodyText() }}</div>
     </ion-row>
-    <ion-row class="gb-mb-lg">
-      <gb-btn label="Confirm" (click)="closeModal('success')" />
-    </ion-row>
-    <ion-row>
-      <gb-btn
-        label="Cancel"
-        fill="outline"
-        color="error"
-        (click)="closeModal('cancel')" />
-    </ion-row>
+    @if (primary.length > 0) {
+      <ion-row class="gb-mt-4xl">
+        <ion-col>
+          <gb-btn
+            [label]="primaryText()"
+            (click)="closeModal('success')"
+            extraClasses="w-full" />
+        </ion-col>
+      </ion-row>
+    }
+    @if (secondary.length > 0) {
+      <ion-row>
+        <ion-col>
+          <gb-btn
+            [label]="secondaryText()"
+            fill="outline"
+            color="error"
+            (click)="closeModal('cancel')"
+            extraClasses="w-full" />
+        </ion-col>
+      </ion-row>
+    }
   </ion-grid>
 </div>

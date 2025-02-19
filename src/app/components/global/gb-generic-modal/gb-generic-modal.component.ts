@@ -20,9 +20,11 @@ export class GbGenericModalComponent {
   }
 
   // ##### INPUTS
-  type = input<'success' | 'error' | 'warning'>('success');
+  type = input<'checkmark' | 'warning' | 'alert'>('checkmark');
   header = input('');
   body = input('');
+  primary = input('');
+  secondary = input('');
 
   // ##### INJECTS
   modalCtrl = inject(ModalController);
@@ -33,20 +35,8 @@ export class GbGenericModalComponent {
   }
 
   // ##### COMPUTED
-  iconType = computed(() => {
-    switch (this.type()) {
-      case 'success':
-        return 'checkmark-outline';
-      case 'warning':
-        return 'warning-outline';
-      case 'error':
-        return 'alert-outline';
-      default:
-        return 'checkmark-outline';
-    }
-  });
-
-  bodyText = computed(() => this.body);
-
-  headerText = computed(() => this.header);
+  bodyText = computed(() => `${this.body}`);
+  headerText = computed(() => `${this.header}`);
+  primaryText = computed(() => `${this.primary}`);
+  secondaryText = computed(() => `${this.secondary}`);
 }

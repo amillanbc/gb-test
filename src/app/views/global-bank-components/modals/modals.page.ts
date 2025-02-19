@@ -23,6 +23,8 @@ export class ModalsPage {
       type: 'warning',
       header: 'Estimado cliente.',
       body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie molestie mi id vehicula. Aliquam sodales congue vulputate.',
+      primary: 'Aceptar',
+      secondary: 'Cancelar',
     });
     console.log(modalResp);
   }
