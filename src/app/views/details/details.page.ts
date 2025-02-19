@@ -42,14 +42,14 @@ export class DetailsPage implements OnInit {
    * Opens modal component 1
    */
   async openModal() {
-    const modalResp = await this.utils.openModal(
-      {
+    const modalResp = await this.utils.openModal({
+      props: {
         bodyText:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis pretium massa, at pretium tortor congue nec.',
       },
-      true,
-      ModalSampleComponent
-    );
+      fullscreen: true,
+      comp: ModalSampleComponent,
+    });
     console.log('MODAL RESP:', modalResp);
   }
 
@@ -57,11 +57,11 @@ export class DetailsPage implements OnInit {
    * Opens modal component 2
    */
   async openModal2() {
-    const modalResp = await this.utils.openModal(
-      {},
-      true,
-      ModalSample2Component
-    );
+    const modalResp = await this.utils.openModal({
+      props: {},
+      fullscreen: true,
+      comp: ModalSample2Component,
+    });
     console.log('MODAL RESP:', modalResp);
   }
 

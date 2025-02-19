@@ -14,7 +14,16 @@ import { GbGenericModalComponent } from '../components/global/gb-generic-modal/g
 export class Utils {
   modalCtrl = inject(ModalController);
 
-  async openModal(props: object, fullscreen: boolean = false, comp?: any) {
+  async openModal({
+    props,
+    fullscreen = false,
+    comp = GbGenericModalComponent,
+  }: {
+    props?: object;
+    fullscreen?: boolean;
+    comp?: any;
+  }) {
+    // props: object, fullscreen: boolean = false, comp?: any
     const modal = await this.modalCtrl.create({
       component: comp || GbGenericModalComponent,
       id: fullscreen ? '' : 'dialog-modal',

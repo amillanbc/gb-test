@@ -25,30 +25,29 @@ export class ModalsPage {
 
   async openModal() {
     const modalResp = await this.utils.openModal({
-      type: 'warning',
-      header: 'Lorem ipsum dolor',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie molestie mi id vehicula. Aliquam sodales congue vulputate.',
-      primary: 'Aceptar',
-      secondary: 'Cancelar',
+      props: {
+        type: 'warning',
+        header: 'Lorem ipsum dolor',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie molestie mi id vehicula. Aliquam sodales congue vulputate.',
+        primary: 'Aceptar',
+        secondary: 'Cancelar',
+      },
     });
     console.log(modalResp);
   }
 
   async openCustomModal() {
-    const modalResp = await this.utils.openModal(
-      {},
-      false,
-      ModalSampleComponent
-    );
+    const modalResp = await this.utils.openModal({
+      comp: ModalSampleComponent,
+    });
     console.log(modalResp);
   }
 
   async openFullscreenModal() {
-    const modalResp = await this.utils.openModal(
-      {},
-      true,
-      ModalSampleComponent
-    );
+    const modalResp = await this.utils.openModal({
+      fullscreen: true,
+      comp: ModalSampleComponent,
+    });
     console.log(modalResp);
   }
 
