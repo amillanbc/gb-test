@@ -16,12 +16,12 @@ export class Utils {
 
   async showGenericModal(
     props: object,
-    fullscreen: boolean = true,
+    fullscreen: boolean = false,
     comp?: any
   ) {
     const modal = await this.modalCtrl.create({
       component: comp || GbGenericModalComponent,
-      id: fullscreen ? 'dialog-modal' : '',
+      id: fullscreen ? '' : 'dialog-modal',
       componentProps: props,
     });
     modal.present();

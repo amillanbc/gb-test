@@ -19,13 +19,16 @@ export class ModalsPage {
   utils = inject(Utils);
 
   async openModal() {
-    const modalResp = await this.utils.showGenericModal({
-      type: 'warning',
-      header: 'Estimado cliente.',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie molestie mi id vehicula. Aliquam sodales congue vulputate.',
-      primary: 'Aceptar',
-      secondary: 'Cancelar',
-    });
+    const modalResp = await this.utils.showGenericModal(
+      {
+        type: 'warning',
+        header: 'Estimado cliente.',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie molestie mi id vehicula. Aliquam sodales congue vulputate.',
+        primary: 'Aceptar',
+        secondary: 'Cancelar',
+      },
+      true
+    );
     console.log(modalResp);
   }
 }
