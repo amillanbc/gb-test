@@ -74,6 +74,13 @@ export const routes: Routes = [
             m => m.FormsPage
           ),
       },
+      {
+        path: 'modals',
+        loadComponent: () =>
+          import('./views/global-bank-components/modals/modals.page').then(
+            m => m.ModalsPage
+          ),
+      },
     ],
   },
   {

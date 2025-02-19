@@ -42,10 +42,13 @@ export class DetailsPage implements OnInit {
    * Opens modal component 1
    */
   async openModal() {
-    const modalResp = await this.utils.showGenericModal(ModalSampleComponent, {
-      bodyText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis pretium massa, at pretium tortor congue nec.',
-    });
+    const modalResp = await this.utils.showGenericModal(
+      {
+        bodyText:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis pretium massa, at pretium tortor congue nec.',
+      },
+      ModalSampleComponent
+    );
     console.log('MODAL RESP:', modalResp);
   }
 
@@ -54,8 +57,8 @@ export class DetailsPage implements OnInit {
    */
   async openModal2() {
     const modalResp = await this.utils.showGenericModal(
-      ModalSample2Component,
-      {}
+      {},
+      ModalSample2Component
     );
     console.log('MODAL RESP:', modalResp);
   }

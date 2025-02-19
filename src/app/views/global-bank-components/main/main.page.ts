@@ -36,6 +36,10 @@ export class MainPage {
       route: '/forms',
     },
     {
+      comp: 'Modals',
+      route: '/modals',
+    },
+    {
       comp: 'Typography',
       route: '/typography',
     },

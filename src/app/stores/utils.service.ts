@@ -1,8 +1,12 @@
+// ##### IONIC & ANGULAR
 import { Injectable, inject } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
 
 // ##### MODELS
 import FormObject from '../types/FormObject';
+
+// ##### GB COMPONENTS
+import { GbGenericModalComponent } from '../components/global/gb-generic-modal/gb-generic-modal.component';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +15,13 @@ export class Utils {
   modalCtrl = inject(ModalController);
 
   async showGenericModal(
-    comp: any,
     props: object,
-    id: string = 'dialog-modal'
+    comp?: any,
+    fullscreen: boolean = true
   ) {
     const modal = await this.modalCtrl.create({
-      component: comp,
-      id: id,
+      component: comp || GbGenericModalComponent,
+      id: fullscreen ? 'dialog-modal' : '',
       componentProps: props,
     });
     modal.present();

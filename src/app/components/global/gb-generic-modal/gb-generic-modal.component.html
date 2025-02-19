@@ -1,0 +1,25 @@
+<div class="gb-pa-xl">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center gb-mb-3xl">
+      <ion-icon [name]="'warning-outline'" style="font-size: 8rem" />
+    </ion-row>
+    <ion-row class="gb-mb-2xl">
+      <ion-col>
+        <div class="text-xl ion-text-center w600">{{ headerText() }}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="gb-mb-3xl">
+      <div class="text-md">{{ bodyText() }}</div>
+    </ion-row>
+    <ion-row class="gb-mb-lg">
+      <gb-btn label="Confirm" (click)="closeModal('success')" />
+    </ion-row>
+    <ion-row>
+      <gb-btn
+        label="Cancel"
+        fill="outline"
+        color="error"
+        (click)="closeModal('cancel')" />
+    </ion-row>
+  </ion-grid>
+</div>
