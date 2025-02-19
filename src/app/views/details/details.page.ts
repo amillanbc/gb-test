@@ -42,7 +42,7 @@ export class DetailsPage implements OnInit {
    * Opens modal component 1
    */
   async openModal() {
-    const modalResp = await this.utils.showGenericModal(
+    const modalResp = await this.utils.openModal(
       {
         bodyText:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis pretium massa, at pretium tortor congue nec.',
@@ -57,7 +57,7 @@ export class DetailsPage implements OnInit {
    * Opens modal component 2
    */
   async openModal2() {
-    const modalResp = await this.utils.showGenericModal(
+    const modalResp = await this.utils.openModal(
       {},
       true,
       ModalSample2Component

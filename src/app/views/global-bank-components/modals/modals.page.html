@@ -1,8 +1,43 @@
 <ion-content [fullscreen]="true">
   <div class="gb-pa-4xl">
-    <div class="display-lg w700 gb-mb-4xl">GB Modals</div>
     <!-- Generic -->
-    <gb-btn label="Open modal" (click)="openModal()" />
+    <div class="display-lg w700 gb-mb-4xl">GB Modals</div>
+    <div class="display-sm w600">Generic modal</div>
+    <div class="text-md">Modal generico del app</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Open modal" (click)="openModal()" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Custom -->
+    <div class="display-sm w600">Custom modal</div>
+    <div class="text-md">Modal con contenido personalizado</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Open modal" (click)="openCustomModal()" />
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Fullscreen -->
+    <div class="display-sm w600">Fullscreen modal</div>
+    <div class="text-md">Modal en pantalla completa (mobile only)</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <gb-btn label="Open modal" (click)="openFullscreenModal()" />
+        </div>
+      </div>
+    </div>
     <!--/-->
   </div>
 </ion-content>
