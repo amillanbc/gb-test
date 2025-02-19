@@ -58,11 +58,13 @@ export class ModalsPage {
 
   async openModal() {
     const modalResp = await this.utils.openModal({
-      type: 'warning', // Modal icon -> 'warning' | 'checkmark' | 'alert'
-      header: 'Modal header text',
-      body: 'Modal body text',
-      primary: 'Primary button text',
-      secondary: 'Secondary button text',
+      props: {
+        type: 'warning',
+        header: 'Lorem ipsum dolor',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie molestie mi id vehicula. Aliquam sodales congue vulputate.',
+        primary: 'Aceptar',
+        secondary: 'Cancelar',
+      },
     });
     // Use modalResp in your code here
   }
@@ -76,11 +78,9 @@ export class ModalsPage {
   import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
 
   async openCustomModal() {
-    const modalResp = await this.utils.openModal(
-      {}, // Inputs (props) for your custom component if needed
-      false,
-      ModalSampleComponent // Your custom component for modal content
-    );
+    const modalResp = await this.utils.openModal({
+      comp: ModalSampleComponent,
+    });
     // Use modalResp in your code here
   }
   `;
@@ -93,11 +93,10 @@ export class ModalsPage {
   import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
 
   async openCustomModal() {
-    const modalResp = await this.utils.openModal(
-      {}, // Inputs (props) for your custom component if needed
-      true, // Fullscreen flag param
-      ModalSampleComponent // Your custom component for modal content
-    );
+    const modalResp = await this.utils.openModal({
+      fullscreen: true,
+      comp: ModalSampleComponent,
+    });
     // Use modalResp in your code here
   }
   `;
