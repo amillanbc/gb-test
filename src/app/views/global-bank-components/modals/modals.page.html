@@ -7,8 +7,15 @@
     <div class="gb-py-2xl gb-px-md">
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Open modal" (click)="openModal()" />
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open modal" (click)="openModal()" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="generic" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -20,8 +27,15 @@
     <div class="gb-py-2xl gb-px-md">
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Open modal" (click)="openCustomModal()" />
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open modal" (click)="openCustomModal()" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="custom" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>
@@ -29,12 +43,22 @@
 
     <!-- Fullscreen -->
     <div class="display-sm w600">Fullscreen modal</div>
-    <div class="text-md">Modal en pantalla completa (mobile only)</div>
+    <div class="text-md">
+      Modal en pantalla completa
+      <span class="text-gb-error-500 w700">(mobile only)</span>
+    </div>
     <div class="gb-py-2xl gb-px-md">
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="text-center sm:p-9 md:p-7 xl:p-9">
-          <gb-btn label="Open modal" (click)="openFullscreenModal()" />
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open modal" (click)="openFullscreenModal()" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="fullscreen" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </div>

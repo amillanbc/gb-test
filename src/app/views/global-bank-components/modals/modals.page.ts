@@ -7,6 +7,9 @@ import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.componen
 // ##### OTHER COMPONENTS
 import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
 
+// ##### OTHER IMPORTS
+import { Highlight } from 'ngx-highlightjs';
+
 // ##### SERVICES
 import { Utils } from 'src/app/stores/utils.service';
 
@@ -15,7 +18,7 @@ import { Utils } from 'src/app/stores/utils.service';
   templateUrl: './modals.page.html',
   styleUrls: ['./modals.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonContent, GbBtnComponent],
+  imports: [IonCol, IonRow, IonContent, GbBtnComponent, Highlight],
 })
 export class ModalsPage {
   utils = inject(Utils);
@@ -48,4 +51,55 @@ export class ModalsPage {
     );
     console.log(modalResp);
   }
+
+  // CODE
+  generic = `
+  // ##### SERVICES
+  import { Utils } from 'src/app/stores/utils.service';
+
+  async openModal() {
+    const modalResp = await this.utils.openModal({
+      type: 'warning', // Modal icon -> 'warning' | 'checkmark' | 'alert'
+      header: 'Modal header text',
+      body: 'Modal body text',
+      primary: 'Primary button text',
+      secondary: 'Secondary button text',
+    });
+    // Use modalResp in your code here
+  }
+  `;
+
+  custom = `
+  // ##### SERVICES
+  import { Utils } from 'src/app/stores/utils.service';
+
+  // ##### OTHER COMPONENTS
+  import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
+
+  async openCustomModal() {
+    const modalResp = await this.utils.openModal(
+      {}, // Inputs (props) for your custom component if needed
+      false,
+      ModalSampleComponent // Your custom component for modal content
+    );
+    // Use modalResp in your code here
+  }
+  `;
+
+  fullscreen = `
+  // ##### SERVICES
+  import { Utils } from 'src/app/stores/utils.service';
+
+  // ##### OTHER COMPONENTS
+  import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
+
+  async openCustomModal() {
+    const modalResp = await this.utils.openModal(
+      {}, // Inputs (props) for your custom component if needed
+      true, // Fullscreen flag param
+      ModalSampleComponent // Your custom component for modal content
+    );
+    // Use modalResp in your code here
+  }
+  `;
 }
