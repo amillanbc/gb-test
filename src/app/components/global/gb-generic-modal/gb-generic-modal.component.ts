@@ -5,9 +5,14 @@ import { addIcons } from 'ionicons';
 import { checkmarkOutline, warningOutline, alertOutline } from 'ionicons/icons';
 import { ModalController } from '@ionic/angular/standalone';
 
+// ##### TYPES
+export enum ModalEnum {
+  SUCCESS = "success",
+  CANCEL = "cancel"
+}
+
 // ##### GB COMPONENTS
 import { GbBtnComponent } from '../gb-btn/gb-btn.component';
-
 @Component({
   selector: 'gb-generic-modal',
   templateUrl: './gb-generic-modal.component.html',
