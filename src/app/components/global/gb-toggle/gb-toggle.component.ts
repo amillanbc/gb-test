@@ -15,6 +15,7 @@ export class GbToggleComponent {
   level = input(500);
   disabled = input(false);
   extraClasses = input('');
+  identity = input('');
 
   // ##### OUTPUTS
   valueChange = output<boolean>();

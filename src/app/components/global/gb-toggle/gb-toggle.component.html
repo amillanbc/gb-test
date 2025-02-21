@@ -6,7 +6,8 @@
     class="sr-only"
     (click)="updateValue()"
     [checked]="value()"
-    [disabled]="disabled()" />
+    [disabled]="disabled()"
+    [id]="identity()" />
   @if (labelPosition() == 'left') {
     <span class="label flex items-center text-sm font-medium text-dark">
       {{ label() }}
