@@ -41,6 +41,7 @@ export class GbInputComponent implements OnInit {
   required = input(false);
   min = input<number>();
   max = input<number>();
+  identity = input('');
 
   // ##### SIGNALS
   model = signal<string>('');
