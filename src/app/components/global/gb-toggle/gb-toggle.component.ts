@@ -7,7 +7,7 @@ import { Component, input, output, computed } from '@angular/core';
 })
 export class GbToggleComponent {
   // ##### INPUTS
-  name = input.required<string>();
+  identity = input.required<string>();
   value = input.required<boolean>();
   label = input('');
   labelPosition = input<'left' | 'right'>('left');
@@ -15,7 +15,6 @@ export class GbToggleComponent {
   level = input(500);
   disabled = input(false);
   extraClasses = input('');
-  identity = input('');
 
   // ##### OUTPUTS
   valueChange = output<boolean>();

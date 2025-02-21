@@ -14,7 +14,7 @@ export class GbCheckboxComponent {
   level = input(500);
   disabled = input(false);
   extraClasses = input('');
-  identity = input('');
+  identity = input.required();
 
   // OUTPUTS
   valueChange = output<boolean>();

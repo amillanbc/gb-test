@@ -1,8 +1,7 @@
-<label [for]="name()" [class]="labelClasses()">
+<label [for]="identity()" [class]="labelClasses()">
   <input
     type="checkbox"
-    [name]="name()"
-    [id]="name()"
+    [name]="identity()"
     class="sr-only"
     (click)="updateValue()"
     [checked]="value()"
