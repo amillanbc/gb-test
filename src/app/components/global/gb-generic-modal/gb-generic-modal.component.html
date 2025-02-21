@@ -19,7 +19,8 @@
           <gb-btn
             [label]="primaryText()"
             (click)="closeModal('success')"
-            extraClasses="w-full" />
+            extraClasses="w-full"
+            identity="success_btn" />
         </ion-col>
       </ion-row>
     }
@@ -31,7 +32,8 @@
             fill="outline"
             color="error"
             (click)="closeModal('cancel')"
-            extraClasses="w-full" />
+            extraClasses="w-full"
+            identity="cancel_btn" />
         </ion-col>
       </ion-row>
     }
