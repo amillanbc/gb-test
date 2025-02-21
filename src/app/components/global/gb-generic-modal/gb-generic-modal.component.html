@@ -11,9 +11,9 @@
     <ion-row>
       <ion-col class="text-center">
         <div class="text-md">{{ bodyText() }}</div>
-      </ion-col>    
+      </ion-col>
     </ion-row>
-    @if (primary.length > 0) {
+    @if (primaryText()) {
       <ion-row class="gb-mt-4xl">
         <ion-col>
           <gb-btn
@@ -23,7 +23,7 @@
         </ion-col>
       </ion-row>
     }
-    @if (secondary.length > 0) {
+    @if (secondaryText()) {
       <ion-row>
         <ion-col>
           <gb-btn
