@@ -8,7 +8,6 @@ import { Component, input, output, computed } from '@angular/core';
 })
 export class GbCheckboxComponent {
   // ##### INPUTS
-  name = input.required<string>();
   value = input.required<boolean>();
   label = input('');
   color = input('blue');

@@ -1,5 +1,5 @@
 <label
-  [for]="name()"
+  [for]="identity()"
   [class]="
     'flex items-center select-none text-dark' +
     ' ' +
@@ -8,7 +8,6 @@
   <div class="relative">
     <input
       type="checkbox"
-      [id]="name()"
       class="sr-only"
       (click)="updateValue()"
       [checked]="value()"
