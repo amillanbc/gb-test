@@ -37,6 +37,7 @@ export class GbSelectContentComponent {
 
   // ##### INPUTS
   options = input<{ label: string; value: string }[]>([]);
+  identity = input('');
 
   // ##### SIGNALS
   value = signal('');
@@ -45,5 +46,10 @@ export class GbSelectContentComponent {
   handleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.modalCtrl.dismiss({ action: target.value });
+  }
+
+  setOptionId(index: number) {
+    if (!this.identity()) return '';
+    return `${this.identity()}_opt_${index}`;
   }
 }

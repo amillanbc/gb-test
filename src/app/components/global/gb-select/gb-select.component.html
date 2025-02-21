@@ -9,7 +9,8 @@
   <select
     (click)="openSelect()"
     onmousedown="(function(e){ e.preventDefault(); })(event, this)"
-    [class]="classes()">
+    [class]="classes()"
+    [id]="identity()">
     <option>
       {{ returnPlaceholder().label }}
     </option>

@@ -43,6 +43,7 @@ export class GbSelectComponent {
   disabled = input(false);
   extraClasses = input('');
   required = input(false);
+  identity = input('');
 
   // OUTPUTS
   valueChange = output<string>();
@@ -57,7 +58,11 @@ export class GbSelectComponent {
     const resp = await this.utils.openModal({
       comp: GbSelectContentComponent,
       fullscreen: true,
-      props: { options: this.options, value: this.value() },
+      props: {
+        options: this.options,
+        value: this.value(),
+        identity: this.identity,
+      },
     });
     this.selected.update(val => (val = resp));
     this.wasFocused();
