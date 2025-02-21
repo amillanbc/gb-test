@@ -24,6 +24,10 @@ export class MainPage {
       route: '/input',
     },
     {
+      comp: 'Select',
+      route: '/select',
+    },
+    {
       comp: 'Checkbox',
       route: '/checkbox',
     },

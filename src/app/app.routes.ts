@@ -81,6 +81,13 @@ export const routes: Routes = [
             m => m.ModalsPage
           ),
       },
+      {
+        path: 'select',
+        loadComponent: () =>
+          import('./views/global-bank-components/select/select.page').then(
+            m => m.SelectPage
+          ),
+      },
     ],
   },
   {

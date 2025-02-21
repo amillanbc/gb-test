@@ -6,6 +6,7 @@ import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
+import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
 
 // ##### SERVICES
 import { Utils } from 'src/app/stores/utils.service';
@@ -25,6 +26,7 @@ import { Highlight } from 'ngx-highlightjs';
     GbInputComponent,
     GbBtnComponent,
     GbCheckboxComponent,
+    GbSelectComponent,
     Highlight,
   ],
 })
@@ -47,6 +49,10 @@ export class FormsPage {
       min: 0,
       max: 50,
     },
+    gender: {
+      value: signal(''),
+      validator: '^.+$',
+    },
     accept: {
       value: signal(false),
       validator: true,
@@ -62,6 +68,17 @@ export class FormsPage {
   isFormValid = computed(() => {
     return this.utils.validateForm(this.formData);
   });
+
+  options = [
+    {
+      label: 'Male',
+      value: 'male',
+    },
+    {
+      label: 'Female',
+      value: 'female',
+    },
+  ];
 
   html = `
   <gb-input
@@ -86,6 +103,12 @@ export class FormsPage {
     [required]="true"
     [min]="formData.age.min"
     [max]="formData.age.max" />
+
+  <gb-select
+    placeholder="Select gender"
+    [(value)]="formData.gender.value"
+    [options]="options"
+    [required]="true" />
 
   <gb-checkbox
     name="checkbox_1"
@@ -123,6 +146,10 @@ export class FormsPage {
         min: 0,
         max: 50,
       },
+      gender: {
+        value: signal(''),
+        validator: '^.+$',
+      },
       accept: {
         value: signal(false),
         validator: true,
@@ -138,6 +165,18 @@ export class FormsPage {
     isFormValid = computed(() => {
       return this.utils.validateForm(this.formData);
     });
+
+    // ##### OPTIONS
+    options = [
+      {
+        label: 'Male',
+        value: 'male',
+      },
+      {
+        label: 'Female',
+        value: 'female',
+      },
+    ];
   }
 
   `;

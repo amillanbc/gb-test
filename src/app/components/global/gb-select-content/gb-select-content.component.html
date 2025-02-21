@@ -3,7 +3,9 @@
     <ion-toolbar>
       <ion-title>Seleccione</ion-title>
       <ion-buttons slot="end">
-        <ion-button (click)="modalCtrl.dismiss()">Cerrar</ion-button>
+        <ion-button (click)="modalCtrl.dismiss({ action: value })">
+          Cerrar
+        </ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>

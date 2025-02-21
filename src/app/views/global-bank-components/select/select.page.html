@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Select</div>
+    <!-- Default -->
+    <div class="display-sm w600">Default select</div>
+    <div class="text-md">Select por defecto</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-select
+                placeholder="Seleccione una opción"
+                [(value)]="selectVal1"
+                [options]="options" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="selOptions" language="typescript"></code></pre>
+              <pre><code [highlight]="default" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Disabled -->
+    <div class="display-sm w600">Disabled select</div>
+    <div class="text-md">Select deshabilitado</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-select
+                placeholder="Seleccione una opción"
+                [(value)]="selectVal2"
+                [options]="options"
+                [disabled]="true" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="disabled" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Required -->
+    <div class="display-sm w600">Required select</div>
+    <div class="text-md">Select requerido</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-select
+                placeholder="Seleccione una opción"
+                [(value)]="selectVal3"
+                [options]="options"
+                [required]="true" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="required" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>

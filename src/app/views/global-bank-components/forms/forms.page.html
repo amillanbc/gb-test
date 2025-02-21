@@ -22,7 +22,8 @@
                 [regex]="formData.pass.validator"
                 icon="lock-closed-outline"
                 [required]="true"
-                type="password" />
+                type="password"
+                [passwordToggle]="true" />
               <br />
               <gb-input
                 placeholder="Age"
@@ -31,6 +32,12 @@
                 [required]="true"
                 [min]="formData.age.min"
                 [max]="formData.age.max" />
+              <br />
+              <gb-select
+                placeholder="Select gender"
+                [(value)]="formData.gender.value"
+                [options]="options"
+                [required]="true" />
               <br />
               <gb-checkbox
                 name="checkbox_1"
