@@ -36,6 +36,7 @@ export class GbBtnComponent {
   spinnerPosition = input<'left' | 'right'>('left');
   disabled = input(false);
   extraClasses = input('');
+  identity = input('');
 
   // ##### COMPUTED
   classes = computed(() => {

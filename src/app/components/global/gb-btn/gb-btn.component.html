@@ -1,4 +1,4 @@
-<button [class]="classes()" [disabled]="disabled()">
+<button [class]="classes()" [disabled]="disabled()" [id]="identity()">
   @if (spinner() && spinnerPosition() == 'left') {
     <ion-spinner [name]="spinner()" [color]="color()"></ion-spinner>
   }
