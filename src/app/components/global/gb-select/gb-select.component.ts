@@ -64,7 +64,7 @@ export class GbSelectComponent {
         identity: this.identity,
       },
     });
-    this.selected.update(val => (val = resp));
+    if (resp != undefined) this.selected.update(val => (val = resp));
     this.wasFocused();
   }
 
