@@ -84,10 +84,10 @@ export class GbSelectComponent {
 
   classes = computed(() => {
     let classes =
-      'relative z-20 w-full appearance-none rounded-md border border-stroke bg-transparent py-[10px] pr-12 outline-none transition';
+      'relative z-20 w-full appearance-none rounded-md border border-stroke py-[10px] pr-12 outline-none transition';
     if (this.icon()) classes += ' pl-12';
     else classes += ' pl-4';
-    if (this.disabled()) classes += ' cursor-not-allowed';
+    if (this.disabled()) classes += ' cursor-not-allowed bg-gray-2';
     else classes += ' cursor-pointer';
     if (this.required() && this.focused()) {
       if (!this.selected())

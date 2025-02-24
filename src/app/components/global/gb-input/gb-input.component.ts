@@ -67,7 +67,7 @@ export class GbInputComponent implements OnInit {
   classes = computed(() => {
     const c = this.color();
     const l = this.level();
-    let classes = `w-full bg-transparent rounded-md border border-stroke outline-none transition py-[10px] pr-3`;
+    let classes = `w-full rounded-md border border-stroke outline-none transition py-[10px] pr-3`;
     if (this.icon()) classes += ` pl-12`;
     else classes += ` pl-3`;
     classes += ` focus:border-gb-${c}-${l}`;
@@ -79,6 +79,7 @@ export class GbInputComponent implements OnInit {
     if (this.required() && !this.model() && this.focused()) {
       classes += ' focus:border-gb-error-500 border-gb-error-500';
     }
+    if (this.disabled()) classes += ' bg-gray-2';
     classes += ` ${this.extraClasses()}`;
     return classes;
   });
