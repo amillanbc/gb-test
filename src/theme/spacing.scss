@@ -91,3 +91,9 @@ $gb-sizes: (
     border-bottom-right-radius: $size;
   }
 }
+
+@for $i from 1 through 100 {
+  .gb-w-#{$i} {
+    width: #{$i} + '%'
+  }
+}
