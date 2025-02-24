@@ -44,6 +44,10 @@ export class MainPage {
       route: '/modals',
     },
     {
+      comp: 'Progress Bar',
+      route: '/progress-bar',
+    },
+    {
       comp: 'Typography',
       route: '/typography',
     },

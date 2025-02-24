@@ -88,6 +88,10 @@ export const routes: Routes = [
             m => m.SelectPage
           ),
       },
+      {
+        path: 'progress-bar',
+        loadComponent: () => import('./views/global-bank-components/progress-bar/progress-bar.page').then( m => m.ProgressBarPage)
+      },
     ],
   },
   {
