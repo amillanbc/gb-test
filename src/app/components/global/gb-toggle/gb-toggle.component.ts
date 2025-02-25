@@ -1,3 +1,4 @@
+// ##### IONIC & ANGULAR
 import { Component, input, output, computed } from '@angular/core';
 
 @Component({
@@ -19,6 +20,7 @@ export class GbToggleComponent {
   // ##### OUTPUTS
   valueChange = output<boolean>();
 
+  // ##### METHODS
   updateValue(): void {
     this.valueChange.emit(!this.value());
   }
