@@ -25,11 +25,11 @@ export class GbToggleComponent {
 
   // ##### COMPUTED
   classes = computed(() => {
-    let c = this.color();
-    let l = this.level();
+    let color = this.color();
+    let level = this.level();
     let classes = `slider mx-4 flex h-8 w-[60px] items-center rounded-full p-1 duration-200`;
-    if (this.disabled()) classes += ` slider:bg-gb-${c}-200 bg-gray-3`;
-    else classes += ` slider:bg-gb-${c}-${l} bg-[#CCCCCE]`;
+    if (this.disabled()) classes += ` slider:bg-gb-${color}-200 bg-gray-3`;
+    else classes += ` slider:bg-gb-${color}-${level} bg-[#CCCCCE]`;
     return classes;
   });
 

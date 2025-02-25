@@ -13,12 +13,12 @@ export class GbProgressBarComponent {
 
   // ##### COMPUTED
   classes = computed(() => {
-    const c = this.color()
-    const l = this.level()
+    const color = this.color()
+    const level = this.level()
     let p = this.progress()
     if (p >= 100) p = 100
     if (p <= 0) p = 0
-    let classes = `bg-gb-${c}-${l} absolute top-0 left-0 h-full gb-w-${p} rounded-2xl`
+    let classes = `bg-gb-${color}-${level} absolute top-0 left-0 h-full gb-w-${p} rounded-2xl`
     return classes
   })
 }

@@ -65,12 +65,12 @@ export class GbInputComponent implements OnInit {
 
   // ##### COMPUTED
   classes = computed(() => {
-    const c = this.color();
-    const l = this.level();
+    const color = this.color();
+    const level = this.level();
     let classes = `w-full rounded-md border border-stroke outline-none transition py-[10px] pr-3`;
     if (this.icon()) classes += ` pl-12`;
     else classes += ` pl-3`;
-    classes += ` focus:border-gb-${c}-${l}`;
+    classes += ` focus:border-gb-${color}-${level}`;
     if ((this.regex() || this.min() || this.max()) && this.model()) {
       if (this.isValid())
         classes += ' focus:border-gb-success-500 border-gb-success-500';
