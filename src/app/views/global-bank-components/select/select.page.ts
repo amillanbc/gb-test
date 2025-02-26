@@ -30,6 +30,7 @@ export class SelectPage {
   selectVal1 = signal('');
   selectVal2 = signal('');
   selectVal3 = signal('');
+  
 
   options = [
     {
@@ -48,6 +49,14 @@ export class SelectPage {
 
   default = `
   <gb-select
+    interface="modal"
+    placeholder="Seleccione una opción"
+    [(value)]="selectVal1"
+    [options]="options" />
+  `;
+  defaultpp = `
+  <gb-select
+    interface="popover"
     placeholder="Seleccione una opción"
     [(value)]="selectVal1"
     [options]="options" />
@@ -55,6 +64,7 @@ export class SelectPage {
 
   disabled = `
   <gb-select
+    interface="modal"
     placeholder="Seleccione una opción"
     [(value)]="selectVal2"
     [options]="options"
@@ -64,6 +74,7 @@ export class SelectPage {
   required = `
   <gb-select
     placeholder="Seleccione una opción"
+    interface="modal"
     [(value)]="selectVal3"
     [options]="options"
     [required]="true" />

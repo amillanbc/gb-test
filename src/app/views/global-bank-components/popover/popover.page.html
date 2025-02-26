@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Popover</div>
+    <!-- Default -->
+    <div class="display-sm w600">Default popover</div>
+    <div class="text-md">Popover por defecto</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-popover label="Seleccione una opción" [(value)]="selectVal1" [options]="options" [disabled]="false" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="selOptions" language="typescript"></code></pre>
+              <pre><code [highlight]="default" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Disabled -->
+    <div class="display-sm w600">Disabled popover</div>
+    <div class="text-md">Popover deshabilitado</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-popover label="Seleccione una opción" [(value)]="selectVal1" [options]="options"
+                [disabled]="true" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="disabled" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->

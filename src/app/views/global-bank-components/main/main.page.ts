@@ -32,6 +32,10 @@ export class MainPage {
       route: '/checkbox',
     },
     {
+      comp: 'Popover',
+      route: '/popover',
+    },
+    {
       comp: 'Toggle',
       route: '/toggle',
     },

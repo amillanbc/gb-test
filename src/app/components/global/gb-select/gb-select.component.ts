@@ -17,6 +17,7 @@ import { Utils } from 'src/app/stores/utils.service';
 
 // ##### GB COMPONENTS
 import { GbSelectContentComponent } from '../gb-select-content/gb-select-content.component';
+import { GbPopoverContentComponent } from '../gb-popover-content/gb-popover-content.component';
 
 @Component({
   selector: 'gb-select',
@@ -44,6 +45,7 @@ export class GbSelectComponent {
   extraClasses = input('');
   required = input(false);
   identity = input('');
+  interface = input('');
 
   // OUTPUTS
   valueChange = output<string>();
@@ -54,19 +56,43 @@ export class GbSelectComponent {
 
   // ##### METHODS
   async openSelect() {
+    console.log(this.interface())
     if (this.disabled()) return;
-    const resp = await this.utils.openModal({
-      comp: GbSelectContentComponent,
-      fullscreen: true,
-      props: {
-        options: this.options,
-        value: this.value(),
-        identity: this.identity,
-      },
-    });
-    if (resp != undefined) this.selected.update(val => (val = resp));
+    switch (this.interface()) {
+      case "modal": {
+        const resp = await this.utils.openModal({
+          comp: GbSelectContentComponent,
+          fullscreen: true,
+          props: {
+            options: this.options,
+            value: this.value(),
+            identity: this.identity,
+          },
+        });
+        if (resp != undefined) this.selected.update(val => (val = resp));
+        break;
+      }
+      case "popover": {
+        const resp = await this.utils.openPopover({
+          comp: GbPopoverContentComponent,
+          props: {
+            options: this.options,
+            value: this.value(),
+            identity: this.identity,
+            translucent: true,
+            showBackdrop: true,
+            side: 'top',
+            alignment: 'left'
+          },
+        });
+        if (resp != undefined) this.selected.update(val => (val = resp));
+        break;
+      }
+
+    }
     this.wasFocused();
   }
+
 
   wasFocused() {
     this.focused.update(val => (val = true));

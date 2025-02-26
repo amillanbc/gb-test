@@ -1,18 +1,20 @@
 // ##### IONIC & ANGULAR
 import { Injectable, inject } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
+import { ModalController , PopoverController} from '@ionic/angular/standalone';
 
 // ##### MODELS
 import FormObject from '../types/FormObject';
 
 // ##### GB COMPONENTS
 import { GbGenericModalComponent } from '../components/global/gb-generic-modal/gb-generic-modal.component';
+import { GbPopoverContentComponent } from '../components/global/gb-popover-content/gb-popover-content.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Utils {
   modalCtrl = inject(ModalController);
+  popoverCtrl = inject(PopoverController)
 
   async openModal({
     props,
@@ -31,6 +33,26 @@ export class Utils {
     });
     modal.present();
     const { data } = await modal.onWillDismiss();
+    if (data) return data.action;
+    return undefined;
+  }
+  async openPopover({
+    props,
+    comp = GbPopoverContentComponent,
+  }: {
+    props?: object;
+    comp?: any;
+  }) {
+    // props: object, fullscreen: boolean = false, comp?: any
+    const popover = await this.popoverCtrl.create({
+      component: comp || GbPopoverContentComponent,
+      id: 'dialog-popover',
+      componentProps: props,
+      side: 'left',
+      alignment:'center',
+    });
+    await popover.present();
+    const { data } = await popover.onWillDismiss();
     if (data) return data.action;
     return undefined;
   }

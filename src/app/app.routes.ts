@@ -47,6 +47,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'popover',
+        loadComponent: () =>
+          import('./views/global-bank-components/popover/popover.page').then(
+            m => m.PopoverPage
+          ),
+      },
+      {
         path: 'typography',
         loadComponent: () =>
           import(

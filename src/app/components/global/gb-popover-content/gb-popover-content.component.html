@@ -1,0 +1,5 @@
+<ion-list >
+  @for (option of options(); track option; let idx = $index) {
+  <ion-item button [id]="setOptionId(idx)" (click)="handleChange(option.value)" >{{option.label}}</ion-item>
+  }
+</ion-list>

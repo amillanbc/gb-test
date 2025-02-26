@@ -1,0 +1,19 @@
+<div class="relative z-20">
+  @if (icon()) {
+    <ion-icon
+      [name]="icon()"
+      class="absolute top-1/2 left-4 -translate-y-1/2"
+      color="medium" />
+  }
+
+  <button 
+    (click)="openPopover()"
+    
+    [class]="classes()"
+    [id]="identity()" [disabled]="disabled()">{{ returnLabel().label }} 
+  </button>
+  <ion-icon
+    name="chevron-down-outline"
+    class="absolute top-1/2 right-4 z-10 -translate-y-1/2"
+    color="medium" />
+</div>
