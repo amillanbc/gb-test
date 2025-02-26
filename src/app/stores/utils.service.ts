@@ -1,6 +1,9 @@
 // ##### IONIC & ANGULAR
 import { Injectable, inject } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
+import { ToastController } from "@ionic/angular/standalone"
+import { addIcons } from 'ionicons';
+import * as icons from 'ionicons/icons';
 
 // ##### MODELS
 import FormObject from '../types/FormObject';
@@ -12,9 +15,16 @@ import { GbGenericModalComponent } from '../components/global/gb-generic-modal/g
   providedIn: 'root',
 })
 export class Utils {
-  modalCtrl = inject(ModalController);
+  constructor() {
+    addIcons(icons);
+  }
 
-  async openModal({
+  // ##### INJECTS
+  modalCtrl = inject(ModalController);
+  toastCtrl = inject(ToastController);
+
+  // ##### METHODS
+  public async openModal({
     props,
     fullscreen = false,
     comp = GbGenericModalComponent,
@@ -22,7 +32,7 @@ export class Utils {
     props?: object;
     fullscreen?: boolean;
     comp?: any;
-  }) {
+  }): Promise<any> {
     const modal = await this.modalCtrl.create({
       component: comp || GbGenericModalComponent,
       id: fullscreen ? '' : 'dialog-modal',
@@ -34,7 +44,7 @@ export class Utils {
     return null;
   }
 
-  validateForm(formData: FormObject) {
+  validateForm(formData: FormObject): boolean {
     for (let field in formData) {
       const [val, validator, min, max] = [
         formData[field].value(),
@@ -60,11 +70,11 @@ export class Utils {
   ): boolean {
     if (typeof val === 'string' && typeof validator === 'string') {
       if (!this.validateString(validator, val)) return false
-   }
-   if (typeof val === 'string' && (min || max)) {
-     if (!this.validateMinMax(min, max, num)) return false
-   }
-   return true
+    }
+    if (typeof val === 'string' && (min || max)) {
+      if (!this.validateMinMax(min, max, num)) return false
+    }
+    return true
   }
 
   private validateString(validator: string, val: string): boolean {
@@ -80,5 +90,35 @@ export class Utils {
       if (typeof max !== "undefined" && num > max) return false
     }
     return true
+  }
+
+  public async openToast({
+    text,
+    header,
+    icon,
+    duration = 3000,
+    position = 'top',
+    color = 'blue',
+  }: {
+    text: string,
+    header?: string
+    icon: string,
+    duration?: number,
+    position?: 'top' | 'bottom',
+    color?: string,
+    textColor?: string,
+  }): Promise<void> {
+    const toast = await this.toastCtrl.create({
+      message: text,
+      duration: duration,
+      position: position,
+      color: `gb-${color}-200`,
+      mode: "ios",
+      cssClass: [`text-gb-${color}-600`, `gb-toast-gb-${color}-500`, 'w500'],
+      swipeGesture: "vertical",
+      icon: icon,
+      header: header,
+    });
+    await toast.present();
   }
 }
