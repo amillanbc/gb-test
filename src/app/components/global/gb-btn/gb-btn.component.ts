@@ -46,7 +46,7 @@ export class GbBtnComponent {
     const active = this.level() + 200 > 950 ? 950 : this.level() + 200;
     const disabled = this.level() - 200 < 25 ? 25 : this.level() - 200;
     let classes =
-      'rounded-full inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium gap-2.5';
+      'rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium gap-2.5';
     if (this.fill() == 'solid')
       classes += ` bg-gb-${color}-${level} text-white active:bg-gb-${color}-${active} disabled:bg-gb-${color}-${disabled} hover:bg-gb-${color}-${hover} border-gb-${color}-${level} active:border-gb-${color}-${active} hover:border-gb-${color}-${hover}`;
     if (this.fill() == 'outline')
