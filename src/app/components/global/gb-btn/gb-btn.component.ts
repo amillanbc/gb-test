@@ -44,13 +44,12 @@ export class GbBtnComponent {
     const level = this.level();
     const hover = this.level() + 100 > 950 ? 950 : this.level() + 100;
     const active = this.level() + 200 > 950 ? 950 : this.level() + 200;
-    const disabled = this.level() - 200 < 25 ? 25 : this.level() - 200;
     let classes =
-      'rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium gap-2.5';
+      'rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium gap-2.5 disabled:text-gb-gray-light-500';
     if (this.fill() == 'solid')
-      classes += ` bg-gb-${color}-${level} text-white active:bg-gb-${color}-${active} disabled:bg-gb-${color}-${disabled} hover:bg-gb-${color}-${hover} border-gb-${color}-${level} active:border-gb-${color}-${active} hover:border-gb-${color}-${hover}`;
+      classes += ` bg-gb-${color}-${level} text-white active:bg-gb-${color}-${active} disabled:bg-gb-gray-light-300 hover:bg-gb-${color}-${hover} border-gb-${color}-${level} active:border-gb-${color}-${active} hover:border-gb-${color}-${hover}`;
     if (this.fill() == 'outline')
-      classes += `  text-gb-${color}-${level} bg-gb-no-color border-gb-${color}-${level} hover:bg-gb-${color}-50 active:bg-gb-${color}-${level} active:text-gb-${color}-50 disabled:bg-no-color disabled:border-gb-${color}-${disabled} disabled:text-gb-${color}-${disabled}`;
+      classes += `  text-gb-${color}-${level} bg-gb-no-color border-gb-${color}-${level} hover:bg-gb-${color}-50 active:bg-gb-${color}-${level} active:text-gb-${color}-50 disabled:bg-no-color disabled:border-gb-gray-light-300`;
     classes += ` ${this.extraClasses()}`;
     return classes;
   });
