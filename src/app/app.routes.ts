@@ -75,6 +75,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'icons',
+        loadComponent: () =>
+          import('./views/global-bank-components/icons/icons.page').then(
+            m => m.IconsPage
+          ),
+      },
+      {
         path: 'forms',
         loadComponent: () =>
           import('./views/global-bank-components/forms/forms.page').then(
@@ -127,5 +134,9 @@ export const routes: Routes = [
           ),
       },
     ],
+  },
+  {
+    path: 'icons',
+    loadComponent: () => import('./views/global-bank-components/icons/icons.page').then( m => m.IconsPage)
   },
 ];

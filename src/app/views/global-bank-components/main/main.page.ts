@@ -63,6 +63,10 @@ export class MainPage {
       comp: 'Shadows',
       route: '/shadows',
     },
+    {
+      comp: 'Icons',
+      route: '/icons',
+    },
   ]);
 
   // ##### METHODS
