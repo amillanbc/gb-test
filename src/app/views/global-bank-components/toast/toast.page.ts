@@ -82,7 +82,7 @@ export class ToastPage {
   this.utils.openToast(
     {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      type: 'default' // <-- 'default' | 'success' | 'warning' | 'error'
+      type: 'default' // 'default' | 'success' | 'warning' | 'error'
     }
   )
   `
