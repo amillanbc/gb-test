@@ -22,3 +22,12 @@
       (click)="togglePass()" />
   }
 </div>
+@if (regex() || typeof min() !== 'undefined' || typeof max() !== 'undefined') {
+  @if (okHint() && model() && isValid()) {
+    <p class="mt-[10px] text-sm text-gb-success-500">{{ okHint() }}</p>
+  }
+  @if (errHint() && model() && !isValid()) {
+    <p class="mt-[10px] text-sm text-gb-error-500">{{ errHint() }}</p>
+  }
+}
+
