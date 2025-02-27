@@ -94,6 +94,7 @@ export class Utils {
 
   public async openToast({
     text,
+    type,
     header,
     icon,
     duration = 3000,
@@ -101,22 +102,42 @@ export class Utils {
     color = 'blue',
   }: {
     text: string,
+    type?: 'default' | 'success' | 'warning' | 'error',
     header?: string
-    icon: string,
+    icon?: string,
     duration?: number,
     position?: 'top' | 'bottom',
     color?: string,
-    textColor?: string,
   }): Promise<void> {
+    let icn = icon || ''
+    let col = color
+    switch (type) {
+      case 'default':
+        icn = 'information-circle-outline'
+        col = 'blue'
+        break;
+      case 'error':
+        icn = 'close-circle-outline'
+        col = 'error'
+        break;
+      case 'success':
+        icn = 'checkmark-circle-outline'
+        col = 'success'
+        break;
+      case 'warning':
+        icn = 'warning-outline'
+        col = 'warning'
+        break;
+    }
     const toast = await this.toastCtrl.create({
       message: text,
       duration: duration,
       position: position,
-      color: `gb-${color}-200`,
+      color: `gb-${col}-200`,
       mode: "ios",
-      cssClass: [`text-gb-${color}-600`, `gb-toast-gb-${color}-500`, 'w500'],
+      cssClass: [`text-gb-${col}-600`, `gb-toast-gb-${col}-500`, 'w500'],
       swipeGesture: "vertical",
-      icon: icon,
+      icon: icn,
       header: header,
     });
     await toast.present();

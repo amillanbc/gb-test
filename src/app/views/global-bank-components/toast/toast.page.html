@@ -24,9 +24,9 @@
     <!--/-->
 
     <!-- Color -->
-    <div class="display-sm w600">Toast color</div>
+    <div class="display-sm w600">Toast types</div>
     <div class="text-md">
-      Definir color al toast
+      Definir el tipo del toast
     </div>
     <div class="gb-py-2xl gb-px-md">
       <div
@@ -34,10 +34,10 @@
         <div class="sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
-              <gb-btn label="Default" (click)="openToastWithColor('blue', 'information-circle-outline')"/>
-              <gb-btn label="Success" color="success" (click)="openToastWithColor('success', 'checkmark-circle-outline')"/>
-              <gb-btn label="Warning" color="warning" (click)="openToastWithColor('warning', 'warning-outline')"/>
-              <gb-btn label="Error" color="error" (click)="openToastWithColor('error', 'close-circle-outline')"/>
+              <gb-btn label="Default" (click)="openToastWithColor('default')"/>
+              <gb-btn label="Success" color="success" (click)="openToastWithColor('success')"/>
+              <gb-btn label="Warning" color="warning" (click)="openToastWithColor('warning')"/>
+              <gb-btn label="Error" color="error" (click)="openToastWithColor('error')"/>
             </ion-col>
             <ion-col>
               <pre><code [highlight]="colors" language="typescript"></code></pre>
@@ -49,9 +49,9 @@
     <!--/-->
 
     <!-- Icon -->
-    <div class="display-sm w600">Toast icon</div>
+    <div class="display-sm w600">Toast custom</div>
     <div class="text-md">
-      Definir el icono a mostrar en el toast.
+      Definir propiedades personalizadas para el toast
     </div>
     <div class="gb-py-2xl gb-px-md">
       <div
@@ -59,76 +59,10 @@
         <div class="sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
-              <gb-btn label="Open" (click)="openToastWithOtherIcon()"/>
+              <gb-btn label="Open" (click)="openCustomToast()"/>
             </ion-col>
             <ion-col>
-              <pre><code [highlight]="icon" language="typescript"></code></pre>
-            </ion-col>
-          </ion-row>
-        </div>
-      </div>
-    </div>
-    <!--/-->
-
-    <!-- Header -->
-    <div class="display-sm w600">Toast header</div>
-    <div class="text-md">
-      Asignar header al toast.
-    </div>
-    <div class="gb-py-2xl gb-px-md">
-      <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="sm:p-9 md:p-7 xl:p-9">
-          <ion-row>
-            <ion-col>
-              <gb-btn label="Open" (click)="openToastWithHeader()"/>
-            </ion-col>
-            <ion-col>
-              <pre><code [highlight]="header" language="typescript"></code></pre>
-            </ion-col>
-          </ion-row>
-        </div>
-      </div>
-    </div>
-    <!--/-->
-
-    <!-- Duration -->
-    <div class="display-sm w600">Toast duration</div>
-    <div class="text-md">
-      Definir la duracion del toast.
-    </div>
-    <div class="gb-py-2xl gb-px-md">
-      <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="sm:p-9 md:p-7 xl:p-9">
-          <ion-row>
-            <ion-col>
-              <gb-btn label="Open" (click)="openToastWithOtherDuration()"/>
-            </ion-col>
-            <ion-col>
-              <pre><code [highlight]="duration" language="typescript"></code></pre>
-            </ion-col>
-          </ion-row>
-        </div>
-      </div>
-    </div>
-    <!--/-->
-
-    <!-- Position -->
-    <div class="display-sm w600">Toast position</div>
-    <div class="text-md">
-      Asignar nueva posision al toast ("top" | "bottom")
-    </div>
-    <div class="gb-py-2xl gb-px-md">
-      <div
-        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="sm:p-9 md:p-7 xl:p-9">
-          <ion-row>
-            <ion-col>
-              <gb-btn label="Open" (click)="openToastWithOtherPosition()"/>
-            </ion-col>
-            <ion-col>
-              <pre><code [highlight]="position" language="typescript"></code></pre>
+              <pre><code [highlight]="custom" language="typescript"></code></pre>
             </ion-col>
           </ion-row>
         </div>

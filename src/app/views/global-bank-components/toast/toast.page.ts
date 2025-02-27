@@ -32,50 +32,23 @@ export class ToastPage {
     )
   }
 
-  openToastWithColor(color: string, icon: string) {
+  openToastWithColor(type: 'default' | 'success' | 'warning' | 'error') {
     this.utils.openToast(
       {
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon: icon,
-        color: color
+        type: type
       }
     )
   }
 
-  openToastWithOtherIcon () {
+  openCustomToast () {
     this.utils.openToast(
       {
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon: 'airplane-outline'
-      }
-    )
-  }
-
-  openToastWithHeader () {
-    this.utils.openToast(
-      {
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon: 'information-circle-outline',
-        header: 'Lorem ipsum'
-      }
-    )
-  }
-
-  openToastWithOtherDuration () {
-    this.utils.openToast(
-      {
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon: 'information-circle-outline',
-        duration: 100
-      }
-    )
-  }
-
-  openToastWithOtherPosition () {
-    this.utils.openToast(
-      {
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon: 'information-circle-outline',
+        icon: 'airplane-outline',
+        header: 'Lorem ipsum.',
+        color: 'pink',
+        duration: 5000,
         position: 'bottom'
       }
     )
@@ -106,43 +79,15 @@ export class ToastPage {
   utils = inject(Utils)
 
   // ##### METHODS
-  // DEFAULT
   this.utils.openToast(
     {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'information-circle-outline',
-    }
-  )
-
-  // SUCCESS
-  this.utils.openToast(
-    {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'checkmark-circle-outline',
-      color: 'success'
-    }
-  )
-
-  // WARNING
-  this.utils.openToast(
-    {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'alert-circle-outline',
-      color: 'warning'
-    }
-  )
-
-  // ERROR
-  this.utils.openToast(
-    {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'close-circle-outline',
-      color: 'error'
+      type: 'default' // <-- 'default' | 'success' | 'warning' | 'error'
     }
   )
   `
 
-  icon = `
+  custom = `
   // ##### SERVICES
   import { Utils } from 'src/app/stores/utils.service';
 
@@ -153,58 +98,11 @@ export class ToastPage {
   this.utils.openToast(
     {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'airplane-outline' // <-- Ionicon here
-    }
-  )
-  `
-
-  header = `
-  // ##### SERVICES
-  import { Utils } from 'src/app/stores/utils.service';
-
-  // ##### INJECTS
-  utils = inject(Utils)
-
-  // ##### METHOD
-  this.utils.openToast(
-    {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'information-circle-outline',
-      header: 'Lorem ipsum' // <-- Header text
-    }
-  )
-  `
-
-   duration = `
-  // ##### SERVICES
-  import { Utils } from 'src/app/stores/utils.service';
-
-  // ##### INJECTS
-  utils = inject(Utils)
-
-  // ##### METHOD
-  this.utils.openToast(
-    {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'information-circle-outline',
-      duration: 100 // <-- Duration in ms
-    }
-  )
-  `
-
-  position = `
-  // ##### SERVICES
-  import { Utils } from 'src/app/stores/utils.service';
-
-  // ##### INJECTS
-  utils = inject(Utils)
-
-  // ##### METHOD
-  this.utils.openToast(
-    {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: 'information-circle-outline',
-      position: 'bottom // <-- Position "top" | "bottom"
+        icon: 'airplane-outline',
+        header: 'Lorem ipsum.',
+        color: 'pink',
+        duration: 5000,
+        position: 'bottom'
     }
   )
   `
