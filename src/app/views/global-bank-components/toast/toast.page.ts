@@ -100,9 +100,9 @@ export class ToastPage {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         icon: 'airplane-outline',
         header: 'Lorem ipsum.',
-        color: 'pink',
+        color: 'pink', // GB Colors
         duration: 5000,
-        position: 'bottom'
+        position: 'bottom' // 'top' | 'bottom'
     }
   )
   `
