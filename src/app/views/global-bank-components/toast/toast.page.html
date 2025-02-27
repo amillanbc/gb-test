@@ -1,0 +1,139 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Toast</div>
+    <!-- Default -->
+    <div class="display-sm w600">Toast default</div>
+    <div class="text-md">
+      Toast por defecto.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open" (click)="openGenericToast()"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="default" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Color -->
+    <div class="display-sm w600">Toast color</div>
+    <div class="text-md">
+      Definir color al toast
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Default" (click)="openToastWithColor('blue', 'information-circle-outline')"/>
+              <gb-btn label="Success" color="success" (click)="openToastWithColor('success', 'checkmark-circle-outline')"/>
+              <gb-btn label="Warning" color="warning" (click)="openToastWithColor('warning', 'warning-outline')"/>
+              <gb-btn label="Error" color="error" (click)="openToastWithColor('error', 'close-circle-outline')"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="colors" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Icon -->
+    <div class="display-sm w600">Toast icon</div>
+    <div class="text-md">
+      Definir el icono a mostrar en el toast.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open" (click)="openToastWithOtherIcon()"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="icon" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Header -->
+    <div class="display-sm w600">Toast header</div>
+    <div class="text-md">
+      Asignar header al toast.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open" (click)="openToastWithHeader()"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="header" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Duration -->
+    <div class="display-sm w600">Toast duration</div>
+    <div class="text-md">
+      Definir la duracion del toast.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open" (click)="openToastWithOtherDuration()"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="duration" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Position -->
+    <div class="display-sm w600">Toast position</div>
+    <div class="text-md">
+      Asignar nueva posision al toast ("top" | "bottom")
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open" (click)="openToastWithOtherPosition()"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="position" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    </div>
+</ion-content>

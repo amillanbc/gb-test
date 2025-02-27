@@ -92,6 +92,10 @@ export const routes: Routes = [
         path: 'progress-bar',
         loadComponent: () => import('./views/global-bank-components/progress-bar/progress-bar.page').then( m => m.ProgressBarPage)
       },
+      {
+        path: 'toast',
+        loadComponent: () => import('./views/global-bank-components/toast/toast.page').then( m => m.ToastPage)
+      },
     ],
   },
   {
