@@ -19,7 +19,7 @@ export class InputPage {
   // ##### INPUTS
   input1 = signal('');
 
-  primary = '<gb-input [(value)]="input1" placeholder="Type here" />';
+  primary = '<gb-input [(value)]="input1" placeholder="Type here" label="Input label" />';
   type =
     '<gb-input [(value)]="input1" placeholder="Type text (default)" />\n<gb-input [(value)]="input1" placeholder="Type password" [passwordToggle]="true" type="password" />\n<gb-input [(value)]="input1" placeholder="Type email (for mobile)" type="email" />\n<gb-input [(value)]="input1" placeholder="Type number" type="number" />';
   disabled =

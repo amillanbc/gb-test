@@ -29,6 +29,7 @@ export class GbInputComponent implements OnInit {
   }
   // ##### INPUTS
   type = input<'text' | 'password' | 'email' | 'number'>('text');
+  label = input('')
   placeholder = input('');
   value = input.required<string>();
   color = input('blue');
