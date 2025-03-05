@@ -57,7 +57,6 @@ export class GbSelectComponent {
     if (this.disabled()) return;
     const resp = await this.utils.openModal({
       comp: GbSelectContentComponent,
-      fullscreen: true,
       props: {
         options: this.options,
         value: this.value(),

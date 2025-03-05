@@ -53,10 +53,32 @@
         <div class="sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
-              <gb-btn label="Open modal" (click)="openFullscreenModal()" />
+              <gb-btn label="Open modal" (click)="openFullScreenModal()" />
             </ion-col>
             <ion-col>
               <pre><code [highlight]="fullscreen" language="typescript"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Card -->
+    <div class="display-sm w600">Card modal</div>
+    <div class="text-md">
+      Modal en modo card
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-btn label="Open modal" (click)="openCardModal()" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="card" language="typescript"></code></pre>
             </ion-col>
           </ion-row>
         </div>

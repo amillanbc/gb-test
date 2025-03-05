@@ -26,18 +26,30 @@ export class Utils {
   // ##### METHODS
   public async openModal({
     props,
-    fullscreen = false,
+    mode = "dialog",
     comp = GbGenericModalComponent,
   }: {
     props?: object;
-    fullscreen?: boolean;
+    mode?: 'dialog' | 'fullscreen' | 'card',
     comp?: any;
-  }): Promise<any> {
-    const modal = await this.modalCtrl.create({
+  }): Promise<string | null> {
+    let id = ''
+    const modalObj: any = {
       component: comp || GbGenericModalComponent,
-      id: fullscreen ? '' : 'dialog-modal',
       componentProps: props,
-    });
+    }
+    if (mode === 'dialog') {
+      id = 'dialog-modal';
+      modalObj.mode = 'ios'
+    }
+    if (mode === 'card') {
+      id = 'card-modal';
+      modalObj.initialBreakpoint = 1
+      modalObj.breakpoints = [1]
+      modalObj.mode = 'ios'
+    }
+    modalObj.id = id
+    const modal = await this.modalCtrl.create(modalObj);
     modal.present();
     const { data } = await modal.onWillDismiss();
     if (data) return data.action;
