@@ -19,7 +19,7 @@ export class InputPage {
   // ##### INPUTS
   input1 = signal('');
 
-  primary = '<gb-input [(value)]="input1" placeholder="Type here" />';
+  primary = '<gb-input [(value)]="input1" placeholder="Type here" label="Input label" />';
   type =
     '<gb-input [(value)]="input1" placeholder="Type text (default)" />\n<gb-input [(value)]="input1" placeholder="Type password" [passwordToggle]="true" type="password" />\n<gb-input [(value)]="input1" placeholder="Type email (for mobile)" type="email" />\n<gb-input [(value)]="input1" placeholder="Type number" type="number" />';
   disabled =
@@ -28,10 +28,24 @@ export class InputPage {
     '<gb-input [(value)]="input1" placeholder="Type here" color="blue" />\n<gb-input [(value)]="input1" placeholder="Type here" color="pink" />';
   icon =
     '<gb-input [(value)]="input1" placeholder="Type here" icon="person-outline" />';
-  validation =
-    '<gb-input [(value)]="input1" placeholder="Type here" regex="^[A-Za-z0-9]{6,}$" />';
-  minmax =
-    '<gb-input [(value)]="input1" placeholder="Type here" [min]="1" [max]="10" />';
+  validation = `
+  <gb-input
+    [(value)]="input1"
+    placeholder="Type here"
+    regex="^[A-Za-z0-9]{6,}$"
+    okHint="Input value is ok"
+    errHint="Input value has an error" />
+  `;
+  minmax = `
+  <gb-input
+    [(value)]="input1"
+    placeholder="Type here"
+    type="number"
+    [min]="1"
+    [max]="10" 
+    okHint="Input value is ok" 
+    errHint="Input value has an error" />
+  `;
   required =
     '<gb-input [(value)]="input1" placeholder="Type here" [required]="true" />';
 }

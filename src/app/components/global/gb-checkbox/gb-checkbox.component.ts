@@ -26,9 +26,9 @@ export class GbCheckboxComponent {
 
   // ##### COMPUTED
   classes = computed(() => {
-    const c = this.color();
-    const l = this.level();
-    let classes = `flex items-center justify-center w-5 h-5 mr-4 border border-stroke rounded box box:border-gb-${c}-${l}`;
+    const color = this.color();
+    const level = this.level();
+    let classes = `flex items-center justify-center w-5 h-5 mr-4 border border-stroke rounded box box:border-gb-${color}-${level}`;
     if (this.disabled()) classes += ` bg-gray-2`;
     classes += ` ${this.extraClasses()}`;
     return classes;

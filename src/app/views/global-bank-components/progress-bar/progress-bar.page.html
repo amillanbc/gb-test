@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Progress Bar</div>
+    <!-- Default -->
+    <div class="display-sm w600">Default progress bar</div>
+    <div class="text-md">
+      Progress bar por defecto con color base del banco.
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-progress-bar [progress]="progress()"/>
+            </ion-col>
+            <ion-col>
+            <pre><code [highlight]="default" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Color -->
+    <div class="display-sm w600">Progress bar color</div>
+    <div class="text-md">
+      Asignar colores al progress bar
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-progress-bar [progress]="75" color="pink"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="color" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Levels -->
+    <div class="display-sm w600">Progress bar color level</div>
+    <div class="text-md">
+      Asignar niveles a colores al progress bar
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-progress-bar [progress]="50" color="green" [level]="300"/>
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="level" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+    </div>
+    </ion-content>
+    

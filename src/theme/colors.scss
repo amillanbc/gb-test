@@ -515,4 +515,13 @@ $gb-colors: (
   input:checked ~ .box\:border-#{$name} {
     border-color: $color !important;
   }
+
+  // TOAST
+  ion-toast.gb-toast-#{$name}::part(icon) {
+    background-color: $color;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 3px;
+    color: white
+  }
 }

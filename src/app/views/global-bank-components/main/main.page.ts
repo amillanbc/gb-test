@@ -48,6 +48,14 @@ export class MainPage {
       route: '/modals',
     },
     {
+      comp: 'Toast',
+      route: '/toast',
+    },
+    {
+      comp: 'Progress Bar',
+      route: '/progress-bar',
+    },
+    {
       comp: 'Typography',
       route: '/typography',
     },
