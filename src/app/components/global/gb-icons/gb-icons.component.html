@@ -1,3 +1,6 @@
 @if (isCustomIcons()=='false') {
 <ion-icon [name]="name()" [color]="color()" [size]="size()" [ios]="ios()" [md]="md()"></ion-icon>
 }
+@else {
+    <ion-icon [id]="name()" [src]="nameIcon" [style]="{'font-size': size()}" [class]="classes()"></ion-icon>
+}

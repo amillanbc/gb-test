@@ -15,10 +15,13 @@
     <div class="gb-py-2xl gb-px-md">
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+        <div class="text-left sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
-              <app-gb-icons name="airplane-outline"></app-gb-icons>
+              <div class="text-md">
+                Tamaño grande.
+              </div>
+              <app-gb-icons name="airplane-outline" size="large"></app-gb-icons>
             </ion-col>
             <ion-col>
               <pre><code [highlight]="primary" language="html"></code></pre>
@@ -26,6 +29,9 @@
           </ion-row>
           <ion-row>
             <ion-col>
+              <div class="text-md">
+                Por plataforma ios o android.
+              </div>
               <app-gb-icons ios="heart-outline" md="heart-sharp"></app-gb-icons>
             </ion-col>
             <ion-col>
@@ -44,18 +50,24 @@
     <div class="gb-py-2xl gb-px-md">
       <div
         class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
-        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+        <div class="text-md sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
+              <div class="text-md">
+                Basico
+              </div>
               <app-gb-icons name="heart" isCustomIcons="true"></app-gb-icons>
             </ion-col>
             <ion-col>
-              <pre><code [highlight]="custom4" language="html"></code></pre>
+              <pre><code [highlight]="custom4" language="html" ></code></pre>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <app-gb-icons name="heart" color="error" level="500" size="2rem" isCustomIcons="true"></app-gb-icons>
+              <div class="text-md">
+                Cambio de color.
+              </div>
+              <app-gb-icons name="heart" color="error" [level]="500" isCustomIcons="true"></app-gb-icons>
             </ion-col>
             <ion-col>
               <pre><code [highlight]="custom1" language="html"></code></pre>
@@ -63,7 +75,10 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <app-gb-icons name="heart" size="4rem" color="blue" level="600" isCustomIcons="true"></app-gb-icons>
+              <div class="text-md">
+                Cambio de tamaño.
+              </div>
+              <app-gb-icons name="heart" size="4rem" color="blue" [level]="600" isCustomIcons="true"></app-gb-icons>
             </ion-col>
             <ion-col>
               <pre><code [highlight]="custom2" language="html" isCustomIcons="true"></code></pre>
@@ -71,7 +86,10 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <app-gb-icons name="genetic-data-svgrepo-com" color="warning" level="600" size="40px" isCustomIcons="true"></app-gb-icons>
+              <div class="text-md">
+                Cambio de color y tamaño.
+              </div>
+              <app-gb-icons name="genetic-data-svgrepo-com" color="warning" [level]="600" size="5rem" isCustomIcons="true"></app-gb-icons>
             </ion-col>
             <ion-col>
               <pre><code [highlight]="custom3" language="html" isCustomIcons="true"></code></pre>
