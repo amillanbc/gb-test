@@ -32,7 +32,7 @@ export class GbSelectComponent {
   @HostListener('document:click', ['$event'])
   onClickOutside(event: Event) {
     if (!this.elRef.nativeElement.contains(event.target)) {
-      this.isDropdownOpen.update(val => (val = false));
+      this.isDropdownOpen.update(() => false);
     }
   }
 
@@ -58,17 +58,17 @@ export class GbSelectComponent {
   // ##### METHODS
   async openSelect() {
     if (this.disabled()) return;
-    this.isDropdownOpen.update(val => (val = !this.isDropdownOpen()));
+    this.isDropdownOpen.update(() => !this.isDropdownOpen());
     this.wasFocused();
   }
 
   selectOption(option: string) {
-    this.isDropdownOpen.update(val => (val = false));
-    this.selected.update(val => (val = option));
+    this.isDropdownOpen.update(() => false);
+    this.selected.update(() => option);
   }
 
   wasFocused() {
-    this.focused.update(val => (val = true));
+    this.focused.update(() => true);
   }
 
   // ##### COMPUTED

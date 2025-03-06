@@ -160,7 +160,7 @@ export class Utils {
       header: header,
     });
     this.activeToast()?.dismiss();
-    this.activeToast.update(val => (val = toast));
+    this.activeToast.update(() => toast);
     await toast.present();
   }
 }
