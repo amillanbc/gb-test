@@ -5,13 +5,14 @@ import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 
 // ##### OTHER COMPONENTS
+import { ModalSample2Component } from 'src/app/components/modal-sample-2/modal-sample-2.component';
 import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';
 
 // ##### SERVICES
-import { Utils } from 'src/app/stores/utils.service';
+import { Utils } from 'components-library';
 
 @Component({
   selector: 'app-modals',
@@ -38,15 +39,23 @@ export class ModalsPage {
 
   async openCustomModal() {
     const modalResp = await this.utils.openModal({
+      comp: ModalSample2Component,
+    });
+    console.log(modalResp);
+  }
+
+  async openFullScreenModal() {
+    const modalResp = await this.utils.openModal({
+      mode: 'fullscreen',
       comp: ModalSampleComponent,
     });
     console.log(modalResp);
   }
 
-  async openFullscreenModal() {
+  async openCardModal() {
     const modalResp = await this.utils.openModal({
-      fullscreen: true,
-      comp: ModalSampleComponent,
+      mode: 'card',
+      comp: ModalSample2Component,
     });
     console.log(modalResp);
   }
@@ -75,11 +84,11 @@ export class ModalsPage {
   import { Utils } from 'src/app/stores/utils.service';
 
   // ##### OTHER COMPONENTS
-  import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
+  import { ModalSample2Component } from 'src/app/components/modal-sample-2/modal-sample-2.component';
 
   async openCustomModal() {
     const modalResp = await this.utils.openModal({
-      comp: ModalSampleComponent,
+      comp: ModalSample2Component,
     });
     // Use modalResp in your code here
   }
@@ -94,8 +103,24 @@ export class ModalsPage {
 
   async openCustomModal() {
     const modalResp = await this.utils.openModal({
-      fullscreen: true,
+      mode: 'fullscreen',
       comp: ModalSampleComponent,
+    });
+    // Use modalResp in your code here
+  }
+  `;
+
+  card = `
+  // ##### SERVICES
+  import { Utils } from 'src/app/stores/utils.service';
+
+  // ##### OTHER COMPONENTS
+  import { ModalSample2Component } from 'src/app/components/modal-sample-2/modal-sample-2.component';
+
+  async openCustomModal() {
+    const modalResp = await this.utils.openModal({
+      mode: 'card',
+      comp: ModalSample2Component,
     });
     // Use modalResp in your code here
   }

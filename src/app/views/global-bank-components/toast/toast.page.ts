@@ -1,12 +1,13 @@
 // ##### IONIC & ANGULAR
-import { Component , inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IonContent, IonCol, IonRow } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 
 // ##### SERVICES
-import { Utils } from 'src/app/stores/utils.service';
+// import { Utils } from 'src/app/stores/utils.service';
+import { Utils } from 'components-library';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';
@@ -16,42 +17,36 @@ import { Highlight } from 'ngx-highlightjs';
   templateUrl: './toast.page.html',
   styleUrls: ['./toast.page.scss'],
   standalone: true,
-  imports: [IonRow, IonCol, IonContent, GbBtnComponent, Highlight]
+  imports: [IonRow, IonCol, IonContent, GbBtnComponent, Highlight],
 })
 export class ToastPage {
   // ##### INJECTS
-  utils = inject(Utils)
+  utils = inject(Utils);
 
   // ##### METHODS
   openGenericToast() {
-    this.utils.openToast(
-      {
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon: 'information-circle-outline'
-      }
-    )
+    this.utils.openToast({
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      icon: 'information-circle-outline',
+    });
   }
 
   openToastWithColor(type: 'default' | 'success' | 'warning' | 'error') {
-    this.utils.openToast(
-      {
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: type
-      }
-    )
+    this.utils.openToast({
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      type: type,
+    });
   }
 
-  openCustomToast () {
-    this.utils.openToast(
-      {
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        icon: 'airplane-outline',
-        header: 'Lorem ipsum.',
-        color: 'pink',
-        duration: 5000,
-        position: 'bottom'
-      }
-    )
+  openCustomToast() {
+    this.utils.openToast({
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      icon: 'airplane-outline',
+      header: 'Lorem ipsum.',
+      color: 'pink',
+      duration: 5000,
+      position: 'bottom',
+    });
   }
 
   // ##### SNIPPETS
@@ -69,7 +64,7 @@ export class ToastPage {
       icon: 'information-circle-outline'
     }
   )
-  `
+  `;
 
   colors = `
   // ##### SERVICES
@@ -85,7 +80,7 @@ export class ToastPage {
       type: 'default' // 'default' | 'success' | 'warning' | 'error'
     }
   )
-  `
+  `;
 
   custom = `
   // ##### SERVICES
@@ -105,5 +100,5 @@ export class ToastPage {
         position: 'bottom' // 'top' | 'bottom'
     }
   )
-  `
+  `;
 }

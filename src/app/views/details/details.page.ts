@@ -47,7 +47,6 @@ export class DetailsPage implements OnInit {
         bodyText:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis pretium massa, at pretium tortor congue nec.',
       },
-      fullscreen: true,
       comp: ModalSampleComponent,
     });
     console.log('MODAL RESP:', modalResp);
@@ -59,7 +58,6 @@ export class DetailsPage implements OnInit {
   async openModal2() {
     const modalResp = await this.utils.openModal({
       props: {},
-      fullscreen: true,
       comp: ModalSample2Component,
     });
     console.log('MODAL RESP:', modalResp);

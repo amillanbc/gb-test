@@ -13,7 +13,8 @@
     "test-android": "ionic capacitor run android -l --external",
     "test-am": "ionic capacitor run ios -l --external --target 00008130-000E78C83451001C",
     "storybook": "ng run app:storybook",
-    "build-storybook": "ng run app:build-storybook"
+    "build-storybook": "ng run app:build-storybook",
+    "serve": "ionic serve --host=0.0.0.0"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +35,7 @@
     "@capacitor/status-bar": "6.0.2",
     "@ionic/angular": "^8.0.0",
     "bootstrap": "^5.3.3",
+    "components-library": "file:../gb-components-library/dist/components-library",
     "ionicons": "^7.0.0",
     "ngx-highlightjs": "^14.0.0",
     "rxjs": "~7.8.0",

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
+import { GbSelectComponent } from 'components-library';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';

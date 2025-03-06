@@ -29,9 +29,9 @@ export class GbInputComponent implements OnInit {
   }
   // ##### INPUTS
   type = input<'text' | 'password' | 'email' | 'number'>('text');
-  label = input('')
-  errHint = input('')
-  okHint = input('')
+  label = input('');
+  errHint = input('');
+  okHint = input('');
   placeholder = input('');
   value = input.required<string>();
   color = input('blue');
@@ -55,8 +55,8 @@ export class GbInputComponent implements OnInit {
   // ##### METHODS
   togglePass() {
     this.isShowingPassword.update(val => (val = !val));
-    if (this.isShowingPassword()) this.inType.update(val => (val = 'text'));
-    else this.inType.update(val => (val = 'password'));
+    if (this.isShowingPassword()) this.inType.update(() => 'text');
+    else this.inType.update(() => 'password');
   }
 
   wasFocused() {
@@ -102,7 +102,7 @@ export class GbInputComponent implements OnInit {
 
   // ##### LC HOOKS
   ngOnInit(): void {
-    this.model.update(val => (val = this.value()));
-    this.inType.update(val => (val = this.type()));
+    this.model.update(() => this.value());
+    this.inType.update(() => this.type());
   }
 }

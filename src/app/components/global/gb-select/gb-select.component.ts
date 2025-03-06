@@ -3,14 +3,17 @@ import {
   Component,
   signal,
   input,
-  inject,
   computed,
   output,
   effect,
+  HostListener,
+  ElementRef,
+  inject,
 } from '@angular/core';
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import * as icons from 'ionicons/icons';
+
 
 // ##### SERVICES
 import { Utils } from 'src/app/stores/utils.service';
@@ -33,12 +36,18 @@ export class GbSelectComponent {
     });
   }
 
-  // ##### INJECTS
-  utils = inject(Utils);
+  elRef = inject(ElementRef);
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    if (!this.elRef.nativeElement.contains(event.target)) {
+      this.isDropdownOpen.update(() => false);
+    }
+  }
 
   // ##### INPUTS
   value = input.required<string>();
   options = input<{ label: string; value: string }[]>([]);
+  label = input('');
   placeholder = input('');
   icon = input('');
   disabled = input(false);
@@ -47,17 +56,19 @@ export class GbSelectComponent {
   identity = input('');
   interface = input('');
 
-  // OUTPUTS
+  // ##### OUTPUTS
   valueChange = output<string>();
 
   // ##### SIGNALS
   selected = signal<string>('');
   focused = signal(false);
+  isDropdownOpen = signal(false);
 
   // ##### METHODS
   async openSelect() {
     console.log(this.interface())
     if (this.disabled()) return;
+    
     switch (this.interface()) {
       case "modal": {
         const resp = await this.utils.openModal({
@@ -92,10 +103,17 @@ export class GbSelectComponent {
     }
     this.wasFocused();
   }
+    this.isDropdownOpen.update(() => !this.isDropdownOpen());
+    this.wasFocused();
+  }
 
+  selectOption(option: string) {
+    this.isDropdownOpen.update(() => false);
+    this.selected.update(() => option);
+  }
 
   wasFocused() {
-    this.focused.update(val => (val = true));
+    this.focused.update(() => true);
   }
 
   // ##### COMPUTED
@@ -104,7 +122,7 @@ export class GbSelectComponent {
     if (this.required()) label += ' *';
     if (!this.value()) return { label: label, value: '' };
     const options = [...this.options()];
-    const found = options.find(el => el.value == this.selected());
+    const found = options.find(el => el.value === this.selected());
     return found || { label: '', value: '' };
   });
 
@@ -114,7 +132,7 @@ export class GbSelectComponent {
     if (this.icon()) classes += ' pl-12';
     else classes += ' pl-4';
     if (this.disabled()) classes += ' cursor-not-allowed bg-gray-2';
-    else classes += ' cursor-pointer';
+    else classes += ' cursor-pointer bg-transparent';
     if (this.required() && this.focused()) {
       if (!this.selected())
         classes += ' focus:border-gb-error-500 border-gb-error-500';
@@ -122,5 +140,15 @@ export class GbSelectComponent {
     }
     if (!this.selected()) classes += ' text-dark-6';
     return classes;
+  });
+
+  dropdownClasses = computed(() => {
+    if (this.isDropdownOpen()) return 'top-full opacity-100 visible';
+    return 'top-[110%] invisible opacity-0';
+  });
+
+  selectChevronIcon = computed(() => {
+    if (this.isDropdownOpen()) return 'chevron-up-outline';
+    else return 'chevron-down-outline';
   });
 }

@@ -57,6 +57,10 @@ ion-modal#dialog-modal .wrapper {
   padding-right: 15px;
 }
 
+ion-modal#card-modal {
+  --height: auto;
+}
+
 ion-toast {
   --border-radius: 6px;
 }
