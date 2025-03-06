@@ -1,5 +1,5 @@
 // ##### IONIC & ANGULAR
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
 import { ToastController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
@@ -18,6 +18,9 @@ export class Utils {
   constructor() {
     addIcons(icons);
   }
+
+  // ##### SIGNALS
+  activeToast = signal<HTMLIonToastElement | null>(null);
 
   // ##### INJECTS
   modalCtrl = inject(ModalController);
@@ -156,6 +159,8 @@ export class Utils {
       icon: icn,
       header: header,
     });
+    this.activeToast()?.dismiss();
+    this.activeToast.update(val => (val = toast));
     await toast.present();
   }
 }
