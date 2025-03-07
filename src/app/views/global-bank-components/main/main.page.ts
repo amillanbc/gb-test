@@ -52,6 +52,10 @@ export class MainPage {
       route: '/progress-bar',
     },
     {
+      comp: 'Icons',
+      route: '/icons',
+    },
+    {
       comp: 'Typography',
       route: '/typography',
     },

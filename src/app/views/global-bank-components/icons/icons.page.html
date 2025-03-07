@@ -1,13 +1,122 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>icons</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">icons</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Icon</div>
+    <!-- Base -->
+    <div class="display-sm w600">Icon</div>
+    <div class="text-md">Icono base</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-icon icon="home-outline" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="base" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Colors -->
+    <div class="display-sm w600">Colors</div>
+    <div class="text-md">Asignacion de colores al icono.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-icon icon="home-outline" color="gb-cyan-500" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="colors" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- Size -->
+    <div class="display-sm w600">Size</div>
+    <div class="text-md">
+      Definicion de tamaño para el icono "px" | "rem" | "gb typography classes"
+    </div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-icon icon="home-outline" size="48px" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="sizePx" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <gb-icon icon="home-outline" size="3rem" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="sizeRem" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <gb-icon icon="home-outline" size="display-xl" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="sizeGb" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- From file -->
+    <div class="display-sm w600">Custom SVG From File</div>
+    <div class="text-md">Icono con SVG personalizado.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-icon icon="handshake" [fromFile]="true" size="4rem" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="fromFile" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+
+    <!-- From SRC -->
+    <div class="display-sm w600">Custom SVG From Source</div>
+    <div class="text-md">Icono con SVG personalizado.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-icon icon="logomark" [fromSrc]="true" size="4rem" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="fromSrc" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
 </ion-content>
