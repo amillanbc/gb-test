@@ -89,12 +89,25 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'icons',
+        loadComponent: () =>
+          import('./views/global-bank-components/icons/icons.page').then(
+            m => m.IconsPage
+          ),
+      },
+      {
         path: 'progress-bar',
-        loadComponent: () => import('./views/global-bank-components/progress-bar/progress-bar.page').then( m => m.ProgressBarPage)
+        loadComponent: () =>
+          import(
+            './views/global-bank-components/progress-bar/progress-bar.page'
+          ).then(m => m.ProgressBarPage),
       },
       {
         path: 'toast',
-        loadComponent: () => import('./views/global-bank-components/toast/toast.page').then( m => m.ToastPage)
+        loadComponent: () =>
+          import('./views/global-bank-components/toast/toast.page').then(
+            m => m.ToastPage
+          ),
       },
     ],
   },
