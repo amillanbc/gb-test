@@ -77,9 +77,7 @@ export class FormsPage {
   }
 
   // ##### COMPUTED
-  isFormValid = computed(() => {
-    return this.utils.validateForm(this.formData);
-  });
+  isFormValid = computed(() => this.utils.validateForm(this.formData));
 
   options = [
     {
@@ -140,6 +138,13 @@ export class FormsPage {
   import { Utils } from 'src/app/stores/utils.service';
 
   export class FormsPage {
+    // ##### CONSTRUCTOR
+    constructor() {
+      effect(() => {
+        this.formData.repass.validator = \`^\${this.formData.pass.value()}$\`;
+      });
+    }
+    
     // ##### INJECTIONS
     utils = inject(Utils);
 
@@ -152,6 +157,10 @@ export class FormsPage {
       pass: {
         value: signal(''),
         validator: '^.{3,}$',
+      },
+      repass: {
+        value: signal(''),
+        validator: '',
       },
       age: {
         value: signal(''),
@@ -174,9 +183,7 @@ export class FormsPage {
     }
       
     // ##### COMPUTED
-    isFormValid = computed(() => {
-      return this.utils.validateForm(this.formData);
-    });
+    isFormValid = computed(() => this.utils.validateForm(this.formData));
 
     // ##### OPTIONS
     options = [
