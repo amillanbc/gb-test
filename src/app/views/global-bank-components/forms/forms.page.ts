@@ -1,12 +1,14 @@
 // ##### IONIC & ANGULAR
-import { Component, signal, computed, inject } from '@angular/core';
+import { Component, signal, computed, inject, effect } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
-import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
-import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
-import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
+import {
+  GbInputComponent,
+  GbBtnComponent,
+  GbCheckboxComponent,
+  GbSelectComponent,
+} from 'components-library';
 
 // ##### SERVICES
 import { Utils } from 'src/app/stores/utils.service';
@@ -31,6 +33,12 @@ import { Highlight } from 'ngx-highlightjs';
   ],
 })
 export class FormsPage {
+  constructor() {
+    effect(() => {
+      this.formData.repass.validator = `^${this.formData.pass.value()}$`;
+    });
+  }
+
   // ##### INJECTIONS
   utils = inject(Utils);
 
@@ -43,6 +51,10 @@ export class FormsPage {
     pass: {
       value: signal(''),
       validator: '^.{3,}$',
+    },
+    repass: {
+      value: signal(''),
+      validator: '',
     },
     age: {
       value: signal(''),

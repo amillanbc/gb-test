@@ -26,6 +26,15 @@
                 [passwordToggle]="true" />
               <br />
               <gb-input
+                placeholder="Re Password"
+                [(value)]="formData.repass.value"
+                [regex]="formData.repass.validator"
+                icon="lock-closed-outline"
+                [required]="true"
+                type="password"
+                [passwordToggle]="true" />
+              <br />
+              <gb-input
                 placeholder="Age"
                 [(value)]="formData.age.value"
                 type="number"
