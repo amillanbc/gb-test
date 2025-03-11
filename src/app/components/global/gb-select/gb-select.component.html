@@ -25,7 +25,7 @@
     class="shadow-1 absolute left-0 z-40 mt-2 w-full rounded-md bg-white py-[10px] transition-all">
     @for (option of options(); track option) {
       <div
-        class="block px-5 py-2 text-base cursor-pointer text-black hover:bg-gb-blue-50 hover:text-gb-blue-500"
+        class="block px-5 py-2 text-base cursor-pointer text-black hover:bg-gb-blue-500 hover:text-gb-gray-light-400"
         (click)="selectOption(option.value)">
         {{ option.label }}
       </div>
