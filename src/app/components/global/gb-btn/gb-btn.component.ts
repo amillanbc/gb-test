@@ -54,7 +54,7 @@ export class GbBtnComponent {
     if (this.fill() == 'solid')
       classes += ` disabled:bg-gb-gray-light-500 disabled:text-gb-dark-600 bg-gb-${color}-500 text-white active:bg-gb-${color}-600 hover:bg-gb-${color}-400 border-gb-${color}-500 active:border-gb-${color}-600 hover:border-gb-${color}-400`;
     if (this.fill() == 'outline')
-      classes += `  active:text-gb-gray-light-400 text-gb-${color}-500 active:text-white bg-gb-no-color border-gb-${color}-500 hover:bg-gb-${color}-50 active:bg-gb-${color}-500  disabled:bg-no-color disabled:border-gb-gray-light-600`;
+      classes += ` active:text-gb-gray-light-400 text-gb-${color}-500 active:text-white bg-gb-no-color border-gb-${color}-500 hover:bg-gb-${color}-50 active:bg-gb-${color}-500  disabled:bg-no-color disabled:border-gb-gray-light-600`;
     classes += ` ${this.extraClasses()}`;
     return classes;
   });
