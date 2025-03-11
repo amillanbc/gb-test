@@ -34,8 +34,7 @@ export class GbIconComponent implements OnInit {
       const key = this.icon();
       const iconsObj: { [key: string]: any } = {};
       iconsObj[key] =
-        'data:image/svg+xml;utf8,' +
-        svgContent.replace(/fill="#[0-9a-fA-F]{3,6}"/g, 'fill="currentColor"');
+        `data:image/svg+xml;utf8,${svgContent.replace(/fill="#[0-9a-fA-F]{3,6}"/g, 'fill="currentColor"')}`;
       icns = { ...icns, ...iconsObj };
     }
     addIcons(icns);

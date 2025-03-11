@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-import { GbIconComponent } from 'components-library';
+// import { GbIconComponent } from 'components-library';
+import { GbIconComponent } from 'src/app/components/global/gb-icon/gb-icon.component';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';

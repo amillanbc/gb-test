@@ -113,10 +113,10 @@ export class Utils {
 
   public async openToast({
     text,
-    type,
+    type = 'default',
     header,
     icon,
-    duration = 3000,
+    duration = 5000,
     position = 'top',
     color = 'blue',
   }: {
@@ -152,12 +152,19 @@ export class Utils {
       message: text,
       duration: duration,
       position: position,
-      color: `gb-${col}-200`,
+      color: `gb-${col}-25`,
       mode: 'ios',
       cssClass: [`text-gb-${col}-600`, `gb-toast-gb-${col}-500`, 'w500'],
       swipeGesture: 'vertical',
       icon: icn,
       header: header,
+      buttons: [
+        {
+          side: 'end',
+          icon: 'close',
+          role: 'cancel',
+        },
+      ],
     });
     this.activeToast()?.dismiss();
     this.activeToast.update(() => toast);

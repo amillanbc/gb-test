@@ -6,8 +6,8 @@ import { IonContent, IonCol, IonRow } from '@ionic/angular/standalone';
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 
 // ##### SERVICES
-// import { Utils } from 'src/app/stores/utils.service';
-import { Utils } from 'components-library';
+import { Utils } from 'src/app/stores/utils.service';
+// import { Utils } from 'components-library';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';
@@ -33,7 +33,7 @@ export class ToastPage {
 
   openToastWithColor(type: 'default' | 'success' | 'warning' | 'error') {
     this.utils.openToast({
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      text: 'Tu usuario o contraseña son incorrectos. intenta de nuevo.',
       type: type,
     });
   }

@@ -3,7 +3,8 @@ import { Component, signal } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-import { GbInputComponent } from 'components-library';
+// import { GbInputComponent } from 'components-library';
+import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';

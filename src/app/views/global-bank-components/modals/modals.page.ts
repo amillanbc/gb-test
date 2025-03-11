@@ -12,7 +12,8 @@ import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-samp
 import { Highlight } from 'ngx-highlightjs';
 
 // ##### SERVICES
-import { Utils } from 'components-library';
+// import { Utils } from 'components-library';
+import { Utils } from 'src/app/stores/utils.service';
 
 @Component({
   selector: 'app-modals',

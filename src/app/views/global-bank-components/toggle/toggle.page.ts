@@ -3,7 +3,8 @@ import { Component, signal } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-import { GbToggleComponent } from 'components-library';
+// import { GbToggleComponent } from 'components-library';
+import { GbToggleComponent } from 'src/app/components/global/gb-toggle/gb-toggle.component';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';

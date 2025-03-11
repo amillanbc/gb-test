@@ -3,7 +3,8 @@ import { Component, OnInit, signal } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENT
-import { GbProgressBarComponent } from 'components-library';
+// import { GbProgressBarComponent } from 'components-library';
+import { GbProgressBarComponent } from 'src/app/components/global/gb-progress-bar/gb-progress-bar.component';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';

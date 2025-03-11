@@ -3,12 +3,16 @@ import { Component, signal, computed, inject, effect } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-import {
-  GbInputComponent,
-  GbBtnComponent,
-  GbCheckboxComponent,
-  GbSelectComponent,
-} from 'components-library';
+// import {
+//   GbInputComponent,
+//   GbBtnComponent,
+//   GbCheckboxComponent,
+//   GbSelectComponent,
+// } from 'components-library';
+import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
+import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
+import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
+import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
 
 // ##### SERVICES
 import { Utils } from 'src/app/stores/utils.service';

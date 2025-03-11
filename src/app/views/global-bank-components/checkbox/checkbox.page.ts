@@ -3,7 +3,8 @@ import { Component, signal } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-import { GbCheckboxComponent } from 'components-library';
+// import { GbCheckboxComponent } from 'components-library';
+import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';

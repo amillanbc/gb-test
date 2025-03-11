@@ -1,239 +1,98 @@
 @use 'sass:color';
 
-$gb-gray-light-25: #fdfdfd;
-$gb-gray-light-50: #fafafa;
-$gb-gray-light-100: #f5f5f5;
-$gb-gray-light-200: #e9eaeb;
-$gb-gray-light-300: #d5d7da;
-$gb-gray-light-400: #a4a7ae;
-$gb-gray-light-500: #717680;
-$gb-gray-light-600: #535862;
-$gb-gray-light-700: #414651;
-$gb-gray-light-800: #252b37;
-$gb-gray-light-900: #181d27;
-$gb-gray-light-950: #0a0d12;
+// GRAY LIGHT
+$gb-gray-light-400: #fafafa; // Gray 1
+$gb-gray-light-500: #eaeaeb; // Gray 2
+$gb-gray-light-600: #dbdbdc; // Gray 3
+$gb-gray-light-700: #d0d1d2; // Gray 4
+$gb-gray-light-800: #bbbcbe; // Gray 5
+$gb-gray-light-900: #acadaf; // Gray 6
+$gb-gray-light-950: #9c9da0; // Gray 7
 
-// Gray dark mode
-$gb-gray-dark-25: #fafafa;
-$gb-gray-dark-50: #f7f7f7;
-$gb-gray-dark-100: #f0f0f1;
-$gb-gray-dark-200: #ececed;
-$gb-gray-dark-300: #cecfd2;
-$gb-gray-dark-400: #94979c;
-$gb-gray-dark-500: #85888e;
-$gb-gray-dark-600: #61656c;
-$gb-gray-dark-700: #373a41;
-$gb-gray-dark-800: #22262f;
-$gb-gray-dark-900: #13161b;
-$gb-gray-dark-950: #0c0e12;
+// GRAY DARK
+$gb-gray-dark-300: #a3a5a9; // Dark 8
+$gb-gray-dark-400: #8c8e93; // Dark 7
+$gb-gray-dark-500: #74777d; // Dark 6
+$gb-gray-dark-600: #5d6168; // Dark 5
+$gb-gray-dark-700: #464a52; // Dark 4
+$gb-gray-dark-800: #2f343d; // Dark 3
+$gb-gray-dark-900: #181d27; // Dark 2
+$gb-gray-dark-950: #161a23; // Dark 1
 
-// Global bank primaries colors
-// Global Blue
-$gb-blue-25: #fafcff;
-$gb-blue-50: #f0f6ff;
-$gb-blue-100: #e0ecff;
-$gb-blue-200: #b8d3ff;
-$gb-blue-300: #85b4ff;
-$gb-blue-400: #3d87ff;
-$gb-blue-500: #0047ba;
-$gb-blue-600: #003d9e;
-$gb-blue-700: #003994;
-$gb-blue-800: #002b70;
-$gb-blue-900: #00235c;
-$gb-blue-950: #00173d;
+// BLUES
+$gb-blue-25: #e6edf8; // Blue light 5
+$gb-blue-100: #99b5e3; // Blue light 4
+$gb-blue-200: #739ad9; // Blue light 3
+$gb-blue-300: #4d7ecf; // Blue light 2
+$gb-blue-400: #2663c4; // Blue light
+$gb-blue-500: #0047ba; // Blue
+$gb-blue-600: #003a99; // Blue dark
 
-// Global Cyan
-$gb-cyan-25: #f5fcff;
-$gb-cyan-50: #ebfaff;
-$gb-cyan-100: #d6f5ff;
-$gb-cyan-200: #a3e8ff;
-$gb-cyan-300: #66d9ff;
-$gb-cyan-400: #0ac2ff;
-$gb-cyan-500: #00a7e1;
-$gb-cyan-600: #0095c7;
-$gb-cyan-700: #0086b3;
-$gb-cyan-800: #006b8f;
-$gb-cyan-900: #00506b;
-$gb-cyan-950: #003647;
+// CYANS
+$gb-cyan-200: #e6f6fc; // Cyan light 3
+$gb-cyan-300: #99dcf3; // Cyan light 2
+$gb-cyan-400: #5cc7ec; // Cyan light
+$gb-cyan-500: #00a7e1; // Cyan
+$gb-cyan-600: #008ebf; // Cyan dark
 
-// Global Pink
-$gb-pink-25: #fef5fc;
-$gb-pink-50: #fef1fb;
-$gb-pink-100: #fde7f8;
-$gb-pink-200: #fbcbf0;
-$gb-pink-300: #f9aae6;
-$gb-pink-400: #f57fda;
-$gb-pink-500: #ef2ac1;
-$gb-pink-600: #df11af;
-$gb-pink-700: #c20f99;
-$gb-pink-800: #a60c82;
-$gb-pink-900: #77095d;
-$gb-pink-950: #4c063c;
+// PINKS
+$gb-pink-100: #fcddf5; // Pink light 4
+$gb-pink-200: #f9b0e8; // Pink light 3
+$gb-pink-300: #f577d7; // Pink light 2
+$gb-pink-400: #f250cc; // Pink light
+$gb-pink-500: #ef2ac1; // Pink
+$gb-pink-600: #d225aa; // Pink dark
 
-// Global green
-$gb-green-25: #f9ffeb;
-$gb-green-50: #f2ffd6;
-$gb-green-100: #e4ffa8;
-$gb-green-200: #baff24;
-$gb-green-300: #a7f500;
-$gb-green-400: #9de600;
-$gb-green-500: #93d500;
-$gb-green-600: #84c200;
-$gb-green-700: #73a800;
-$gb-green-800: #628f00;
-$gb-green-900: #466600;
-$gb-green-950: #314700;
+// YELLOWS
+$gb-yellow-100: #fffbde; // Yellow light 4
+$gb-yellow-200: #fff4b0; // Yellow light 3
+$gb-yellow-300: #ffec73; // Yellow light 2
+$gb-yellow-400: #ffe017; // Yellow light
+$gb-yellow-500: #ffdd00; // Yellow
+$gb-yellow-600: #e8c900; // Yellow dark
+$gb-yellow-700: #d1b500; // Yellow dark 2
 
-// Global yellow
-$gb-yellow-25: #fffdf5;
-$gb-yellow-50: #fffceb;
-$gb-yellow-100: #fffadb;
-$gb-yellow-200: #fff4ad;
-$gb-yellow-300: #ffee80;
-$gb-yellow-400: #ffe642;
-$gb-yellow-500: #ffdd00;
-$gb-yellow-600: #e6c700;
-$gb-yellow-700: #ccb100;
-$gb-yellow-800: #a89200;
-$gb-yellow-900: #7a6a00;
-$gb-yellow-950: #574b00;
+// ERRORS
+$gb-error-25: #f8dede; // Red light 6
+$gb-error-50: #efb0b0; // Red light 5
+$gb-error-100: #e99191; // Red light 4
+$gb-error-200: #e47a7a; // Red light 3
+$gb-error-300: #dd5454; // Red light 2
+$gb-error-400: #d73636; // Red light
+$gb-error-500: #cc0000; // Red
+$gb-error-600: #e10e0e; // Red dark
 
-// Global error
-$gb-error-25: #fffafa;
-$gb-error-50: #fff0f0;
-$gb-error-100: #ffe5e5;
-$gb-error-200: #ffc7c7;
-$gb-error-300: #ff9e9e;
-$gb-error-400: #ff5c5c;
-$gb-error-500: #cc0000;
-$gb-error-600: #b80000;
-$gb-error-700: #a30000;
-$gb-error-800: #850000;
-$gb-error-900: #6b0000;
-$gb-error-950: #3d0000;
+// WARNINGS
+$gb-warning-25: #fef3e2; // Orange light 5
+$gb-warning-100: #fbdba7; // Orange light 4
+$gb-warning-200: #fad393; // Orange light 3
+$gb-warning-300: #f8c36c; // Orange light 2
+$gb-warning-400: #f6b13d; // Orange light
+$gb-warning-500: #f5a623; // Orange
+$gb-warning-600: #df9720; // Orange dark
 
-// Global warning
-$gb-warning-25: #fefbf5;
-$gb-warning-50: #fef9f0;
-$gb-warning-100: #fdf1dd;
-$gb-warning-200: #fce3bb;
-$gb-warning-300: #fad18f;
-$gb-warning-400: #f8bd5e;
-$gb-warning-500: #f5a623;
-$gb-warning-600: #e5910a;
-$gb-warning-700: #c87f09;
-$gb-warning-800: #ab6c08;
-$gb-warning-900: #754a05;
-$gb-warning-950: #583804;
+// SUCCESSES
+$gb-success-25: #e6f5eb; // Green light 6
+$gb-success-50: #cfecd8; // Green light 5
+$gb-success-100: #bfe6cc; // Green light 4
+$gb-success-200: #99d6ad; // Green light 3
+$gb-success-300: #73c78f; // Green light 2
+$gb-success-400: #4db870; // Green light
+$gb-success-500: #009933; // Green
+$gb-success-600: #00822b; // Green dark
 
-// Global success
-$gb-success-25: #f5fff8;
-$gb-success-50: #dbffe7;
-$gb-success-100: #b8ffcf;
-$gb-success-200: #70ffa0;
-$gb-success-300: #29ff70;
-$gb-success-400: #00e04b;
-$gb-success-500: #009933;
-$gb-success-600: #007a29;
-$gb-success-700: #005c1f;
-$gb-success-800: #003d14;
-$gb-success-900: #001f0a;
-$gb-success-950: #000f05;
-
-//Global TAP
-// TAP blue
-$gb-tap-blue-25: #f5f7ff;
-$gb-tap-blue-50: #e5ebff;
-$gb-tap-blue-100: #ccd7ff;
-$gb-tap-blue-200: #99afff;
-$gb-tap-blue-300: #6687ff;
-$gb-tap-blue-400: #335fff;
-$gb-tap-blue-500: #0037fc;
-$gb-tap-blue-600: #002ccc;
-$gb-tap-blue-700: #002199;
-$gb-tap-blue-800: #001666;
-$gb-tap-blue-900: #000b33;
-$gb-tap-blue-950: #000619;
-
-// TAP yellow
-$gb-tap-yellow-25: #f5f7ff;
-$gb-tap-yellow-50: #ffffdb;
-$gb-tap-yellow-100: #ffffc7;
-$gb-tap-yellow-200: #ffff85;
-$gb-tap-yellow-300: #fefe01;
-$gb-tap-yellow-400: #f9f901;
-$gb-tap-yellow-500: #f5f501;
-$gb-tap-yellow-600: #e0e001;
-$gb-tap-yellow-700: #c6c601;
-$gb-tap-yellow-800: #a3a301;
-$gb-tap-yellow-900: #757500;
-$gb-tap-yellow-950: #515100;
-
-// TAP pink
-$gb-tap-pink-25: #fffafd;
-$gb-tap-pink-50: #fff5fc;
-$gb-tap-pink-100: #fee7f8;
-$gb-tap-pink-200: #fdc9f1;
-$gb-tap-pink-300: #fba2e6;
-$gb-tap-pink-400: #f96cd8;
-$gb-tap-pink-500: #e60ab4;
-$gb-tap-pink-600: #cd099f;
-$gb-tap-pink-700: #b5088c;
-$gb-tap-pink-800: #980776;
-$gb-tap-pink-900: #6c0554;
-$gb-tap-pink-950: #4e033d;
-
-// TAP Cyan
-$gb-tap-cyan-25: #fafdff;
-$gb-tap-cyan-50: #f0f9ff;
-$gb-tap-cyan-100: #dbf1ff;
-$gb-tap-cyan-200: #b8e2ff;
-$gb-tap-cyan-300: #85ceff;
-$gb-tap-cyan-400: #4db8ff;
-$gb-tap-cyan-500: #0097fc;
-$gb-tap-cyan-600: #0087e0;
-$gb-tap-cyan-700: #0077c7;
-$gb-tap-cyan-800: #0065a8;
-$gb-tap-cyan-900: #00497a;
-$gb-tap-cyan-950: #003457;
-
-// TAP Aquamarine
-$gb-tap-aquamarine-25: #fafdff;
-$gb-tap-aquamarine-50: #edfcf8;
-$gb-tap-aquamarine-100: #dbfaf1;
-$gb-tap-aquamarine-200: #b8f4e2;
-$gb-tap-aquamarine-300: #94efd4;
-$gb-tap-aquamarine-400: #71eac6;
-$gb-tap-aquamarine-500: #50e5b9;
-$gb-tap-aquamarine-600: #20d59f;
-$gb-tap-aquamarine-700: #18a077;
-$gb-tap-aquamarine-800: #106b4f;
-$gb-tap-aquamarine-900: #083528;
-$gb-tap-aquamarine-950: #041b14;
-
-// TAP Error
-$gb-tap-error-25: #fefafa;
-$gb-tap-error-50: #fef6f6;
-$gb-tap-error-100: #fce8e8;
-$gb-tap-error-200: #fad1d1;
-$gb-tap-error-300: #f6b2b2;
-$gb-tap-error-400: #f18d8d;
-$gb-tap-error-500: #eb5757;
-$gb-tap-error-600: #e73636;
-$gb-tap-error-700: #d61a1a;
-$gb-tap-error-800: #b21515;
-$gb-tap-error-900: #800f0f;
-$gb-tap-error-950: #640c0c;
+// LIMES
+$gb-lime-200: #f4fbe6; // Lime light 3
+$gb-lime-300: #d4ee99; // Lime light 2
+$gb-lime-400: #b3e24d; // Lime light
+$gb-lime-500: #93d500; // Lime
+$gb-lime-600: #7db500; // Lime dark
 
 $gb-colors: (
+  // TRANSPARENT
   no-color: transparent,
-  //
-  // Gray light mode
-  gb-gray-light-25: $gb-gray-light-25,
-  gb-gray-light-50: $gb-gray-light-50,
-  gb-gray-light-100: $gb-gray-light-100,
-  gb-gray-light-200: $gb-gray-light-200,
-  gb-gray-light-300: $gb-gray-light-300,
+
+  // GRAYS
   gb-gray-light-400: $gb-gray-light-400,
   gb-gray-light-500: $gb-gray-light-500,
   gb-gray-light-600: $gb-gray-light-600,
@@ -242,11 +101,7 @@ $gb-colors: (
   gb-gray-light-900: $gb-gray-light-900,
   gb-gray-light-950: $gb-gray-light-950,
 
-  // Gray dark mode
-  gb-gray-dark-25: $gb-gray-dark-25,
-  gb-gray-dark-50: $gb-gray-dark-50,
-  gb-gray-dark-100: $gb-gray-dark-100,
-  gb-gray-dark-200: $gb-gray-dark-200,
+  // DARK
   gb-gray-dark-300: $gb-gray-dark-300,
   gb-gray-dark-400: $gb-gray-dark-400,
   gb-gray-dark-500: $gb-gray-dark-500,
@@ -256,66 +111,31 @@ $gb-colors: (
   gb-gray-dark-900: $gb-gray-dark-900,
   gb-gray-dark-950: $gb-gray-dark-950,
 
-  // Global bank primaries colors
-  // Global Blue
+  // BLUES
   gb-blue-25: $gb-blue-25,
-  gb-blue-50: $gb-blue-50,
   gb-blue-100: $gb-blue-100,
   gb-blue-200: $gb-blue-200,
   gb-blue-300: $gb-blue-300,
   gb-blue-400: $gb-blue-400,
   gb-blue-500: $gb-blue-500,
   gb-blue-600: $gb-blue-600,
-  gb-blue-700: $gb-blue-700,
-  gb-blue-800: $gb-blue-800,
-  gb-blue-900: $gb-blue-900,
-  gb-blue-950: $gb-blue-950,
 
-  //  Global cyan
-  gb-cyan-25: $gb-cyan-25,
-  gb-cyan-50: $gb-cyan-50,
-  gb-cyan-100: $gb-cyan-100,
+  //  CYANS
   gb-cyan-200: $gb-cyan-200,
   gb-cyan-300: $gb-cyan-300,
   gb-cyan-400: $gb-cyan-400,
   gb-cyan-500: $gb-cyan-500,
   gb-cyan-600: $gb-cyan-600,
-  gb-cyan-700: $gb-cyan-700,
-  gb-cyan-800: $gb-cyan-800,
-  gb-cyan-900: $gb-cyan-900,
-  gb-cyan-950: $gb-cyan-950,
 
-  // Global Pink
-  gb-pink-25: $gb-pink-25,
-  gb-pink-50: $gb-pink-50,
+  // PINKS
   gb-pink-100: $gb-pink-100,
   gb-pink-200: $gb-pink-200,
   gb-pink-300: $gb-pink-300,
   gb-pink-400: $gb-pink-400,
   gb-pink-500: $gb-pink-500,
   gb-pink-600: $gb-pink-600,
-  gb-pink-700: $gb-pink-700,
-  gb-pink-800: $gb-pink-800,
-  gb-pink-900: $gb-pink-900,
-  gb-pink-950: $gb-pink-950,
 
-  // Global green
-  gb-green-25: $gb-green-25,
-  gb-green-50: $gb-green-50,
-  gb-green-100: $gb-green-100,
-  gb-green-200: $gb-green-200,
-  gb-green-300: $gb-green-300,
-  gb-green-400: $gb-green-400,
-  gb-green-500: $gb-green-500,
-  gb-green-600: $gb-green-600,
-  gb-green-700: $gb-green-700,
-  gb-green-800: $gb-green-800,
-  gb-green-900: $gb-green-900,
-  gb-green-950: $gb-green-950,
-
-  // Global yellow
-  gb-yellow-25: $gb-yellow-25,
-  gb-yellow-50: $gb-yellow-50,
+  // YELLOWS
   gb-yellow-100: $gb-yellow-100,
   gb-yellow-200: $gb-yellow-200,
   gb-yellow-300: $gb-yellow-300,
@@ -323,11 +143,8 @@ $gb-colors: (
   gb-yellow-500: $gb-yellow-500,
   gb-yellow-600: $gb-yellow-600,
   gb-yellow-700: $gb-yellow-700,
-  gb-yellow-800: $gb-yellow-800,
-  gb-yellow-900: $gb-yellow-900,
-  gb-yellow-950: $gb-yellow-950,
 
-  // Global error
+  // ERRORS
   gb-error-25: $gb-error-25,
   gb-error-50: $gb-error-50,
   gb-error-100: $gb-error-100,
@@ -336,26 +153,17 @@ $gb-colors: (
   gb-error-400: $gb-error-400,
   gb-error-500: $gb-error-500,
   gb-error-600: $gb-error-600,
-  gb-error-700: $gb-error-700,
-  gb-error-800: $gb-error-800,
-  gb-error-900: $gb-error-900,
-  gb-error-950: $gb-error-950,
 
-  // Global warning
+  // WARNINGS
   gb-warning-25: $gb-warning-25,
-  gb-warning-50: $gb-warning-50,
   gb-warning-100: $gb-warning-100,
   gb-warning-200: $gb-warning-200,
   gb-warning-300: $gb-warning-300,
   gb-warning-400: $gb-warning-400,
   gb-warning-500: $gb-warning-500,
   gb-warning-600: $gb-warning-600,
-  gb-warning-700: $gb-warning-700,
-  gb-warning-800: $gb-warning-800,
-  gb-warning-900: $gb-warning-900,
-  gb-warning-950: $gb-warning-950,
 
-  // Global success,
+  // SUCCESSES
   gb-success-25: $gb-success-25,
   gb-success-50: $gb-success-50,
   gb-success-100: $gb-success-100,
@@ -364,95 +172,13 @@ $gb-colors: (
   gb-success-400: $gb-success-400,
   gb-success-500: $gb-success-500,
   gb-success-600: $gb-success-600,
-  gb-success-700: $gb-success-700,
-  gb-success-800: $gb-success-800,
-  gb-success-900: $gb-success-900,
-  gb-success-950: $gb-success-950,
 
-  //Global TAP
-  // TAP blue
-  gb-tap-blue-25: $gb-tap-blue-25,
-  gb-tap-blue-50: $gb-tap-blue-50,
-  gb-tap-blue-100: $gb-tap-blue-100,
-  gb-tap-blue-200: $gb-tap-blue-200,
-  gb-tap-blue-300: $gb-tap-blue-300,
-  gb-tap-blue-400: $gb-tap-blue-400,
-  gb-tap-blue-500: $gb-tap-blue-500,
-  gb-tap-blue-600: $gb-tap-blue-600,
-  gb-tap-blue-700: $gb-tap-blue-700,
-  gb-tap-blue-800: $gb-tap-blue-800,
-  gb-tap-blue-900: $gb-tap-blue-900,
-  gb-tap-blue-950: $gb-tap-blue-950,
-
-  // TAP yellow
-  gb-tap-yellow-25: $gb-tap-yellow-25,
-  gb-tap-yellow-50: $gb-tap-yellow-50,
-  gb-tap-yellow-100: $gb-tap-yellow-100,
-  gb-tap-yellow-200: $gb-tap-yellow-200,
-  gb-tap-yellow-300: $gb-tap-yellow-300,
-  gb-tap-yellow-400: $gb-tap-yellow-400,
-  gb-tap-yellow-500: $gb-tap-yellow-500,
-  gb-tap-yellow-600: $gb-tap-yellow-600,
-  gb-tap-yellow-700: $gb-tap-yellow-700,
-  gb-tap-yellow-800: $gb-tap-yellow-800,
-  gb-tap-yellow-900: $gb-tap-yellow-900,
-  gb-tap-yellow-950: $gb-tap-yellow-950,
-
-  // TAP pink
-  gb-tap-pink-25: $gb-tap-pink-25,
-  gb-tap-pink-50: $gb-tap-pink-50,
-  gb-tap-pink-100: $gb-tap-pink-100,
-  gb-tap-pink-200: $gb-tap-pink-200,
-  gb-tap-pink-300: $gb-tap-pink-300,
-  gb-tap-pink-400: $gb-tap-pink-400,
-  gb-tap-pink-500: $gb-tap-pink-500,
-  gb-tap-pink-600: $gb-tap-pink-600,
-  gb-tap-pink-700: $gb-tap-pink-700,
-  gb-tap-pink-800: $gb-tap-pink-800,
-  gb-tap-pink-900: $gb-tap-pink-900,
-  gb-tap-pink-950: $gb-tap-pink-950,
-
-  // TAP Cyan
-  gb-tap-cyan-25: $gb-tap-cyan-25,
-  gb-tap-cyan-50: $gb-tap-cyan-50,
-  gb-tap-cyan-100: $gb-tap-cyan-100,
-  gb-tap-cyan-200: $gb-tap-cyan-200,
-  gb-tap-cyan-300: $gb-tap-cyan-300,
-  gb-tap-cyan-400: $gb-tap-cyan-400,
-  gb-tap-cyan-500: $gb-tap-cyan-500,
-  gb-tap-cyan-600: $gb-tap-cyan-600,
-  gb-tap-cyan-700: $gb-tap-cyan-700,
-  gb-tap-cyan-800: $gb-tap-cyan-800,
-  gb-tap-cyan-900: $gb-tap-cyan-900,
-  gb-tap-cyan-950: $gb-tap-cyan-950,
-
-  // TAP Aquamarine
-  gb-tap-aquamarine-25: $gb-tap-aquamarine-25,
-  gb-tap-aquamarine-50: $gb-tap-aquamarine-50,
-  gb-tap-aquamarine-100: $gb-tap-aquamarine-100,
-  gb-tap-aquamarine-200: $gb-tap-aquamarine-200,
-  gb-tap-aquamarine-300: $gb-tap-aquamarine-300,
-  gb-tap-aquamarine-400: $gb-tap-aquamarine-400,
-  gb-tap-aquamarine-500: $gb-tap-aquamarine-500,
-  gb-tap-aquamarine-600: $gb-tap-aquamarine-600,
-  gb-tap-aquamarine-700: $gb-tap-aquamarine-700,
-  gb-tap-aquamarine-800: $gb-tap-aquamarine-800,
-  gb-tap-aquamarine-900: $gb-tap-aquamarine-900,
-  gb-tap-aquamarine-950: $gb-tap-aquamarine-950,
-
-  // TAP Aquamarine
-  gb-tap-error-25: $gb-tap-error-25,
-  gb-tap-error-50: $gb-tap-error-50,
-  gb-tap-error-100: $gb-tap-error-100,
-  gb-tap-error-200: $gb-tap-error-200,
-  gb-tap-error-300: $gb-tap-error-300,
-  gb-tap-error-400: $gb-tap-error-400,
-  gb-tap-error-500: $gb-tap-error-500,
-  gb-tap-error-600: $gb-tap-error-600,
-  gb-tap-error-700: $gb-tap-error-700,
-  gb-tap-error-800: $gb-tap-error-800,
-  gb-tap-error-900: $gb-tap-error-900,
-  gb-tap-error-950: $gb-tap-error-950,
+  // LIMES
+  gb-lime-200: $gb-lime-200,
+  gb-lime-300: $gb-lime-300,
+  gb-lime-400: $gb-lime-400,
+  gb-lime-500: $gb-lime-500,
+  gb-lime-600: $gb-lime-600
 );
 
 :root {
@@ -522,6 +248,6 @@ $gb-colors: (
     border-radius: 50%;
     font-size: 1rem;
     padding: 3px;
-    color: white
+    color: white;
   }
 }
