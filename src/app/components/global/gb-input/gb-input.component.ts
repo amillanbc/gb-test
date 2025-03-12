@@ -24,6 +24,10 @@ export class GbInputComponent implements OnInit {
     addIcons(icons);
     // ##### EFFECTS
     effect(() => {
+      if (this.value() !== '' && !this.valueLoaded()) {
+        this.model.update(() => this.value());
+        this.valueLoaded.update(() => true);
+      }
       this.valueChange.emit(this.model());
     });
   }
@@ -51,6 +55,7 @@ export class GbInputComponent implements OnInit {
   isShowingPassword = signal(false);
   inType = signal('');
   focused = signal(false);
+  valueLoaded = signal(false);
 
   // ##### METHODS
   togglePass() {
@@ -60,7 +65,7 @@ export class GbInputComponent implements OnInit {
   }
 
   wasFocused() {
-    this.focused.update(val => (val = true));
+    this.focused.update(() => true);
   }
 
   // OUTPUTS
