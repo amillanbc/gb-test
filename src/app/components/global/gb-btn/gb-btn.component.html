@@ -1,4 +1,8 @@
-<button [class]="classes()" [disabled]="disabled()" [id]="identity()">
+<button
+  [class]="classes()"
+  [disabled]="disabled()"
+  [id]="identity()"
+  [attr.data-test]="identity() + '-gb-btn'">
   @if (spinner() && spinnerPosition() == 'left') {
     <ion-spinner [name]="spinner()" [color]="color()"></ion-spinner>
   }

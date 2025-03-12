@@ -6,7 +6,8 @@
     (click)="updateValue()"
     [checked]="value()"
     [disabled]="disabled()"
-    [id]="identity()" />
+    [id]="identity()"
+    [attr.data-test]="identity() + '-gb-toggle'" />
   @if (labelPosition() == 'left') {
     <span class="label flex items-center text-sm font-medium text-dark">
       {{ label() }}

@@ -15,7 +15,8 @@
     (click)="openSelect()"
     onmousedown="(function(e){ e.preventDefault(); })(event, this)"
     [class]="classes()"
-    [id]="identity()">
+    [id]="identity()"
+    [attr.data-test]="identity() + '-gb-select'">
     <option>
       {{ returnPlaceholder().label }}
     </option>
@@ -23,9 +24,11 @@
   <div
     [class]="dropdownClasses()"
     class="shadow-1 absolute left-0 z-40 mt-2 w-full rounded-md bg-white py-[10px] transition-all">
-    @for (option of options(); track option) {
+    @for (option of options(); track option; let idx = $index) {
       <div
         class="block px-5 py-2 text-base cursor-pointer text-black hover:bg-gb-blue-500 hover:text-gb-gray-light-400"
+        [id]="identity() + '-option-' + idx"
+        [attr.data-test]="identity() + '-gb-option-' + idx"
         (click)="selectOption(option.value)">
         {{ option.label }}
       </div>

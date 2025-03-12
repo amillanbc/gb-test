@@ -9,7 +9,8 @@
     [class]="classes()"
     (focusout)="wasFocused()"
     [disabled]="disabled()"
-    [id]="identity()" />
+    [id]="identity()"
+    [attr.data-test]="identity() + '-gb-input'" />
   <ion-icon
     [name]="icon()"
     class="absolute top-1/2 left-4 -translate-y-1/2"
@@ -30,4 +31,3 @@
     <p class="mt-[10px] text-sm text-gb-error-500">{{ errHint() }}</p>
   }
 }
-
