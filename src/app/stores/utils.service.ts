@@ -118,7 +118,7 @@ export class Utils {
     icon,
     duration = 5000,
     position = 'top',
-    color = 'blue',
+    color,
   }: {
     text: string;
     type?: 'default' | 'success' | 'warning' | 'error';
@@ -128,44 +128,30 @@ export class Utils {
     position?: 'top' | 'bottom';
     color?: string;
   }): Promise<void> {
-    let icn = icon || '';
-    let col = color;
-    switch (type) {
-      case 'default':
-        icn = 'information-circle-outline';
-        col = 'blue';
-        break;
-      case 'error':
-        icn = 'close-circle-outline';
-        col = 'error';
-        break;
-      case 'success':
-        icn = 'checkmark-circle-outline';
-        col = 'success';
-        break;
-      case 'warning':
-        icn = 'warning-outline';
-        col = 'warning';
-        break;
-    }
+    const typeConfig: Record<string, { icon: string; color: string }> = {
+      default: { icon: 'information-circle-outline', color: 'blue' },
+      error: { icon: 'close-circle-outline', color: 'error' },
+      success: { icon: 'checkmark-circle-outline', color: 'success' },
+      warning: { icon: 'warning-outline', color: 'warning' },
+    };
+
+    const selectedType = typeConfig[type] || typeConfig['default'];
+    const icn = icon || selectedType.icon;
+    const col = color || selectedType.color;
+
     const toast = await this.toastCtrl.create({
       message: text,
-      duration: duration,
-      position: position,
+      duration,
+      position,
       color: `gb-${col}-25`,
       mode: 'ios',
       cssClass: [`text-gb-${col}-600`, `gb-toast-gb-${col}-500`, 'w500'],
       swipeGesture: 'vertical',
       icon: icn,
-      header: header,
-      buttons: [
-        {
-          side: 'end',
-          icon: 'close',
-          role: 'cancel',
-        },
-      ],
+      header,
+      buttons: [{ side: 'end', icon: 'close', role: 'cancel' }],
     });
+
     this.activeToast()?.dismiss();
     this.activeToast.update(() => toast);
     await toast.present();
