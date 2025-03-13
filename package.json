@@ -41,7 +41,6 @@
     "ionicons": "^7.0.0",
     "ngx-highlightjs": "^14.0.0",
     "rxjs": "~7.8.0",
-    "tailgrids": "^2.2.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

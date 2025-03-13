@@ -1,5 +1,9 @@
 @use 'sass:color';
 
+// TEXTS
+$gb-text-primary: #414651;
+$gb-text-secondary: #7a8294;
+
 // GRAY LIGHT
 $gb-gray-light-400: #fafafa; // Gray 1
 $gb-gray-light-500: #eaeaeb; // Gray 2
@@ -91,6 +95,10 @@ $gb-lime-600: #7db500; // Lime dark
 $gb-colors: (
   // TRANSPARENT
   no-color: transparent,
+
+  // TEXTS
+  gb-text-primary: $gb-text-primary,
+  gb-text-secondary: $gb-text-secondary,
 
   // GRAYS
   gb-gray-light-400: $gb-gray-light-400,

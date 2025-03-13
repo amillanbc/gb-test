@@ -1,0 +1,15 @@
+<div class="mx-auto px-4 sm:container">
+  <div
+    class="-mx-3 flex items-center justify-center sm:-mx-7 md:-mx-10 lg:-mx-[50px]">
+    @for (step of stepsLength(); track step; let idx = $index) {
+      <div class="relative px-3 text-center sm:px-7 md:px-10 lg:px-[50px]">
+        @if (idx + 1 < stepsLength().length) {
+          <span [class]="strokeClass(idx + 1)"> </span>
+        }
+        <span [class]="stepClass(idx + 1)" style="border-width: 2px">
+          {{ idx + 1 }}
+        </span>
+      </div>
+    }
+  </div>
+</div>
