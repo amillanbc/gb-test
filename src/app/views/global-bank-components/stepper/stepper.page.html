@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <div class="gb-pa-4xl">
+    <div class="display-lg w700 gb-mb-4xl">GB Stepper</div>
+    <!-- Primary -->
+    <div class="display-sm w600">Stepper</div>
+    <div class="text-md">Base stepper usage.</div>
+    <div class="gb-py-2xl gb-px-md">
+      <div
+        class="overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3">
+        <div class="text-center sm:p-9 md:p-7 xl:p-9">
+          <ion-row>
+            <ion-col>
+              <gb-stepper [steps]="4" [current]="2" />
+            </ion-col>
+            <ion-col>
+              <pre><code [highlight]="stepperCode" language="html"></code></pre>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <!--/-->
+  </div>
+</ion-content>

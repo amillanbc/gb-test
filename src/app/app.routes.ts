@@ -109,6 +109,13 @@ export const routes: Routes = [
             m => m.ToastPage
           ),
       },
+      {
+        path: 'stepper',
+        loadComponent: () =>
+          import('./views/global-bank-components/stepper/stepper.page').then(
+            m => m.StepperPage
+          ),
+      },
     ],
   },
   {
