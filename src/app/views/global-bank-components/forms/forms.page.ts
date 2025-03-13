@@ -94,6 +94,11 @@ export class FormsPage {
     },
   ];
 
+  regexMessages = [
+    'Should be at least 3 characters long.',
+    'Should contain special chars !@#$%^&*()',
+  ];
+
   html = `
   <gb-input
     placeholder="User"
@@ -108,7 +113,19 @@ export class FormsPage {
     [regex]="formData.pass.validator"
     icon="lock-closed-outline"
     [required]="true"
-    type="password" />
+    type="password"
+    [passwordToggle]="true"
+    [regexMessages]="regexMessages" />
+
+  <gb-input
+    placeholder="Re Password"
+    [(value)]="formData.repass.value"
+    [regex]="formData.repass.validator"
+    icon="lock-closed-outline"
+    [required]="true"
+    type="password"
+    errHint="Passwords do not match."
+    [passwordToggle]="true" />
 
   <gb-input
     placeholder="Age"
@@ -160,7 +177,7 @@ export class FormsPage {
       },
       pass: {
         value: signal(''),
-        validator: '^.{3,}$',
+        validator: ['^.{3,}$', '[!@#$%^&*()]'],
       },
       repass: {
         value: signal(''),
@@ -199,6 +216,11 @@ export class FormsPage {
         label: 'Female',
         value: 'female',
       },
+    ];
+
+    regexMessages = [
+      'Should be at least 3 characters long.',
+      'Should contain special chars !@#$%^&*()',
     ];
   }
 

@@ -78,7 +78,7 @@ export class GbInputComponent implements OnInit {
   classes = computed(() => {
     const color = this.color();
     const level = this.level();
-    let classes = `w-full rounded-md border border-stroke outline-none transition py-[10px] pr-3`;
+    let classes = `bg-white w-full rounded-md border border-stroke outline-none transition py-[10px] pr-3`;
     if (this.icon()) classes += ` pl-12`;
     else classes += ` pl-3`;
     classes += ` focus:border-gb-${color}-${level}`;
