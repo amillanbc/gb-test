@@ -15,7 +15,8 @@
     "storybook": "ng run app:storybook",
     "build-storybook": "ng run app:build-storybook",
     "serve": "ng serve --host=0.0.0.0",
-    "update-lib": "npm uninstall components-library && npm install ../gb-components-library/dist/components-library"
+    "update-lib": "npm uninstall components-library && npm install ../gb-components-library/dist/components-library",
+    "sync-lib": "rsync -av ./src/app/components/global/ ../gb-components-library/projects/components-library/src/lib/components/"
   },
   "private": true,
   "dependencies": {

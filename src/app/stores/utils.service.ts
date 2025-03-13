@@ -69,32 +69,35 @@ export class Utils {
       ];
       const num = parseFloat(`${val}`);
       if (typeof validator === 'boolean' && val !== validator) return false;
-      if (typeof validator === 'string' || min || max) {
-        if (!this.validateField(val, validator, min, max, num)) return false;
-      }
+      if (!this.validateField(val, validator, min, max, num)) return false;
     }
     return true;
   }
 
   validateField(
     val: string | boolean,
-    validator: string | boolean | undefined,
+    validator: string | string[] | boolean | undefined,
     min: number | undefined,
     max: number | undefined,
     num: number
   ): boolean {
-    if (typeof val === 'string' && typeof validator === 'string') {
-      if (!this.validateString(validator, val)) return false;
+    const isStrOrStrArr =
+      typeof validator === 'string' || Array.isArray(validator);
+    if (typeof val === 'string' && isStrOrStrArr) {
+      const vld = Array.isArray(validator) ? validator : [validator];
+      if (!this.validateString(vld, val)) return false;
     }
-    if (typeof val === 'string' && (min || max)) {
+    if (min || max) {
       if (!this.validateMinMax(min, max, num)) return false;
     }
     return true;
   }
 
-  private validateString(validator: string, val: string): boolean {
-    const regex = new RegExp(validator);
-    if (typeof val === 'string' && !regex.test(val)) return false;
+  private validateString(validator: string[], val: string): boolean {
+    for (let vldtr of validator) {
+      const regex = new RegExp(vldtr);
+      if (typeof val === 'string' && !regex.test(val)) return false;
+    }
     return true;
   }
 

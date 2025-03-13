@@ -54,7 +54,7 @@ export class FormsPage {
     },
     pass: {
       value: signal(''),
-      validator: '^.{3,}$',
+      validator: ['^.{3,}$', '[!@#$%^&*()]'],
     },
     repass: {
       value: signal(''),

@@ -8,6 +8,7 @@
     [(ngModel)]="model"
     [class]="classes()"
     (focusout)="wasFocused()"
+    (focusin)="wasFocused()"
     [disabled]="disabled()"
     [id]="identity()"
     [attr.data-test]="identity() + '-gb-input'" />
@@ -30,4 +31,22 @@
   @if (errHint() && model() && !isValid()) {
     <p class="mt-[10px] text-sm text-gb-error-500">{{ errHint() }}</p>
   }
+}
+
+@if (regexMessages() && isFocus()) {
+  <ul class="gb-mt-md">
+    @for (msg of regexMessages(); track msg; let idx = $index) {
+      <li
+        [class]="
+          validateRegex([regex()[idx]])
+            ? 'text-gb-success-500 flex'
+            : 'text-gb-gray-dark-500 flex'
+        ">
+        <span class="mr-1">
+          <ion-icon name="checkmark-circle-outline" class="display-xs" />
+        </span>
+        <span class="text-sm">{{ msg }}</span>
+      </li>
+    }
+  </ul>
 }

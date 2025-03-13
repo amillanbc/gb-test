@@ -15,7 +15,6 @@
                 [regex]="formData.user.validator"
                 [required]="true"
                 icon="person-outline" />
-              <br />
               <gb-input
                 placeholder="Password"
                 [(value)]="formData.pass.value"
@@ -23,8 +22,8 @@
                 icon="lock-closed-outline"
                 [required]="true"
                 type="password"
-                [passwordToggle]="true" />
-              <br />
+                [passwordToggle]="true"
+                [regexMessages]="['Should be at least 3 characters long.', 'Should contain special chars !@#$%^&*()']" />
               <gb-input
                 placeholder="Re Password"
                 [(value)]="formData.repass.value"
@@ -32,8 +31,8 @@
                 icon="lock-closed-outline"
                 [required]="true"
                 type="password"
+                errHint="Passwords do not match."
                 [passwordToggle]="true" />
-              <br />
               <gb-input
                 placeholder="Age"
                 [(value)]="formData.age.value"
@@ -41,7 +40,6 @@
                 [required]="true"
                 [min]="formData.age.min"
                 [max]="formData.age.max" />
-              <br />
               <gb-select
                 placeholder="Select gender"
                 [(value)]="formData.gender.value"

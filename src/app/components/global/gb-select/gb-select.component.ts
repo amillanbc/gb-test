@@ -88,11 +88,11 @@ export class GbSelectComponent {
     else classes += ' pl-4';
     if (this.disabled()) classes += ' cursor-not-allowed bg-gray-2';
     else classes += ' cursor-pointer bg-transparent';
-    if (this.required() && this.focused()) {
-      if (!this.selected())
-        classes += ' focus:border-gb-error-500 border-gb-error-500';
-      else classes += ' focus:border-gb-success-500 border-gb-success-500';
-    }
+    // if (this.required() && this.focused()) {
+    //   if (!this.selected())
+    //     classes += ' focus:border-gb-error-500 border-gb-error-500';
+    //   else classes += ' focus:border-gb-success-500 border-gb-success-500';
+    // }
     if (!this.selected()) classes += ' text-dark-6';
     return classes;
   });
