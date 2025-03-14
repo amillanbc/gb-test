@@ -4,6 +4,9 @@
 $gb-text-primary: #414651;
 $gb-text-secondary: #7a8294;
 
+// GRAY STROKE
+$gb-stroke-500: #d5d8dd;
+
 // GRAY LIGHT
 $gb-gray-light-400: #fafafa; // Gray 1
 $gb-gray-light-500: #eaeaeb; // Gray 2
@@ -99,6 +102,9 @@ $gb-colors: (
   // TEXTS
   gb-text-primary: $gb-text-primary,
   gb-text-secondary: $gb-text-secondary,
+
+  // STROKE
+  gb-stroke-500: $gb-stroke-500,
 
   // GRAYS
   gb-gray-light-400: $gb-gray-light-400,
