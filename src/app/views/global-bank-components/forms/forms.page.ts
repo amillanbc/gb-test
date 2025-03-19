@@ -116,7 +116,8 @@ export class FormsPage {
     [(value)]="formData.user.value"
     [regex]="formData.user.validator"
     [required]="true"
-    icon="person-outline" />
+    icon="person-outline" 
+    [forceError]="formData.user.forceError" />
 
   <gb-input
     placeholder="Password"
@@ -185,6 +186,10 @@ export class FormsPage {
       user: {
         value: signal(''),
         validator: '^.{3,}$',
+        forceError: {
+          force: signal(false),
+          msg: signal(''),
+        },
       },
       pass: {
         value: signal(''),
