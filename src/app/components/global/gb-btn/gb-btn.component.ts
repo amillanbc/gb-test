@@ -42,6 +42,7 @@ export class GbBtnComponent {
     | 'circles'
     | 'circular'
     | 'crescent'
+    | null
   >();
   spinnerPosition = input<'left' | 'right'>('left');
   disabled = input(false);

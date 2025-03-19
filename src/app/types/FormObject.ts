@@ -5,6 +5,10 @@ interface FieldObject {
   validator?: string | string[] | boolean;
   min?: number;
   max?: number;
+  forceError?: {
+    force: WritableSignal<boolean>;
+    msg: WritableSignal<string>;
+  };
 }
 
 interface FormObject {

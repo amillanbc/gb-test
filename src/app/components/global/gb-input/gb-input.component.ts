@@ -50,6 +50,10 @@ export class GbInputComponent implements OnInit {
   max = input<number>();
   identity = input('');
   regexMessages = input<string[]>();
+  forceError = input({
+    force: signal(false),
+    msg: signal(''),
+  });
 
   // ##### SIGNALS
   model = signal<string>('');
@@ -90,6 +94,8 @@ export class GbInputComponent implements OnInit {
       classes += ' focus:border-gb-error-500 border-gb-error-500';
     }
     if (this.disabled()) classes += ' bg-gray-2';
+    if (this.forceError().force())
+      classes += ' border-gb-error-500 border-gb-error-500';
     classes += ` ${this.extraClasses()}`;
     return classes;
   });

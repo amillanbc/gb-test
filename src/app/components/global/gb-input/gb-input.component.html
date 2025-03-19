@@ -1,4 +1,6 @@
-<label class="mb-[10px] block text-base font-medium text-dark">
+<label
+  class="mb-[10px] block text-base font-medium text-dark"
+  [attr.data-test]="identity() + '-gb-label'">
   {{ label() }}
 </label>
 <div class="relative">
@@ -21,20 +23,25 @@
       [name]="isShowingPassword() ? 'eye-off-outline' : 'eye-outline'"
       class="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer"
       color="medium"
-      (click)="togglePass()" />
+      (click)="togglePass()"
+      data-test="password-gb-icon" />
   }
 </div>
 @if (regex() || typeof min() !== 'undefined' || typeof max() !== 'undefined') {
   @if (okHint() && model() && isValid()) {
-    <p class="mt-[10px] text-sm text-gb-success-500">{{ okHint() }}</p>
+    <p class="mt-[5px] text-sm text-gb-success-500">{{ okHint() }}</p>
   }
   @if (errHint() && model() && !isValid()) {
-    <p class="mt-[10px] text-sm text-gb-error-500">{{ errHint() }}</p>
+    <p class="mt-[5px] text-sm text-gb-error-500">{{ errHint() }}</p>
   }
 }
 
+@if (forceError().force()) {
+  <p class="mt-[5px] text-sm text-gb-error-500">{{ forceError().msg() }}</p>
+}
+
 @if (regexMessages() && isFocus()) {
-  <ul class="gb-mt-md">
+  <ul class="gb-mt-md" [attr.data-test]="identity() + '-gb-regexMessages'">
     @for (msg of regexMessages(); track msg; let idx = $index) {
       <li
         [class]="

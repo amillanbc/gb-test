@@ -3,12 +3,12 @@ import { Component, signal, computed, inject, effect } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-// import {
-//   GbInputComponent,
-//   GbBtnComponent,
-//   GbCheckboxComponent,
-//   GbSelectComponent,
-// } from 'components-library';
+// import {} from
+// GbInputComponent,
+// GbBtnComponent,
+// GbCheckboxComponent,
+// GbSelectComponent,
+// 'components-library';
 import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
@@ -47,10 +47,15 @@ export class FormsPage {
   utils = inject(Utils);
 
   // ##### SIGNALS
+  isLoading = signal(false);
   formData = {
     user: {
       value: signal(''),
       validator: '^.{3,}$',
+      forceError: {
+        force: signal(false),
+        msg: signal(''),
+      },
     },
     pass: {
       value: signal(''),
@@ -77,7 +82,13 @@ export class FormsPage {
 
   // ##### METHODS
   submitLogin() {
-    alert('Registration successfull');
+    this.isLoading.update(() => true);
+    setTimeout(() => {
+      this.utils.openToast({ type: 'error', text: 'User already taken.' });
+      this.formData.user.forceError.force.update(() => true);
+      this.formData.user.forceError.msg.update(() => 'User already taken.');
+      this.isLoading.update(() => false);
+    }, 1500);
   }
 
   // ##### COMPUTED
