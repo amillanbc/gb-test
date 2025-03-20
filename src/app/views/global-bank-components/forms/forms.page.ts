@@ -3,16 +3,16 @@ import { Component, signal, computed, inject, effect } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-// import {
-//   GbInputComponent,
-//   GbSelectComponent,
-//   GbCheckboxComponent,
-//   GbBtnComponent,
-// } from 'components-library';
-import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
-import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
-import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
-import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
+import {
+  GbInputComponent,
+  GbSelectComponent,
+  GbCheckboxComponent,
+  GbBtnComponent,
+} from 'components-library';
+// import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
+// import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
+// import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
+// import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
 
 // ##### SERVICES
 import { Utils } from 'src/app/stores/utils.service';
@@ -57,7 +57,10 @@ export class FormsPage {
       }
 
       this.registrationForm.repass.validator.update(
-        () => new RegExp(`^${this.registrationForm.pass.value()}$`)
+        () =>
+          new RegExp(
+            `^${this.utils.cleanStringForRegex(this.registrationForm.pass.value())}$`
+          )
       );
     });
   }
@@ -183,16 +186,16 @@ export class FormsPage {
     const username = this.utils.cleanStringForRegex(this.username);
     const password = this.utils.cleanStringForRegex(this.password);
     const regexArr = [
-      new RegExp(`/^(?!.*${email}).*$/i`),
-      new RegExp(`/^(?!.*${username}).*$/i`),
-      new RegExp(`/^(?!.*${password}).*$/i`),
+      new RegExp(`^(?!.*${email}).*$`, 'i'),
+      new RegExp(`^(?!.*${username}).*$`, 'i'),
+      new RegExp(`^(?!.*${password}).*$`, 'i'),
       /^[a-zA-Z0-9 ]*$/,
       /^.{3,}$/,
     ];
     for (const [key, value] of Object.entries(this.formData)) {
       if (value.value() && key !== inputKey) {
         const regStr = this.utils.cleanStringForRegex(value.value());
-        const newReg = new RegExp(`/^(?!.*${regStr}).*$/i`);
+        const newReg = new RegExp(`^(?!.*${regStr}).*$`, 'i');
         regexArr.push(newReg);
       }
     }
