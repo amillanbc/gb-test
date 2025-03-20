@@ -102,7 +102,8 @@ export class Utils {
   }
 
   public validateString(val: string, validator: RegExp[]): boolean {
-    for (let vldtr of validator) if (!vldtr.test(val)) return false;
+    for (let vldtr of validator)
+      if (!vldtr.test(val.toLowerCase().trim())) return false;
     return true;
   }
 
@@ -166,6 +167,9 @@ export class Utils {
   }
 
   public cleanStringForRegex(stringVal: string) {
-    return stringVal.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, match => `[${match}]`);
+    return stringVal
+      .toLowerCase()
+      .trim()
+      .replace(/[-[\]{}()*+?.,\\^$|#\s]/g, match => `[${match}]`);
   }
 }
