@@ -216,10 +216,15 @@ export class FormsPage {
   }
 
   setQuestionsOptions(val: string) {
-    const f = this.questions.find(q => q.value === val);
-    const op = [...this.availableQuestions()];
-    if (f) op.push(f);
-    return op;
+    const takenOptions: string[] = [];
+    for (const item in this.questionsFormData) {
+      const itemVal =
+        this.questionsFormData[
+          item as keyof typeof this.questionsFormData
+        ].value();
+      if (itemVal && itemVal !== val) takenOptions.push(itemVal);
+    }
+    return this.questions.filter(opt => !takenOptions.includes(opt.value));
   }
 
   // ##### COMPUTED
