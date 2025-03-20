@@ -2,13 +2,9 @@ import { WritableSignal } from '@angular/core';
 
 interface FieldObject {
   value: WritableSignal<string | boolean>;
-  validator?: string | string[] | boolean;
+  validator?: WritableSignal<RegExp | RegExp[]> | boolean;
   min?: number;
   max?: number;
-  forceError?: {
-    force: WritableSignal<boolean>;
-    msg: WritableSignal<string>;
-  };
 }
 
 interface FormObject {

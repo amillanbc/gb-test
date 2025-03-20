@@ -3,16 +3,16 @@ import { Component, signal, computed, inject, effect } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-// import {} from
-// GbInputComponent,
-// GbBtnComponent,
-// GbCheckboxComponent,
-// GbSelectComponent,
-// 'components-library';
+// import {
+//   GbInputComponent,
+//   GbSelectComponent,
+//   GbCheckboxComponent,
+//   GbBtnComponent,
+// } from 'components-library';
 import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
-import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
 import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
+import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
 
 // ##### SERVICES
 import { Utils } from 'src/app/stores/utils.service';
@@ -31,15 +31,34 @@ import { Highlight } from 'ngx-highlightjs';
     IonContent,
     GbInputComponent,
     GbBtnComponent,
-    GbCheckboxComponent,
     GbSelectComponent,
+    GbCheckboxComponent,
     Highlight,
   ],
 })
 export class FormsPage {
   constructor() {
     effect(() => {
-      this.formData.repass.validator = `^${this.formData.pass.value()}$`;
+      for (const item in this.formData) {
+        // UPDATE VALIDATORS
+        const arr = this.setValidationRegexArr(item);
+        this.formData[item as keyof typeof this.formData].validator.update(
+          () => arr
+        );
+
+        // UPDATE ERR HINTS
+        this.formData[item as keyof typeof this.formData].errHint.update(() => {
+          const value =
+            this.formData[item as keyof typeof this.formData].value();
+          const validator =
+            this.formData[item as keyof typeof this.formData].validator;
+          return this.returnErrHintString(value, validator());
+        });
+      }
+
+      this.registrationForm.repass.validator.update(
+        () => new RegExp(`^${this.registrationForm.pass.value()}$`)
+      );
     });
   }
 
@@ -49,9 +68,37 @@ export class FormsPage {
   // ##### SIGNALS
   isLoading = signal(false);
   formData = {
+    question1: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question2: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question3: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question4: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question5: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+  };
+
+  registrationForm = {
     user: {
       value: signal(''),
-      validator: '^.{3,}$',
+      validator: signal(/^.{3,}$/),
       forceError: {
         force: signal(false),
         msg: signal(''),
@@ -59,11 +106,11 @@ export class FormsPage {
     },
     pass: {
       value: signal(''),
-      validator: ['^.{3,}$', '[!@#$%^&*()]'],
+      validator: signal([/^.{3,}$/, /[!@#$%^&*()]/]),
     },
     repass: {
       value: signal(''),
-      validator: '',
+      validator: signal(/(?:)/),
     },
     age: {
       value: signal(''),
@@ -72,7 +119,7 @@ export class FormsPage {
     },
     gender: {
       value: signal(''),
-      validator: '^.+$',
+      validator: signal(/^.+$/),
     },
     accept: {
       value: signal(false),
@@ -81,18 +128,80 @@ export class FormsPage {
   };
 
   // ##### METHODS
-  submitLogin() {
+  submitQuestions() {
+    alert('All questions ok!');
+  }
+
+  submitRegistration() {
     this.isLoading.update(() => true);
     setTimeout(() => {
-      this.utils.openToast({ type: 'error', text: 'User already taken.' });
-      this.formData.user.forceError.force.update(() => true);
-      this.formData.user.forceError.msg.update(() => 'User already taken.');
+      if (this.registrationForm.user.value() === 'asd') {
+        const msg = 'User already taken.';
+        this.registrationForm.user.forceError.force.update(() => true);
+        this.registrationForm.user.forceError.msg.update(() => msg);
+        this.utils.openToast({ type: 'error', text: msg });
+      } else {
+        this.utils.openToast({
+          type: 'success',
+          text: 'Registration successful',
+        });
+      }
       this.isLoading.update(() => false);
     }, 1500);
   }
 
+  cleanForceError() {
+    this.registrationForm.user.forceError.force.update(() => false);
+    this.registrationForm.user.forceError.msg.update(() => '');
+  }
+
+  setValidationRegexArr(inputKey: string) {
+    const email = this.utils.cleanStringForRegex(this.email);
+    const username = this.utils.cleanStringForRegex(this.username);
+    const password = this.utils.cleanStringForRegex(this.password);
+    const regexArr = [
+      new RegExp(`^(?!.*${email}).*$`),
+      new RegExp(`^(?!.*${username}).*$`),
+      new RegExp(`^(?!.*${password}).*$`),
+      /^[a-zA-Z0-9 ]*$/,
+      /^.{3,}$/,
+    ];
+    for (const [key, value] of Object.entries(this.formData)) {
+      if (value.value() && key !== inputKey)
+        regexArr.push(new RegExp(`^(?!.*${value.value()}).*$`));
+    }
+    return regexArr;
+  }
+
+  returnErrHintString(inputVal: string, regexArr: RegExp[]) {
+    for (let i = 0; i < regexArr.length; i++) {
+      const valid = this.utils.validateString(inputVal, [regexArr[i]]);
+      if (!valid)
+        return this.errMsgList[
+          i > this.errMsgList.length - 1 ? this.errMsgList.length - 1 : i
+        ];
+    }
+    return '';
+  }
+
   // ##### COMPUTED
   isFormValid = computed(() => this.utils.validateForm(this.formData));
+
+  isRegisterFormValid = computed(() =>
+    this.utils.validateForm(this.registrationForm)
+  );
+
+  email = 'test@gmail.com';
+  username = 'username123';
+  password = 'Password456*';
+  errMsgList = [
+    'No uses tu nombre de usuario, correo o constraseña.',
+    'No uses tu nombre de usuario, correo o constraseña.',
+    'No uses tu nombre de usuario, correo o constraseña.',
+    'No utilices caracteres especiales.',
+    'Debe contener más de 2 caracteres.',
+    'Respuesta repetida.',
+  ];
 
   options = [
     {

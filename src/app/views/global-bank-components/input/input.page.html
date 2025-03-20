@@ -12,7 +12,10 @@
         <div class="sm:p-9 md:p-7 xl:p-9">
           <ion-row>
             <ion-col>
-              <gb-input [(value)]="input1" placeholder="Type here" label="Input label" />
+              <gb-input
+                [(value)]="input1"
+                placeholder="Type here"
+                label="Input label" />
             </ion-col>
             <ion-col>
               <pre><code [highlight]="primary" language="html"></code></pre>
@@ -143,7 +146,7 @@
               <gb-input
                 [(value)]="input1"
                 placeholder="Type here"
-                regex="^[A-Za-z0-9]{6,}$"
+                [regex]="regex"
                 okHint="Input value is ok"
                 errHint="Input value has an error" />
               <br />
@@ -152,8 +155,8 @@
                 placeholder="Type here"
                 type="number"
                 [min]="1"
-                [max]="10" 
-                okHint="Input value is ok" 
+                [max]="10"
+                okHint="Input value is ok"
                 errHint="Input value has an error" />
             </ion-col>
             <ion-col>

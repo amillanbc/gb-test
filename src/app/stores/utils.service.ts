@@ -61,31 +61,39 @@ export class Utils {
 
   validateForm(formData: FormObject): boolean {
     for (let field in formData) {
-      const [val, validator, min, max] = [
+      const [val, min, max] = [
         formData[field].value(),
-        formData[field].validator,
         formData[field].min,
         formData[field].max,
       ];
+      let validator: RegExp | RegExp[] | boolean = /(?:)/;
+      if (typeof formData[field].validator === 'boolean')
+        validator = formData[field].validator;
+      if (
+        formData[field].validator &&
+        typeof formData[field].validator !== 'boolean'
+      )
+        validator = formData[field].validator();
       const num = parseFloat(`${val}`);
       if (typeof validator === 'boolean' && val !== validator) return false;
-      if (!this.validateField(val, validator, min, max, num)) return false;
+      if (typeof val === 'string' || typeof val === 'number')
+        if (!this.validateField(val, num, validator, min, max)) return false;
     }
     return true;
   }
 
   validateField(
-    val: string | boolean,
-    validator: string | string[] | boolean | undefined,
-    min: number | undefined,
-    max: number | undefined,
-    num: number
+    val: string,
+    num: number,
+    validator?: RegExp | RegExp[] | boolean,
+    min?: number,
+    max?: number
   ): boolean {
-    const isStrOrStrArr =
-      typeof validator === 'string' || Array.isArray(validator);
-    if (typeof val === 'string' && isStrOrStrArr) {
+    const isRegexOrRegexArr =
+      validator instanceof RegExp || Array.isArray(validator);
+    if (isRegexOrRegexArr) {
       const vld = Array.isArray(validator) ? validator : [validator];
-      if (!this.validateString(vld, val)) return false;
+      if (!this.validateString(val, vld)) return false;
     }
     if (min || max) {
       if (!this.validateMinMax(min, max, num)) return false;
@@ -93,15 +101,12 @@ export class Utils {
     return true;
   }
 
-  private validateString(validator: string[], val: string): boolean {
-    for (let vldtr of validator) {
-      const regex = new RegExp(vldtr);
-      if (typeof val === 'string' && !regex.test(val)) return false;
-    }
+  public validateString(val: string, validator: RegExp[]): boolean {
+    for (let vldtr of validator) if (!vldtr.test(val)) return false;
     return true;
   }
 
-  private validateMinMax(
+  public validateMinMax(
     min: number | undefined,
     max: number | undefined,
     num: number
@@ -158,5 +163,9 @@ export class Utils {
     this.activeToast()?.dismiss();
     this.activeToast.update(() => toast);
     await toast.present();
+  }
+
+  public cleanStringForRegex(stringVal: string) {
+    return stringVal.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, match => `[${match}]`);
   }
 }

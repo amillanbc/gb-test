@@ -11,54 +11,96 @@
             <ion-col>
               <gb-input
                 placeholder="User"
-                [(value)]="formData.user.value"
-                [regex]="formData.user.validator"
+                [(value)]="registrationForm.user.value"
+                [regex]="registrationForm.user.validator()"
                 [required]="true"
                 icon="person-outline"
-                [forceError]="formData.user.forceError" />
+                [forceError]="registrationForm.user.forceError"
+                (click)="cleanForceError()" />
+
               <gb-input
                 placeholder="Password"
-                [(value)]="formData.pass.value"
-                [regex]="formData.pass.validator"
+                [(value)]="registrationForm.pass.value"
+                [regex]="registrationForm.pass.validator()"
                 icon="lock-closed-outline"
                 [required]="true"
                 type="password"
                 [passwordToggle]="true"
                 [regexMessages]="regexMessages" />
+
               <gb-input
                 placeholder="Re Password"
-                [(value)]="formData.repass.value"
-                [regex]="formData.repass.validator"
+                [(value)]="registrationForm.repass.value"
+                [regex]="registrationForm.repass.validator()"
                 icon="lock-closed-outline"
                 [required]="true"
                 type="password"
                 errHint="Passwords do not match."
                 [passwordToggle]="true" />
+
               <gb-input
                 placeholder="Age"
-                [(value)]="formData.age.value"
+                [(value)]="registrationForm.age.value"
                 type="number"
                 [required]="true"
-                [min]="formData.age.min"
-                [max]="formData.age.max" />
+                [min]="registrationForm.age.min"
+                [max]="registrationForm.age.max" />
+
               <gb-select
                 placeholder="Select gender"
-                [(value)]="formData.gender.value"
+                [(value)]="registrationForm.gender.value"
                 [options]="options"
                 [required]="true" />
               <br />
               <gb-checkbox
-                identity="checkbox_1"
-                [(value)]="formData.accept.value"
-                label="Accept terms" />
+                name="checkbox_1"
+                [(value)]="registrationForm.accept.value"
+                label="Accept terms"
+                identity="asdf" />
               <br />
               <gb-btn
                 label="Register"
-                (click)="submitLogin()"
-                [disabled]="!isFormValid() || isLoading()"
+                (click)="submitRegistration()"
+                [disabled]="!isRegisterFormValid() || isLoading()"
                 [spinner]="isLoading() ? 'lines' : null" />
             </ion-col>
-            <ion-col> </ion-col>
+            <ion-col>
+              <gb-input
+                placeholder="Question 1"
+                [(value)]="formData.question1.value"
+                [regex]="formData.question1.validator()"
+                [errHint]="formData.question1.errHint()"
+                [required]="true" />
+              <gb-input
+                placeholder="Question 2"
+                [(value)]="formData.question2.value"
+                [regex]="formData.question2.validator()"
+                [errHint]="formData.question2.errHint()"
+                [required]="true" />
+              <gb-input
+                placeholder="Question 3"
+                [(value)]="formData.question3.value"
+                [regex]="formData.question3.validator()"
+                [errHint]="formData.question3.errHint()"
+                [required]="true" />
+              <gb-input
+                placeholder="Question 4"
+                [(value)]="formData.question4.value"
+                [regex]="formData.question4.validator()"
+                [errHint]="formData.question4.errHint()"
+                [required]="true" />
+              <gb-input
+                placeholder="Question 5"
+                [(value)]="formData.question5.value"
+                [regex]="formData.question5.validator()"
+                [errHint]="formData.question5.errHint()"
+                [required]="true" />
+              <br />
+              <gb-btn
+                label="Send"
+                (click)="submitQuestions()"
+                [disabled]="!isFormValid()" />
+            </ion-col>
           </ion-row>
         </div>
       </div>
