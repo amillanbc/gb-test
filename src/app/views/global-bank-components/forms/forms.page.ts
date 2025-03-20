@@ -101,23 +101,23 @@ export class FormsPage {
   questionsFormData = {
     qSelect1: {
       value: signal(''),
-      valdator: signal(/^.+$/),
+      validator: signal(/^.+$/),
     },
     qSelect2: {
       value: signal(''),
-      valdator: signal(/^.+$/),
+      validator: signal(/^.+$/),
     },
     qSelect3: {
       value: signal(''),
-      valdator: signal(/^.+$/),
+      validator: signal(/^.+$/),
     },
     qSelect4: {
       value: signal(''),
-      valdator: signal(/^.+$/),
+      validator: signal(/^.+$/),
     },
     qSelect5: {
       value: signal(''),
-      valdator: signal(/^.+$/),
+      validator: signal(/^.+$/),
     },
   };
 
