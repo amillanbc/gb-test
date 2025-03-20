@@ -183,17 +183,16 @@ export class FormsPage {
     const username = this.utils.cleanStringForRegex(this.username);
     const password = this.utils.cleanStringForRegex(this.password);
     const regexArr = [
-      new RegExp(`^(?!.*${email}).*$`),
-      new RegExp(`^(?!.*${username}).*$`),
-      new RegExp(`^(?!.*${password}).*$`),
+      new RegExp(`/^(?!.*${email}).*$/i`),
+      new RegExp(`/^(?!.*${username}).*$/i`),
+      new RegExp(`/^(?!.*${password}).*$/i`),
       /^[a-zA-Z0-9 ]*$/,
       /^.{3,}$/,
     ];
     for (const [key, value] of Object.entries(this.formData)) {
       if (value.value() && key !== inputKey) {
-        const newReg = new RegExp(
-          `^(?!.*${this.utils.cleanStringForRegex(value.value())}).*$`
-        );
+        const regStr = this.utils.cleanStringForRegex(value.value());
+        const newReg = new RegExp(`/^(?!.*${regStr}).*$/i`);
         regexArr.push(newReg);
       }
     }
