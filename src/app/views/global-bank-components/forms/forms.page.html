@@ -65,11 +65,22 @@
                 [spinner]="isLoading() ? 'lines' : null" />
             </ion-col>
             <ion-col>
+              <gb-select
+                placeholder="Select question 1"
+                [(value)]="questionsFormData.qSelect1.value"
+                [options]="setQuestionsOptions(questionsFormData.qSelect1.value())"
+                [required]="true" />
               <gb-input
                 placeholder="Question 1"
                 [(value)]="formData.question1.value"
                 [regex]="formData.question1.validator()"
                 [errHint]="formData.question1.errHint()"
+                [required]="true" />
+              <br />
+              <gb-select
+                placeholder="Select question 2"
+                [(value)]="questionsFormData.qSelect2.value"
+                [options]="setQuestionsOptions(questionsFormData.qSelect2.value())"
                 [required]="true" />
               <gb-input
                 placeholder="Question 2"
@@ -77,17 +88,35 @@
                 [regex]="formData.question2.validator()"
                 [errHint]="formData.question2.errHint()"
                 [required]="true" />
+              <br />
+              <gb-select
+                placeholder="Select question 3"
+                [(value)]="questionsFormData.qSelect3.value"
+                [options]="setQuestionsOptions(questionsFormData.qSelect3.value())"
+                [required]="true" />
               <gb-input
                 placeholder="Question 3"
                 [(value)]="formData.question3.value"
                 [regex]="formData.question3.validator()"
                 [errHint]="formData.question3.errHint()"
                 [required]="true" />
+              <br />
+              <gb-select
+                placeholder="Select question 4"
+                [(value)]="questionsFormData.qSelect4.value"
+                [options]="setQuestionsOptions(questionsFormData.qSelect4.value())"
+                [required]="true" />
               <gb-input
                 placeholder="Question 4"
                 [(value)]="formData.question4.value"
                 [regex]="formData.question4.validator()"
                 [errHint]="formData.question4.errHint()"
+                [required]="true" />
+              <br />
+              <gb-select
+                placeholder="Select question 5"
+                [(value)]="questionsFormData.qSelect5.value"
+                [options]="setQuestionsOptions(questionsFormData.qSelect5.value())"
                 [required]="true" />
               <gb-input
                 placeholder="Question 5"
@@ -99,7 +128,7 @@
               <gb-btn
                 label="Send"
                 (click)="submitQuestions()"
-                [disabled]="!isFormValid()" />
+                [disabled]="!isFormValid() || !isQuestionsFormValid()" />
             </ion-col>
           </ion-row>
         </div>

@@ -95,6 +95,29 @@ export class FormsPage {
     },
   };
 
+  questionsFormData = {
+    qSelect1: {
+      value: signal(''),
+      valdator: signal(/^.+$/),
+    },
+    qSelect2: {
+      value: signal(''),
+      valdator: signal(/^.+$/),
+    },
+    qSelect3: {
+      value: signal(''),
+      valdator: signal(/^.+$/),
+    },
+    qSelect4: {
+      value: signal(''),
+      valdator: signal(/^.+$/),
+    },
+    qSelect5: {
+      value: signal(''),
+      valdator: signal(/^.+$/),
+    },
+  };
+
   registrationForm = {
     user: {
       value: signal(''),
@@ -106,7 +129,7 @@ export class FormsPage {
     },
     pass: {
       value: signal(''),
-      validator: signal([/^.{3,}$/, /[!@#$%^&*()]/]),
+      validator: signal([/^.{3,}$/, /[!@#$%^&*()]/, /[A-Z]/]),
     },
     repass: {
       value: signal(''),
@@ -167,15 +190,19 @@ export class FormsPage {
       /^.{3,}$/,
     ];
     for (const [key, value] of Object.entries(this.formData)) {
-      if (value.value() && key !== inputKey)
-        regexArr.push(new RegExp(`^(?!.*${value.value()}).*$`));
+      if (value.value() && key !== inputKey) {
+        const newReg = new RegExp(
+          `^(?!.*${this.utils.cleanStringForRegex(value.value())}).*$`
+        );
+        regexArr.push(newReg);
+      }
     }
     return regexArr;
   }
 
   returnErrHintString(inputVal: string, regexArr: RegExp[]) {
     for (let i = 0; i < regexArr.length; i++) {
-      const valid = this.utils.validateString(inputVal, [regexArr[i]]);
+      const valid = this.utils.validateString(inputVal.trim(), [regexArr[i]]);
       if (!valid)
         return this.errMsgList[
           i > this.errMsgList.length - 1 ? this.errMsgList.length - 1 : i
@@ -184,12 +211,35 @@ export class FormsPage {
     return '';
   }
 
+  setQuestionsOptions(val: string) {
+    const f = this.questions.find(q => q.value === val);
+    const op = [...this.availableQuestions()];
+    if (f) op.push(f);
+    return op;
+  }
+
   // ##### COMPUTED
   isFormValid = computed(() => this.utils.validateForm(this.formData));
+
+  isQuestionsFormValid = computed(() =>
+    this.utils.validateForm(this.questionsFormData)
+  );
 
   isRegisterFormValid = computed(() =>
     this.utils.validateForm(this.registrationForm)
   );
+
+  availableQuestions = computed(() => {
+    const takenQuestions: string[] = [];
+    for (const item in this.questionsFormData) {
+      const val =
+        this.questionsFormData[
+          item as keyof typeof this.questionsFormData
+        ].value();
+      if (val) takenQuestions.push(val);
+    }
+    return this.questions.filter(q => !takenQuestions.includes(q.value));
+  });
 
   email = 'test@gmail.com';
   username = 'username123';
@@ -214,9 +264,45 @@ export class FormsPage {
     },
   ];
 
+  questions = [
+    {
+      label: 'Question 1 label?',
+      value: 'question_1',
+    },
+    {
+      label: 'Question 2 label?',
+      value: 'question_2',
+    },
+    {
+      label: 'Question 3 label?',
+      value: 'question_3',
+    },
+    {
+      label: 'Question 4 label?',
+      value: 'question_4',
+    },
+    {
+      label: 'Question 5 label?',
+      value: 'question_5',
+    },
+    {
+      label: 'Question 6 label?',
+      value: 'question_6',
+    },
+    {
+      label: 'Question 7 label?',
+      value: 'question_7',
+    },
+    {
+      label: 'Question 8 label?',
+      value: 'question_8',
+    },
+  ];
+
   regexMessages = [
     'Should be at least 3 characters long.',
     'Should contain special chars !@#$%^&*()',
+    'Should contain at least 1 mayus character',
   ];
 
   html = `

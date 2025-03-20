@@ -113,7 +113,7 @@ export class GbInputComponent implements OnInit {
 
   validateRegex(rgx: RegExp | RegExp[], index?: number) {
     let r = Array.isArray(rgx) ? rgx : [rgx];
-    if (index) r = [r[index]];
+    if (typeof index !== 'undefined') r = [r[index]];
     for (let rx of r) if (!rx.test(`${this.model()}`)) return false;
     return true;
   }
