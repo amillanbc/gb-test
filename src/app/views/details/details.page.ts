@@ -10,7 +10,7 @@ import {
 
 // ##### SERVICES
 import { AppStore } from 'src/app/stores/app-store.service';
-import { Utils } from 'src/app/stores/utils.service';
+import { Utils as LibUtils } from 'components-library';
 
 // ##### COMPONENTS
 import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
@@ -29,7 +29,7 @@ import User from 'src/app/types/User';
 export class DetailsPage implements OnInit {
   // ##### INJECTIONS
   appStore = inject(AppStore);
-  utils = inject(Utils);
+  libUtils = inject(LibUtils);
 
   constructor() {}
 
@@ -42,7 +42,7 @@ export class DetailsPage implements OnInit {
    * Opens modal component 1
    */
   async openModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       props: {
         bodyText:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis pretium massa, at pretium tortor congue nec.',
@@ -56,7 +56,7 @@ export class DetailsPage implements OnInit {
    * Opens modal component 2
    */
   async openModal2() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       props: {},
       comp: ModalSample2Component,
     });

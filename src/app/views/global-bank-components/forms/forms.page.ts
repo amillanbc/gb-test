@@ -15,7 +15,7 @@ import {
 // import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
 
 // ##### SERVICES
-import { Utils } from 'src/app/stores/utils.service';
+import { Utils as LibUtils } from 'components-library';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';
@@ -59,14 +59,14 @@ export class FormsPage {
       this.registrationForm.repass.validator.update(
         () =>
           new RegExp(
-            `^${this.utils.cleanStringForRegex(this.registrationForm.pass.value())}$`
+            `^${this.libUtils.cleanStringForRegex(this.registrationForm.pass.value())}$`
           )
       );
     });
   }
 
   // ##### INJECTIONS
-  utils = inject(Utils);
+  libUtils = inject(LibUtils);
 
   // ##### SIGNALS
   isLoading = signal(false);
@@ -165,9 +165,9 @@ export class FormsPage {
         const msg = 'User already taken.';
         this.registrationForm.user.forceError.force.update(() => true);
         this.registrationForm.user.forceError.msg.update(() => msg);
-        this.utils.openToast({ type: 'error', text: msg });
+        this.libUtils.openToast({ type: 'error', text: msg });
       } else {
-        this.utils.openToast({
+        this.libUtils.openToast({
           type: 'success',
           text: 'Registration successful',
         });
@@ -182,9 +182,9 @@ export class FormsPage {
   }
 
   setValidationRegexArr(inputKey: string) {
-    const email = this.utils.cleanStringForRegex(this.email);
-    const username = this.utils.cleanStringForRegex(this.username);
-    const password = this.utils.cleanStringForRegex(this.password);
+    const email = this.libUtils.cleanStringForRegex(this.email);
+    const username = this.libUtils.cleanStringForRegex(this.username);
+    const password = this.libUtils.cleanStringForRegex(this.password);
     const regexArr = [
       new RegExp(`^(?!.*${email}).*$`, 'i'),
       new RegExp(`^(?!.*${username}).*$`, 'i'),
@@ -194,7 +194,7 @@ export class FormsPage {
     ];
     for (const [key, value] of Object.entries(this.formData)) {
       if (value.value() && key !== inputKey) {
-        const regStr = this.utils.cleanStringForRegex(value.value());
+        const regStr = this.libUtils.cleanStringForRegex(value.value());
         const newReg = new RegExp(`^(?!.*${regStr}).*$`, 'i');
         regexArr.push(newReg);
       }
@@ -204,7 +204,9 @@ export class FormsPage {
 
   returnErrHintString(inputVal: string, regexArr: RegExp[]) {
     for (let i = 0; i < regexArr.length; i++) {
-      const valid = this.utils.validateString(inputVal.trim(), [regexArr[i]]);
+      const valid = this.libUtils.validateString(inputVal.trim(), [
+        regexArr[i],
+      ]);
       if (!valid)
         return this.errMsgList[
           i > this.errMsgList.length - 1 ? this.errMsgList.length - 1 : i
@@ -221,14 +223,14 @@ export class FormsPage {
   }
 
   // ##### COMPUTED
-  isFormValid = computed(() => this.utils.validateForm(this.formData));
+  isFormValid = computed(() => this.libUtils.validateForm(this.formData));
 
   isQuestionsFormValid = computed(() =>
-    this.utils.validateForm(this.questionsFormData)
+    this.libUtils.validateForm(this.questionsFormData)
   );
 
   isRegisterFormValid = computed(() =>
-    this.utils.validateForm(this.registrationForm)
+    this.libUtils.validateForm(this.registrationForm)
   );
 
   availableQuestions = computed(() => {
@@ -417,7 +419,7 @@ export class FormsPage {
     }
       
     // ##### COMPUTED
-    isFormValid = computed(() => this.utils.validateForm(this.formData));
+    isFormValid = computed(() => this.libUtils.validateForm(this.formData));
 
     // ##### OPTIONS
     options = [

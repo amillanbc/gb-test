@@ -6,8 +6,7 @@ import { IonContent, IonCol, IonRow } from '@ionic/angular/standalone';
 import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
 
 // ##### SERVICES
-import { Utils } from 'src/app/stores/utils.service';
-// import { Utils } from 'components-library';
+import { Utils as LibUtils } from 'components-library';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';
@@ -21,25 +20,25 @@ import { Highlight } from 'ngx-highlightjs';
 })
 export class ToastPage {
   // ##### INJECTS
-  utils = inject(Utils);
+  libUtils = inject(LibUtils);
 
   // ##### METHODS
   openGenericToast() {
-    this.utils.openToast({
+    this.libUtils.openToast({
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       icon: 'information-circle-outline',
     });
   }
 
   openToastWithColor(type: 'default' | 'success' | 'warning' | 'error') {
-    this.utils.openToast({
+    this.libUtils.openToast({
       text: 'Tu usuario o contraseña son incorrectos. intenta de nuevo.',
       type: type,
     });
   }
 
   openCustomToast() {
-    this.utils.openToast({
+    this.libUtils.openToast({
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       icon: 'airplane-outline',
       header: 'Lorem ipsum.',
@@ -58,7 +57,7 @@ export class ToastPage {
   utils = inject(Utils)
 
   // ##### METHOD
-  this.utils.openToast(
+  this.libUtils.openToast(
     {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       icon: 'information-circle-outline'
@@ -74,7 +73,7 @@ export class ToastPage {
   utils = inject(Utils)
 
   // ##### METHODS
-  this.utils.openToast(
+  this.libUtils.openToast(
     {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       type: 'default' // 'default' | 'success' | 'warning' | 'error'
@@ -90,7 +89,7 @@ export class ToastPage {
   utils = inject(Utils)
 
   // ##### METHOD
-  this.utils.openToast(
+  this.libUtils.openToast(
     {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         icon: 'airplane-outline',
