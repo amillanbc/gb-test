@@ -45,7 +45,7 @@
     @for (msg of regexMessages(); track msg; let idx = $index) {
       <li
         [class]="
-          validateRegex([regex()[idx]])
+          validateRegex(regex(), idx)
             ? 'text-gb-success-500 flex'
             : 'text-gb-gray-dark-500 flex'
         ">

@@ -44,7 +44,7 @@ export class GbInputComponent implements OnInit {
   disabled = input(false);
   extraClasses = input('');
   passwordToggle = input(false);
-  regex = input<string | string[]>('');
+  regex = input<RegExp | RegExp[]>(new RegExp(''));
   required = input(false);
   min = input<number>();
   max = input<number>();
@@ -101,21 +101,20 @@ export class GbInputComponent implements OnInit {
   });
 
   isValid() {
-    const regex = this.regex();
-    const regexArray = Array.isArray(regex) ? regex : [regex];
     const min = this.min();
     const max = this.max();
-    if (regex) return this.validateRegex(regexArray);
     if (min != undefined && parseFloat(this.model()) < min) return false;
     if (max != undefined && parseFloat(this.model()) > max) return false;
+    const regex = this.regex();
+    const regexArray = Array.isArray(regex) ? regex : [regex];
+    if (regex) return this.validateRegex(regexArray);
     return true;
   }
 
-  validateRegex(rgx: string[]) {
-    for (let rx of rgx) {
-      const reg = new RegExp(rx);
-      if (!reg.test(`${this.model()}`)) return false;
-    }
+  validateRegex(rgx: RegExp | RegExp[], index?: number) {
+    let r = Array.isArray(rgx) ? rgx : [rgx];
+    if (index) r = [r[index]];
+    for (let rx of r) if (!rx.test(`${this.model()}`)) return false;
     return true;
   }
 
