@@ -94,6 +94,10 @@ $gb-sizes: (
 
 @for $i from 1 through 100 {
   .gb-w-#{$i} {
-    width: #{$i} + '%'
+    width: #{$i} + '%';
   }
+}
+
+.transition-width {
+  transition: width 0.5s ease-in-out;
 }

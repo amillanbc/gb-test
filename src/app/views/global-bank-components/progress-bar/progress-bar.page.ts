@@ -18,15 +18,14 @@ import { Highlight } from 'ngx-highlightjs';
 })
 export class ProgressBarPage implements OnInit {
   // ##### SIGNALS
-  progress = signal(0);
+  progress = signal(100);
 
   // METHODS
   loopCount() {
-    let count = 0;
     setInterval(() => {
-      this.progress.update(() => count);
-      count = (count + 1) % 101;
-    }, 25);
+      this.progress.update(val => (val = val - 1));
+      if (this.progress() < -1) this.progress.set(100);
+    }, 300);
   }
 
   // LC HOOKS
