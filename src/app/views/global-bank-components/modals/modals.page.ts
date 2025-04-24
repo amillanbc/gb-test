@@ -12,8 +12,7 @@ import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-samp
 import { Highlight } from 'ngx-highlightjs';
 
 // ##### SERVICES
-// import { Utils } from 'components-library';
-import { Utils } from 'src/app/stores/utils.service';
+import { Utils as LibUtils } from 'components-library';
 
 @Component({
   selector: 'app-modals',
@@ -23,10 +22,10 @@ import { Utils } from 'src/app/stores/utils.service';
   imports: [IonCol, IonRow, IonContent, GbBtnComponent, Highlight],
 })
 export class ModalsPage {
-  utils = inject(Utils);
+  libUtils = inject(LibUtils);
 
   async openModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       props: {
         type: 'warning',
         header: 'Lorem ipsum dolor',
@@ -39,14 +38,14 @@ export class ModalsPage {
   }
 
   async openCustomModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       comp: ModalSample2Component,
     });
     console.log(modalResp);
   }
 
   async openFullScreenModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       mode: 'fullscreen',
       comp: ModalSampleComponent,
     });
@@ -54,7 +53,7 @@ export class ModalsPage {
   }
 
   async openCardModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       mode: 'card',
       comp: ModalSample2Component,
     });
@@ -67,7 +66,7 @@ export class ModalsPage {
   import { Utils } from 'src/app/stores/utils.service';
 
   async openModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       props: {
         type: 'warning',
         header: 'Lorem ipsum dolor',
@@ -88,7 +87,7 @@ export class ModalsPage {
   import { ModalSample2Component } from 'src/app/components/modal-sample-2/modal-sample-2.component';
 
   async openCustomModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       comp: ModalSample2Component,
     });
     // Use modalResp in your code here
@@ -103,7 +102,7 @@ export class ModalsPage {
   import { ModalSampleComponent } from 'src/app/components/modal-sample/modal-sample.component';
 
   async openCustomModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       mode: 'fullscreen',
       comp: ModalSampleComponent,
     });
@@ -119,7 +118,7 @@ export class ModalsPage {
   import { ModalSample2Component } from 'src/app/components/modal-sample-2/modal-sample-2.component';
 
   async openCustomModal() {
-    const modalResp = await this.utils.openModal({
+    const modalResp = await this.libUtils.openModal({
       mode: 'card',
       comp: ModalSample2Component,
     });

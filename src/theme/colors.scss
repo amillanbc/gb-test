@@ -7,6 +7,9 @@ $gb-text-secondary: #7a8294;
 // GRAY STROKE
 $gb-stroke-500: #d5d8dd;
 
+// WHITE
+$gb-white-500: white;
+
 // GRAY LIGHT
 $gb-gray-light-400: #fafafa; // Gray 1
 $gb-gray-light-500: #eaeaeb; // Gray 2
@@ -105,6 +108,9 @@ $gb-colors: (
 
   // STROKE
   gb-stroke-500: $gb-stroke-500,
+
+  // WHITE
+  gb-white-500: $gb-white-500,
 
   // GRAYS
   gb-gray-light-400: $gb-gray-light-400,
@@ -263,5 +269,9 @@ $gb-colors: (
     font-size: 1rem;
     padding: 3px;
     color: white;
+  }
+  ion-toast.gb-toast-#{$name}::part(container) {
+    border-radius: 6px;
+    border: solid 1px $color;
   }
 }

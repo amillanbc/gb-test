@@ -19,7 +19,7 @@ import { Highlight } from 'ngx-highlightjs';
 export class InputPage {
   // ##### INPUTS
   input1 = signal('');
-
+  regex = /^[A-Za-z0-9]{6,}$/;
   primary =
     '<gb-input [(value)]="input1" placeholder="Type here" label="Input label" />';
   type =

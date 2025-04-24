@@ -3,19 +3,19 @@ import { Component, signal, computed, inject, effect } from '@angular/core';
 import { IonContent, IonRow, IonCol } from '@ionic/angular/standalone';
 
 // ##### GB COMPONENTS
-// import {} from
-// GbInputComponent,
-// GbBtnComponent,
-// GbCheckboxComponent,
-// GbSelectComponent,
-// 'components-library';
-import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
-import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
-import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
-import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
+import {
+  GbInputComponent,
+  GbSelectComponent,
+  GbCheckboxComponent,
+  GbBtnComponent,
+} from 'components-library';
+// import { GbInputComponent } from 'src/app/components/global/gb-input/gb-input.component';
+// import { GbBtnComponent } from 'src/app/components/global/gb-btn/gb-btn.component';
+// import { GbSelectComponent } from 'src/app/components/global/gb-select/gb-select.component';
+// import { GbCheckboxComponent } from 'src/app/components/global/gb-checkbox/gb-checkbox.component';
 
 // ##### SERVICES
-import { Utils } from 'src/app/stores/utils.service';
+import { Utils as LibUtils } from 'components-library';
 
 // ##### OTHER IMPORTS
 import { Highlight } from 'ngx-highlightjs';
@@ -31,27 +31,100 @@ import { Highlight } from 'ngx-highlightjs';
     IonContent,
     GbInputComponent,
     GbBtnComponent,
-    GbCheckboxComponent,
     GbSelectComponent,
+    GbCheckboxComponent,
     Highlight,
   ],
 })
 export class FormsPage {
   constructor() {
     effect(() => {
-      this.formData.repass.validator = `^${this.formData.pass.value()}$`;
+      for (const item in this.formData) {
+        // UPDATE VALIDATORS
+        const arr = this.setValidationRegexArr(item);
+        this.formData[item as keyof typeof this.formData].validator.update(
+          () => arr
+        );
+
+        // UPDATE ERR HINTS
+        this.formData[item as keyof typeof this.formData].errHint.update(() => {
+          const value =
+            this.formData[item as keyof typeof this.formData].value();
+          const validator =
+            this.formData[item as keyof typeof this.formData].validator;
+          return this.returnErrHintString(value, validator());
+        });
+      }
+
+      this.registrationForm.repass.validator.update(
+        () =>
+          new RegExp(
+            `^${this.libUtils.cleanStringForRegex(this.registrationForm.pass.value())}$`
+          )
+      );
     });
   }
 
   // ##### INJECTIONS
-  utils = inject(Utils);
+  libUtils = inject(LibUtils);
 
   // ##### SIGNALS
   isLoading = signal(false);
   formData = {
+    question1: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question2: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question3: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question4: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+    question5: {
+      value: signal(''),
+      validator: signal([new RegExp('')]),
+      errHint: signal(''),
+    },
+  };
+
+  questionsFormData = {
+    qSelect1: {
+      value: signal(''),
+      validator: signal(/^.+$/),
+    },
+    qSelect2: {
+      value: signal(''),
+      validator: signal(/^.+$/),
+    },
+    qSelect3: {
+      value: signal(''),
+      validator: signal(/^.+$/),
+    },
+    qSelect4: {
+      value: signal(''),
+      validator: signal(/^.+$/),
+    },
+    qSelect5: {
+      value: signal(''),
+      validator: signal(/^.+$/),
+    },
+  };
+
+  registrationForm = {
     user: {
       value: signal(''),
-      validator: '^.{3,}$',
+      validator: signal(/^.{3,}$/),
       forceError: {
         force: signal(false),
         msg: signal(''),
@@ -59,11 +132,11 @@ export class FormsPage {
     },
     pass: {
       value: signal(''),
-      validator: ['^.{3,}$', '[!@#$%^&*()]'],
+      validator: signal([/^.{3,}$/, /[!@#$%^&*()]/, /[A-Z]/]),
     },
     repass: {
       value: signal(''),
-      validator: '',
+      validator: signal(/(?:)/),
     },
     age: {
       value: signal(''),
@@ -72,7 +145,7 @@ export class FormsPage {
     },
     gender: {
       value: signal(''),
-      validator: '^.+$',
+      validator: signal(/^.+$/),
     },
     accept: {
       value: signal(false),
@@ -81,18 +154,113 @@ export class FormsPage {
   };
 
   // ##### METHODS
-  submitLogin() {
+  submitQuestions() {
+    alert('All questions ok!');
+  }
+
+  submitRegistration() {
     this.isLoading.update(() => true);
     setTimeout(() => {
-      this.utils.openToast({ type: 'error', text: 'User already taken.' });
-      this.formData.user.forceError.force.update(() => true);
-      this.formData.user.forceError.msg.update(() => 'User already taken.');
+      if (this.registrationForm.user.value() === 'asd') {
+        const msg = 'User already taken.';
+        this.registrationForm.user.forceError.force.update(() => true);
+        this.registrationForm.user.forceError.msg.update(() => msg);
+        this.libUtils.openToast({ type: 'error', text: msg });
+      } else {
+        this.libUtils.openToast({
+          type: 'success',
+          text: 'Registration successful',
+        });
+      }
       this.isLoading.update(() => false);
     }, 1500);
   }
 
+  cleanForceError() {
+    this.registrationForm.user.forceError.force.update(() => false);
+    this.registrationForm.user.forceError.msg.update(() => '');
+  }
+
+  setValidationRegexArr(inputKey: string) {
+    const email = this.libUtils.cleanStringForRegex(this.email);
+    const username = this.libUtils.cleanStringForRegex(this.username);
+    const password = this.libUtils.cleanStringForRegex(this.password);
+    const regexArr = [
+      new RegExp(`^(?!.*${email}).*$`, 'i'),
+      new RegExp(`^(?!.*${username}).*$`, 'i'),
+      new RegExp(`^(?!.*${password}).*$`, 'i'),
+      /^[a-zA-Z0-9 ]*$/,
+      /^.{3,}$/,
+    ];
+    for (const [key, value] of Object.entries(this.formData)) {
+      if (value.value() && key !== inputKey) {
+        const regStr = this.libUtils.cleanStringForRegex(value.value());
+        const newReg = new RegExp(`^(?!.*${regStr}).*$`, 'i');
+        regexArr.push(newReg);
+      }
+    }
+    return regexArr;
+  }
+
+  returnErrHintString(inputVal: string, regexArr: RegExp[]) {
+    for (let i = 0; i < regexArr.length; i++) {
+      const valid = this.libUtils.validateString(inputVal.trim(), [
+        regexArr[i],
+      ]);
+      if (!valid)
+        return this.errMsgList[
+          i > this.errMsgList.length - 1 ? this.errMsgList.length - 1 : i
+        ];
+    }
+    return '';
+  }
+
+  setQuestionsOptions(val: string) {
+    const takenOptions: string[] = [];
+    for (const item in this.questionsFormData) {
+      const itemVal =
+        this.questionsFormData[
+          item as keyof typeof this.questionsFormData
+        ].value();
+      if (itemVal && itemVal !== val) takenOptions.push(itemVal);
+    }
+    return this.questions.filter(opt => !takenOptions.includes(opt.value));
+  }
+
   // ##### COMPUTED
-  isFormValid = computed(() => this.utils.validateForm(this.formData));
+  isFormValid = computed(() => this.libUtils.validateForm(this.formData));
+
+  isQuestionsFormValid = computed(() =>
+    this.libUtils.validateForm(this.questionsFormData)
+  );
+
+  isRegisterFormValid = computed(() =>
+    this.libUtils.validateForm(this.registrationForm)
+  );
+
+  availableQuestions = computed(() => {
+    const takenQuestions: string[] = [];
+    for (const item in this.questionsFormData) {
+      const val =
+        this.questionsFormData[
+          item as keyof typeof this.questionsFormData
+        ].value();
+      if (val) takenQuestions.push(val);
+    }
+    return this.questions.filter(q => !takenQuestions.includes(q.value));
+  });
+
+  email = 'test@gmail.com';
+  username = 'username123';
+  password = 'Password456*';
+  errMsgList = [
+    'No uses tu nombre de usuario, correo o constraseña.',
+    'No uses tu nombre de usuario, correo o constraseña.',
+    'No uses tu nombre de usuario, correo o constraseña.',
+    'No utilices caracteres especiales.',
+    'Debe contener más de 2 caracteres.',
+    'Respuesta repetida.',
+  ];
 
   options = [
     {
@@ -105,9 +273,45 @@ export class FormsPage {
     },
   ];
 
+  questions = [
+    {
+      label: 'Question 1 label?',
+      value: 'question_1',
+    },
+    {
+      label: 'Question 2 label?',
+      value: 'question_2',
+    },
+    {
+      label: 'Question 3 label?',
+      value: 'question_3',
+    },
+    {
+      label: 'Question 4 label?',
+      value: 'question_4',
+    },
+    {
+      label: 'Question 5 label?',
+      value: 'question_5',
+    },
+    {
+      label: 'Question 6 label?',
+      value: 'question_6',
+    },
+    {
+      label: 'Question 7 label?',
+      value: 'question_7',
+    },
+    {
+      label: 'Question 8 label?',
+      value: 'question_8',
+    },
+  ];
+
   regexMessages = [
     'Should be at least 3 characters long.',
     'Should contain special chars !@#$%^&*()',
+    'Should contain at least 1 mayus character',
   ];
 
   html = `
@@ -220,7 +424,7 @@ export class FormsPage {
     }
       
     // ##### COMPUTED
-    isFormValid = computed(() => this.utils.validateForm(this.formData));
+    isFormValid = computed(() => this.libUtils.validateForm(this.formData));
 
     // ##### OPTIONS
     options = [
