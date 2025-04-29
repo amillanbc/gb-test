@@ -15,7 +15,8 @@
     "storybook": "ng run app:storybook",
     "build-storybook": "ng run app:build-storybook",
     "serve": "ng serve --host=0.0.0.0",
-    "update-lib": "npm uninstall components-library && npm install ../gb-components-library/dist/components-library",
+    "install-lib-local": "npm uninstall components-library && npm install ../gb-components-library/dist/components-library",
+    "install-lib-latest": "npm uninstall components-library && ./install-latest.sh",
     "sync-lib": "rsync -av ./src/app/components/global/ ../gb-components-library/projects/components-library/src/lib/components/"
   },
   "private": true,
@@ -37,7 +38,7 @@
     "@capacitor/status-bar": "6.0.2",
     "@ionic/angular": "^8.0.0",
     "bootstrap": "^5.3.3",
-    "components-library": "file:../gb-components-library/dist/components-library",
+    "components-library": "https://github.com/bluecorela/gb-components-library/releases/download/v1.0.1/components-library-1.0.1.tgz",
     "ionicons": "^7.0.0",
     "ngx-highlightjs": "^14.0.0",
     "rxjs": "~7.8.0",
